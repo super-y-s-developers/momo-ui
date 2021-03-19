@@ -1,0 +1,53 @@
+{
+  "name": "momo-ui",
+  "version": "0.1.0",
+  "description": "A design system that works as a comic relief. It's light and fun",
+  "repository": "git@github.com:super-y-s-developers/momo-ui.git",
+  "contributors": [
+    {
+      "name": "Yeliana Torres",
+      "email": "yelis124@gmail.com",
+      "url": "https://github.com/Yelis3"
+    },
+    {
+      "name": "Jesus F. Chavarro",
+      "email": "jesusfchavarro@gmail.com",
+      "url": "https://github.com/jesusfchavarro"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "private": false,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
