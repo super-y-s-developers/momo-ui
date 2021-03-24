@@ -1,0 +1,21 @@
+{
+  "name": "momo-ui",
+  "version": "1.0.0",
+  "description": "A design system that works as a comic relief. It's light and fun",
+  "main": "index.js",
+  "repository": "git@github.com:super-y-s-developers/momo-ui.git",
+  "contributors": [
+    {
+      "name": "Yeliana Torres",
+      "email": "yelis124@gmail.com",
+      "url": "https://github.com/Yelis3"
+    },
+    {
+      "name": "Jesus F. Chavarro",
+      "email": "jesusfchavarro@gmail.com",
+      "url": "https://github.com/jesusfchavarro"
+    }
+  ],
+  "license": "GLP 3.0",
+  "private": false
+}
