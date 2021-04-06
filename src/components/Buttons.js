@@ -20,6 +20,7 @@ const Button = styled.button`
 
   &:disabled {
     opacity: 0.2;
+    cursor: not-allowed;
   }
 `;
 
@@ -28,6 +29,9 @@ const PrimaryButton = styled(Button)`
 
   &:hover, &:active {
     background-color: ${defaultTheme.primaryColorHover};
+  }
+  &:disabled {
+    background-color: ${defaultTheme.primaryColor};
   }
 `;
 
@@ -40,11 +44,22 @@ export const SecondaryButton = styled(Button)`
     background-color: ${defaultTheme.primaryColorHover};
     color: ${defaultTheme.textColorOnPrimary};
   }
+  &:disabled {
+    background-color: ${defaultTheme.textColorOnPrimary};
+    color: ${defaultTheme.primaryColorHover};
+  }
 `;
 
 export const TertiaryButton = styled(Button)`
   color: ${defaultTheme.textColor};
   background-color: ${neutral[300]};
+
+  &:hover, &:active {
+    background-color: ${neutral[400]}
+  }
+  &:disabled {
+    background-color: ${neutral[300]};
+  }
 `;
 
 export default PrimaryButton;

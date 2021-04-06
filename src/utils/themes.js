@@ -9,6 +9,7 @@ export const defaultTheme = {
 
   textColor: neutral[800],
   textColorInverted: neutral[100],
+
   primaryFont,
   titlesFont,
   subtitlesFont,
