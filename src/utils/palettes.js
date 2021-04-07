@@ -11,8 +11,8 @@ export const neutral = {
 };
 
 export const green = {
-  100: "#C2F1E5",
-  200: "#8DE9B2",
+  100: "#A8E4D5",
+  200: "#7AD79F",
   300: "#1CB890",
   400: "#29A183",
   500: "#00906C",
@@ -29,7 +29,7 @@ export const pink = {
 export const yellow = {
   100: "#FDEA92",
   200: "#FDDC4D",
-  300: "#FCA252",
+  300: "#FFCF00",
 };
 
 export const blue = {
