@@ -6,8 +6,8 @@ import { normalize } from "polished";
 export const GlobalStyle = createGlobalStyle`
   ${normalize()}
   html {
-    font-size: 14px; //mobile
-    // font-size: 16px; //desktop
+    // font-size: 14px; //mobile
+    font-size: 16px; //desktop
     box-sizing: border-box;
 
     *, *:before, *:after {

@@ -9,7 +9,7 @@ import { GlobalStyle } from "./utils";
 const App = () => (
   <main>
     <h1>Buttons 👆</h1>
-    <h2 className="subtitle">Button states</h2>
+    <h2 className="subtitle">States</h2>
 
     <h3>Default</h3>
     <PrimaryButton>Primary</PrimaryButton>
@@ -25,7 +25,7 @@ const App = () => (
     <p>Check these states by interacting with the buttons.</p>
 
     <br />
-    <h2 className="subtitle">Button modifiers</h2>
+    <h2 className="subtitle">Modifiers</h2>
 
     <h3>Small</h3>
     <PrimaryButton modifiers="small">Primary</PrimaryButton>
@@ -36,6 +36,21 @@ const App = () => (
     <PrimaryButton modifiers="large">Primary</PrimaryButton>
     <SecondaryButton modifiers="large">Secondary</SecondaryButton>
     <TertiaryButton modifiers="large">Tertiary</TertiaryButton>
+
+    <h3>Warning</h3>
+    <PrimaryButton modifiers="warning">Primary</PrimaryButton>
+    <SecondaryButton modifiers={["warning", "warningSecondary"]}>Secondary</SecondaryButton>
+    <TertiaryButton modifiers={["warning", "warningTertiary"]}>Tertiary</TertiaryButton>
+
+    <h3>Error</h3>
+    <PrimaryButton modifiers="error">Primary</PrimaryButton>
+    <SecondaryButton modifiers={["error", "errorSecondary"]}>Secondary</SecondaryButton>
+    <TertiaryButton modifiers={["error", "errorTertiary"]}>Tertiary</TertiaryButton>
+
+    <h3>Success</h3>
+    <PrimaryButton modifiers="success">Primary</PrimaryButton>
+    <SecondaryButton modifiers={["success", "successSecondary"]}>Secondary</SecondaryButton>
+    <TertiaryButton modifiers={["success", "successTertiary"]}>Tertiary</TertiaryButton>
 
     <GlobalStyle />
   </main>

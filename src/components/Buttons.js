@@ -3,6 +3,7 @@ import { defaultTheme, typeScale, neutral } from "utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
 
 const BUTTON_MODIFIERS = {
+  // Sizes
   small: () => `
     font-size: ${typeScale.paragraph};
     padding: 8px 16px;
@@ -10,6 +11,62 @@ const BUTTON_MODIFIERS = {
   large: () => `
     font-size: ${typeScale.s};
     padding: 16px 32px;
+  `,
+
+  // Warning buttons
+  warning: () => `
+    background-color: ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.textColor};
+
+    &:hover, &:focus, &:active {
+      background-color: ${defaultTheme.status.warningColorHover};
+      color: ${defaultTheme.textColor};
+    }
+  `,
+  warningSecondary: () => `
+    background-color: ${defaultTheme.textColorInverted};
+    color: ${defaultTheme.textColor};
+    box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.warningColorHover};
+  `,
+  warningTertiary: () => `
+    background-color: ${defaultTheme.status.warningColorTertiary};
+  `,
+
+  // Error buttons
+  error: () => `
+    background-color: ${defaultTheme.status.errorColor};
+
+    &:hover, &:focus, &:active {
+      background-color: ${defaultTheme.status.errorColorHover};
+    }
+  `,
+  errorSecondary: () => `
+    background-color: ${defaultTheme.textColorInverted};
+    color: ${defaultTheme.status.errorColorHover};
+    box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.errorColorHover};
+  `,
+  errorTertiary: () => `
+    background-color: ${defaultTheme.status.errorColorTertiary};
+    color: ${defaultTheme.textColor};
+  `,
+
+  // Success buttons
+  success: () => `
+    background-color: ${defaultTheme.status.successColor};
+
+    &:hover, &:focus, &:active {
+      background-color: ${defaultTheme.status.successColorHover};
+      color: ${defaultTheme.textColor};
+    }
+  `,
+  successSecondary: () => `
+    background-color: ${defaultTheme.textColorInverted};
+    color: ${defaultTheme.status.successColorHover};
+    box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.successColorHover};
+  `,
+  successTertiary: () => `
+    background-color: ${defaultTheme.status.successColorTertiary};
+    color: ${defaultTheme.textColor};
   `,
 };
 
@@ -25,28 +82,23 @@ const Button = styled.button`
   box-sizing: border-box;
   transition: background-color 0.2s linear, color 0.2s linear;
 
-  &:focus {
-    outline: solid 3px ${defaultTheme.primaryColor};
-    // box-shadow: -7px 0 0 3px ${defaultTheme.primaryColor};
-  }
-
   &:disabled {
     opacity: 0.2;
     cursor: not-allowed;
   }
-
-  ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 const PrimaryButton = styled(Button)`
   background-color: ${defaultTheme.primaryColor};
 
-  &:hover, &:active {
+  &:hover, &:active, &:focus {
     background-color: ${defaultTheme.primaryColorHover};
   }
   &:disabled {
     background-color: ${defaultTheme.primaryColor};
   }
+
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 export const SecondaryButton = styled(Button)`
@@ -54,7 +106,7 @@ export const SecondaryButton = styled(Button)`
   color: ${defaultTheme.primaryColorHover};
   box-shadow: inset 0px 0px 0px 3px ${defaultTheme.primaryColorHover};
 
-  &:hover, &:active {
+  &:hover, &:active, &:focus {
     background-color: ${defaultTheme.primaryColorHover};
     color: ${defaultTheme.textColorOnPrimary};
   }
@@ -62,18 +114,22 @@ export const SecondaryButton = styled(Button)`
     background-color: ${defaultTheme.textColorOnPrimary};
     color: ${defaultTheme.primaryColorHover};
   }
+
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 export const TertiaryButton = styled(Button)`
   color: ${defaultTheme.textColor};
   background-color: ${neutral[300]};
 
-  &:hover, &:active {
+  &:hover, &:active, &:focus {
     background-color: ${neutral[400]}
   }
   &:disabled {
     background-color: ${neutral[300]};
   }
+
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 export default PrimaryButton;
