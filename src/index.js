@@ -9,7 +9,7 @@ import { GlobalStyle } from "./utils";
 const App = () => (
   <main>
     <h1>Buttons 👆</h1>
-    <h2 className="subtitle">Let's see the button states</h2>
+    <h2 className="subtitle">Button states</h2>
 
     <h3>Default</h3>
     <PrimaryButton>Primary</PrimaryButton>
@@ -23,6 +23,19 @@ const App = () => (
 
     <h3>Focused, Hover & active</h3>
     <p>Check these states by interacting with the buttons.</p>
+
+    <br />
+    <h2 className="subtitle">Button modifiers</h2>
+
+    <h3>Small</h3>
+    <PrimaryButton modifiers="small">Primary</PrimaryButton>
+    <SecondaryButton modifiers="small">Secondary</SecondaryButton>
+    <TertiaryButton modifiers="small">Tertiary</TertiaryButton>
+
+    <h3>Large</h3>
+    <PrimaryButton modifiers="large">Primary</PrimaryButton>
+    <SecondaryButton modifiers="large">Secondary</SecondaryButton>
+    <TertiaryButton modifiers="large">Tertiary</TertiaryButton>
 
     <GlobalStyle />
   </main>

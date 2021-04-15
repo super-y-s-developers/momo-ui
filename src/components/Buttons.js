@@ -1,5 +1,17 @@
 import styled from "styled-components";
 import { defaultTheme, typeScale, neutral } from "utils";
+import { applyStyleModifiers } from "styled-components-modifiers";
+
+const BUTTON_MODIFIERS = {
+  small: () => `
+    font-size: ${typeScale.paragraph};
+    padding: 8px 16px;
+  `,
+  large: () => `
+    font-size: ${typeScale.s};
+    padding: 16px 32px;
+  `,
+};
 
 const Button = styled.button`
   font-family: ${defaultTheme.subtitlesFont};
@@ -14,14 +26,16 @@ const Button = styled.button`
   transition: background-color 0.2s linear, color 0.2s linear;
 
   &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px ${defaultTheme.primaryColorFocusOutline};
+    outline: solid 3px ${defaultTheme.primaryColor};
+    // box-shadow: -7px 0 0 3px ${defaultTheme.primaryColor};
   }
 
   &:disabled {
     opacity: 0.2;
     cursor: not-allowed;
   }
+
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 const PrimaryButton = styled(Button)`
