@@ -29,7 +29,7 @@ export const pink = {
 export const yellow = {
   100: "#FDEA92",
   200: "#FDDC4D",
-  300: "#FFCF00",
+  300: "#C9A300",
 };
 
 export const blue = {

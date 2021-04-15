@@ -20,16 +20,17 @@ const BUTTON_MODIFIERS = {
 
     &:hover, &:focus, &:active {
       background-color: ${defaultTheme.status.warningColorHover};
-      color: ${defaultTheme.textColor};
+      color: ${defaultTheme.textColorInverted};
     }
   `,
   warningSecondary: () => `
     background-color: ${defaultTheme.textColorInverted};
-    color: ${defaultTheme.textColor};
     box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.warningColorHover};
+    color: ${defaultTheme.status.warningColorHover};
   `,
   warningTertiary: () => `
-    background-color: ${defaultTheme.status.warningColorTertiary};
+    background-color: ${defaultTheme.textColorInverted};
+    color: ${defaultTheme.status.warningColorHover};
   `,
 
   // Error buttons
@@ -38,6 +39,7 @@ const BUTTON_MODIFIERS = {
 
     &:hover, &:focus, &:active {
       background-color: ${defaultTheme.status.errorColorHover};
+      color: ${defaultTheme.textColorInverted};
     }
   `,
   errorSecondary: () => `
@@ -46,8 +48,8 @@ const BUTTON_MODIFIERS = {
     box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.errorColorHover};
   `,
   errorTertiary: () => `
-    background-color: ${defaultTheme.status.errorColorTertiary};
-    color: ${defaultTheme.textColor};
+    background-color: ${defaultTheme.textColorInverted};
+    color: ${defaultTheme.status.errorColorHover};
   `,
 
   // Success buttons
@@ -56,7 +58,7 @@ const BUTTON_MODIFIERS = {
 
     &:hover, &:focus, &:active {
       background-color: ${defaultTheme.status.successColorHover};
-      color: ${defaultTheme.textColor};
+      color: ${defaultTheme.textColorInverted};
     }
   `,
   successSecondary: () => `
@@ -65,8 +67,8 @@ const BUTTON_MODIFIERS = {
     box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.successColorHover};
   `,
   successTertiary: () => `
-    background-color: ${defaultTheme.status.successColorTertiary};
-    color: ${defaultTheme.textColor};
+    background-color: ${defaultTheme.textColorInverted};
+    color: ${defaultTheme.status.successColorHover};
   `,
 };
 
@@ -74,7 +76,7 @@ const Button = styled.button`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
-  color: ${defaultTheme.textColorOnPrimary};
+  color: ${defaultTheme.textColorInverted};
   padding: 12px 24px;
   border-radius: 100px;
   cursor: pointer;
@@ -102,16 +104,16 @@ const PrimaryButton = styled(Button)`
 `;
 
 export const SecondaryButton = styled(Button)`
-  background-color: ${defaultTheme.textColorOnPrimary};
+  background-color: ${defaultTheme.textColorInverted};
   color: ${defaultTheme.primaryColorHover};
   box-shadow: inset 0px 0px 0px 3px ${defaultTheme.primaryColorHover};
 
   &:hover, &:active, &:focus {
     background-color: ${defaultTheme.primaryColorHover};
-    color: ${defaultTheme.textColorOnPrimary};
+    color: ${defaultTheme.textColorInverted};
   }
   &:disabled {
-    background-color: ${defaultTheme.textColorOnPrimary};
+    background-color: ${defaultTheme.textColorInverted};
     color: ${defaultTheme.primaryColorHover};
   }
 
@@ -120,13 +122,13 @@ export const SecondaryButton = styled(Button)`
 
 export const TertiaryButton = styled(Button)`
   color: ${defaultTheme.textColor};
-  background-color: ${neutral[300]};
+  background-color: ${defaultTheme.tertiaryColor};
 
   &:hover, &:active, &:focus {
-    background-color: ${neutral[400]}
+    background-color: ${defaultTheme.tertiaryColorHover};
   }
   &:disabled {
-    background-color: ${neutral[300]};
+    background-color: ${defaultTheme.tertiaryColor};
   }
 
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
