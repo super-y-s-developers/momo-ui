@@ -21,6 +21,9 @@ const App = () => (
     <SecondaryButton disabled>Secondary</SecondaryButton>
     <TertiaryButton disabled>Tertiary</TertiaryButton>
 
+    <h3>Focused, Hover & active</h3>
+    <p>Check these states by interacting with the buttons.</p>
+
     <GlobalStyle />
   </main>
 );
