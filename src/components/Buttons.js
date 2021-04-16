@@ -88,6 +88,16 @@ const Button = styled.button`
     opacity: 0.2;
     cursor: not-allowed;
   }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px white,
+      0 0 0 7px ${defaultTheme.primaryColor};
+  }
+  &:active {
+    box-shadow: 0 0 0 4px white,
+      0 0 0 7px ${defaultTheme.primaryColor},
+      inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 const PrimaryButton = styled(Button)`
