@@ -2,6 +2,8 @@ import { green, yellow, red, neutral } from "./palettes";
 import { primaryFont, titlesFont, subtitlesFont } from "./typography";
 
 export const defaultTheme = {
+  backgroundColor: neutral[200],
+
   primaryColor: green[300],
   primaryColorHover: green[400],
 

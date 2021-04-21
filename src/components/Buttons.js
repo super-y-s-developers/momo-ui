@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { defaultTheme, typeScale, neutral } from "utils";
+import { defaultTheme, typeScale } from "utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
 
 const BUTTON_MODIFIERS = {
