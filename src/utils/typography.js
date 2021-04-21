@@ -1,6 +1,6 @@
-export const primaryFont = "'Nunito Sans', Verdana";
-export const titlesFont = "'Fredoka One', Verdana";
-export const subtitlesFont = "'Quicksand', Verdana";
+export const primaryFont = "NunitoSans, Verdana";
+export const titlesFont = "FredokaOne, Verdana";
+export const subtitlesFont = "Quicksand, Verdana";
 
 export const typeScale = {
   // DESKTOP

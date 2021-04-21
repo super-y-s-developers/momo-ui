@@ -1,22 +1,22 @@
-import { create } from '@storybook/theming';
+import { create } from "@storybook/theming";
 
 export default create({
-  base: 'light',
-  brandTitle: 'Momo UI',
-  brandImage: './logos/isologo/296x80.png',
+  base: "light",
+  brandTitle: "Momo UI",
+  brandImage: "./logos/isologo/296x80.png",
 
-  colorPrimary: '#1CB890',
+  colorPrimary: "#1CB890",
 
   // UI
-  appBg: '#FAFAFA',
+  appBg: "#FAFAFA",
 
   // Typography
   fontBase: '"Nunito Sans", Verdana',
-  fontCode: 'monospace',
+  fontCode: "monospace",
 
   // Text colors
-  textColor: '#333333',
-  textInverseColor: 'white',
+  textColor: "#333333",
+  textInverseColor: "white",
 
   // Toolbar default and active colors
   // barTextColor: 'silver',
