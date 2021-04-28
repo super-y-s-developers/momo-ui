@@ -72,7 +72,7 @@ const BUTTON_MODIFIERS = {
   `,
 };
 
-const Button = styled.button`
+export const Button = styled.button`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
@@ -90,12 +90,10 @@ const Button = styled.button`
   }
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 4px white,
-      0 0 0 7px ${defaultTheme.primaryColor};
+    box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.primaryColor};
   }
   &:active {
-    box-shadow: 0 0 0 4px white,
-      0 0 0 7px ${defaultTheme.primaryColor},
+    box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.primaryColor},
       inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;
@@ -103,7 +101,9 @@ const Button = styled.button`
 const PrimaryButton = styled(Button)`
   background-color: ${defaultTheme.primaryColor};
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: ${defaultTheme.primaryColorHover};
   }
   &:disabled {
@@ -118,7 +118,9 @@ export const SecondaryButton = styled(Button)`
   color: ${defaultTheme.primaryColorHover};
   box-shadow: inset 0px 0px 0px 3px ${defaultTheme.primaryColorHover};
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: ${defaultTheme.primaryColorHover};
     color: ${defaultTheme.textColorInverted};
   }
@@ -134,7 +136,9 @@ export const TertiaryButton = styled(Button)`
   color: ${defaultTheme.textColor};
   background-color: ${defaultTheme.tertiaryColor};
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: ${defaultTheme.tertiaryColorHover};
   }
   &:disabled {
