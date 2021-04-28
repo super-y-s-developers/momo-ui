@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PrimaryButton, {
+import {
+  PrimaryButton,
   SecondaryButton,
   TertiaryButton,
 } from "components/Button";
