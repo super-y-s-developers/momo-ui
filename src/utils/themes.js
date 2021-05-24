@@ -30,6 +30,8 @@ export const defaultTheme = {
   inputColor: neutral[100],
   inputBorderColor: neutral[400],
   inputBorderColorFocus: blue[200],
+  inputColorDisabled: neutral[300],
+  inputBorderColorDisabled: neutral[500],
   inputPlaceholderColor: neutral[500],
   inputShadowColorFocus: "rgba(68, 140, 255, 0.3)",
 

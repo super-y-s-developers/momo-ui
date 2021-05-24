@@ -20,13 +20,16 @@ const Input = styled.input`
   }
 
   &:disabled {
-    opacity: 0.2;
     cursor: not-allowed;
+    color: ${defaultTheme.inputBorderColorDisabled};
+    background-color: ${defaultTheme.inputColorDisabled};
+    border-color: ${defaultTheme.inputBorderColorDisabled};
   }
   &:focus {
     outline: none;
     box-shadow: 2px 2px 15px ${defaultTheme.inputShadowColorFocus};
     border-color: ${defaultTheme.inputBorderColorFocus};
+    border-style: dotted;
   }
 `;
 

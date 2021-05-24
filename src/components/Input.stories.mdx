@@ -1,4 +1,5 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { withKnobs, boolean } from "@storybook/addon-knobs";
 import Input from "./Input";
 
 <Meta title="Atoms/Input" component={Input} />
@@ -9,14 +10,18 @@ The Inputs of Momo UI are very practical. You won't find a `select` or `text-are
 
 ## Usage
 
-Inputs are used to get information from the user. You can find theme inside a form, a search bar, or basically anywhere.
+Inputs are used to get information from the user. You can find them inside a form, a search bar, and basically anywhere.
 
 ## Text Input
 
 Text Inputs can be used used for names, short prases or similar.
 
 <Preview withToolbar>
-  <Story name="primary">
-    <Input type="text" placeholder="Hello World" />
+  <Story name="text">
+    <Input
+      disabled={boolean("Disabled", false)}
+      type="text"
+      placeholder="Hello World"
+    />
   </Story>
 </Preview>
