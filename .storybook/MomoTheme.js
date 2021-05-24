@@ -11,21 +11,9 @@ export default create({
   appBg: "#FAFAFA",
 
   // Typography
-  fontBase: '"Nunito Sans", Verdana',
   fontCode: "monospace",
 
   // Text colors
   textColor: "#333333",
   textInverseColor: "white",
-
-  // Toolbar default and active colors
-  // barTextColor: 'silver',
-  // barSelectedColor: 'black',
-  // barBg: 'hotpink',
-
-  // Form colors
-  // inputBg: 'white',
-  // inputBorder: 'silver',
-  // inputTextColor: 'black',
-  // inputBorderRadius: 4,
 });

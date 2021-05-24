@@ -72,7 +72,7 @@ const BUTTON_MODIFIERS = {
   `,
 };
 
-const Button = styled.button`
+export const Button = styled.button`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
