@@ -80,7 +80,7 @@ export const Button = styled.button<ButtonProps>`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
-  color: ${defaultTheme.textColor};
+  color: ${defaultTheme.textColorInverted};
   padding: 12px 24px;
   border-radius: 100px;
   cursor: pointer;
