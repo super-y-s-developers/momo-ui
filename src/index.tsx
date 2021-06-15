@@ -5,7 +5,7 @@ import {
   TertiaryButton,
 } from "./components/Button";
 import { GlobalStyle } from "./utils";
-import { } from 'styled-components/cssprop'
+// import { } from 'styled-components/cssprop'
 
 const App = () => (
   <main>
