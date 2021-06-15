@@ -1,7 +1,7 @@
 # Name of our action
 name: "Chromatic"
 # The event that will trigger the action
-on: pull_request
+on: push
 
 # What the action will do
 jobs:
