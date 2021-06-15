@@ -19,8 +19,8 @@
   "private": false,
   "dependencies": {
     "@storybook/addon-knobs": "^6.2.9",
+    "@testing-library/react": "^11.2.7",
     "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "polished": "^4.1.3",
     "react": "^17.0.1",
