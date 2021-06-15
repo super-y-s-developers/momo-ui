@@ -1,6 +1,6 @@
 import momoTheme from "./MomoTheme";
 import { addDecorator } from "@storybook/react";
-import { GlobalStyle } from "../src/utils/Global.js";
+import { GlobalStyle } from "../src/utils/Global";
 import { withKnobs } from "@storybook/addon-knobs";
 
 addDecorator((story) => (
@@ -17,10 +17,10 @@ export const parameters = {
   controls: {
     matchers: {
       color: /(background|color)$/i,
-      date: /Date$/,
-    },
+      date: /Date$/
+    }
   },
   docs: {
-    theme: momoTheme,
-  },
+    theme: momoTheme
+  }
 };
