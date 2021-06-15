@@ -80,7 +80,7 @@ export const Button = styled.button<ButtonProps>`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
-  color: ${defaultTheme.textColorInverted};
+  color: ${defaultTheme.textColor};
   padding: 12px 24px;
   border-radius: 100px;
   cursor: pointer;
@@ -94,7 +94,7 @@ export const Button = styled.button<ButtonProps>`
   }
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.textColorInverted};
+    box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.primaryColor};
   }
   &:active {
     box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.primaryColor},
