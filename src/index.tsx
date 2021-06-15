@@ -1,11 +1,11 @@
-import React from "react";
 import ReactDOM from "react-dom";
 import {
   PrimaryButton,
   SecondaryButton,
   TertiaryButton,
-} from "components/Button";
+} from "./components/Button";
 import { GlobalStyle } from "./utils";
+import { } from 'styled-components/cssprop'
 
 const App = () => (
   <main>

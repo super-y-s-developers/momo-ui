@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { defaultTheme, typeScale } from "utils";
+import { defaultTheme, typeScale } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
 
 const BUTTON_MODIFIERS = {
@@ -72,7 +72,7 @@ const BUTTON_MODIFIERS = {
   `,
 };
 
-export const Button = styled.button`
+export const Button = styled.button<{ modifiers?: string | string[] }>`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
