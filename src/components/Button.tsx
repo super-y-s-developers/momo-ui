@@ -94,7 +94,7 @@ export const Button = styled.button<ButtonProps>`
   }
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.primaryColor};
+    box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.textColorInverted};
   }
   &:active {
     box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.primaryColor},
