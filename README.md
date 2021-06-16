@@ -29,5 +29,5 @@ Install dependencies and Run the project
 
 ```
 yarn
-yarn start
+yarn storybook
 ```

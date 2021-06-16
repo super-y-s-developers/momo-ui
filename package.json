@@ -15,22 +15,6 @@
   "types": "./lib/esm/index.d.ts",
   "license": "GPL-3.0-or-later",
   "private": false,
-  "dependencies": {
-    "@storybook/addon-knobs": "^6.2.9",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/styled-components": "^5.1.10",
-    "polished": "^4.1.3",
-    "styled-components": "^5.3.0",
-    "styled-components-modifiers": "^1.2.5",
-    "typescript": "^4.2.4",
-    "web-vitals": "^1.1.2"
-  },
-  "peerDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  },
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
@@ -39,6 +23,37 @@
     "build-storybook": "build-storybook -s public",
     "build-storybook-docs": "build-storybook -s public --docs",
     "chromatic": "npx chromatic --project-token 918e124b26dd"
+  },
+  "dependencies": {
+    "polished": "^4.1.3",
+    "react-scripts": "^4.0.3",
+    "styled-components": "^5.3.0",
+    "styled-components-modifiers": "^1.2.5",
+    "typescript": "^4.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.2.8",
+    "@storybook/addon-essentials": "^6.2.8",
+    "@storybook/addon-knobs": "^6.2.9",
+    "@storybook/addon-links": "^6.2.8",
+    "@storybook/addons": "^6.2.8",
+    "@storybook/node-logger": "^6.2.8",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.2.8",
+    "@storybook/theming": "^6.2.8",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.7",
+    "@types/styled-components": "^5.1.10",
+    "prettier": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.1"
   },
   "eslintConfig": {
     "extends": [
@@ -67,23 +82,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "@storybook/addon-actions": "^6.2.8",
-    "@storybook/addon-essentials": "^6.2.8",
-    "@storybook/addon-links": "^6.2.8",
-    "@storybook/addons": "^6.2.8",
-    "@storybook/node-logger": "^6.2.8",
-    "@storybook/preset-create-react-app": "^3.1.7",
-    "@storybook/react": "^6.2.8",
-    "@storybook/theming": "^6.2.8",
-    "@types/react": "^17.0.11",
-    "@types/react-dom": "^17.0.7",
-    "prettier": "^2.3.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
   },
   "bugs": {
     "url": "https://github.com/super-y-s-developers/momo-ui/issues"

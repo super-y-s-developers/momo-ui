@@ -1,8 +1,9 @@
-# v0.1.0 (Tue Jun 15 2021)
+# v0.0.2 (Tue Jun 15 2021)
 
-#### 🐛 Bug Fix
+#### Features
 
 - Created first version of the design system, with `Button` and `Icon` components
+- Created utils with GlobalStyle, themes, palettes and typography
 
 #### Authors: 2
 
