@@ -69,6 +69,8 @@
     ]
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@storybook/addon-actions": "^6.2.8",
     "@storybook/addon-essentials": "^6.2.8",
     "@storybook/addon-links": "^6.2.8",
@@ -79,10 +81,6 @@
     "@storybook/theming": "^6.2.8",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.7",
-    "auto": "^10.29.3",
-    "babel-loader": "8.1.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

@@ -73,7 +73,7 @@ const BUTTON_MODIFIERS = {
 };
 
 type ButtonProps = {
-  modifiers?: string | string[]
+  modifiers?: string | string[];
 };
 
 const Button = styled.button<ButtonProps>`
