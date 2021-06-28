@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { defaultTheme, typeScale } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
 
-const BUTTON_MODIFIERS = {
+export const BUTTON_MODIFIERS = {
   // Sizes
   small: () => `
     font-size: ${typeScale.paragraph};
@@ -72,8 +72,9 @@ const BUTTON_MODIFIERS = {
   `,
 };
 
-type ButtonProps = {
-  modifiers?: string | string[];
+export type ButtonProps = {
+  modifiers?: keyof typeof BUTTON_MODIFIERS | keyof typeof BUTTON_MODIFIERS[];
+  // variant: "primary" | "secondary" | "tertiary" | undefined;
 };
 
 const Button = styled.button<ButtonProps>`
