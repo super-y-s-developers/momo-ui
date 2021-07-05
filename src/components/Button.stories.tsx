@@ -1,4 +1,5 @@
 import React from "react";
+import { Story, Meta } from '@storybook/react';
 
 import Button, {
   SecondaryButton,
@@ -16,9 +17,9 @@ export default {
       control: { type: "check" },
     },
   },
-};
+} as Meta;
 
-const Template = (args: ButtonProps) => <Button {...args}>Hello</Button>;
+const Template: Story<ButtonProps> = (args) => <Button {...args}>Hello</Button>;
 
 export const Primary = Template.bind({});
 
