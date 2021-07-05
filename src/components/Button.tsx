@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { defaultTheme, typeScale } from "utils";
+import { defaultTheme, typeScale } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
 
-const BUTTON_MODIFIERS = {
+export const BUTTON_MODIFIERS = {
   // Sizes
   small: () => `
     font-size: ${typeScale.paragraph};
@@ -72,7 +72,12 @@ const BUTTON_MODIFIERS = {
   `,
 };
 
-export const Button = styled.button`
+export type ButtonProps = {
+  modifiers?: keyof typeof BUTTON_MODIFIERS | keyof typeof BUTTON_MODIFIERS[],
+  // variant: "primary" | "secondary" | "tertiary" | undefined;
+};
+
+const Button = styled.button<ButtonProps>`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
@@ -98,7 +103,7 @@ export const Button = styled.button`
   }
 `;
 
-const PrimaryButton = styled(Button)`
+export const PrimaryButton = styled(Button)`
   background-color: ${defaultTheme.primaryColor};
 
   &:hover,

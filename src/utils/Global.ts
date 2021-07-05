@@ -1,5 +1,10 @@
 import { createGlobalStyle } from "styled-components";
-import { primaryFont, titlesFont, subtitlesFont } from "./typography";
+import {
+  primaryFont,
+  titlesFont,
+  subtitlesFont,
+  typeScale,
+} from "./typography";
 import { defaultTheme } from "./themes";
 import { normalize } from "polished";
 
@@ -9,8 +14,8 @@ export const GlobalStyle = createGlobalStyle`
   // -------- CUSTOM STYLES --------- //
 
   html {
-    // font-size: 14px; //mobile
-    font-size: 16px; //desktop
+    font-size: 14px; //mobile
+    /* font-size: 16px; //desktop */
     box-sizing: border-box;
 
     *, *:before, *:after {
@@ -21,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       font-family: ${primaryFont};
       color: ${defaultTheme.textColor};
+      background-color: ${defaultTheme.backgroundColor};
     }
 
     main {
@@ -39,6 +45,21 @@ export const GlobalStyle = createGlobalStyle`
         letter-spacing: 0.04em;
         font-weight: 700;
       }
+    }
+    h1 {
+      font-size: ${typeScale.xl};
+    }
+    h2 {
+      font-size: ${typeScale.l};
+    }
+    h3 {
+      font-size: ${typeScale.m};
+    }
+    h4 {
+      font-size: ${typeScale.s};
+    }
+    h5 {
+      font-size: ${typeScale.xs};
     }
   }
 

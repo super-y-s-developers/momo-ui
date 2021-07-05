@@ -1,6 +1,6 @@
 import momoTheme from "./MomoTheme";
 import { addDecorator } from "@storybook/react";
-import { GlobalStyle } from "../src/utils/Global.js";
+import { GlobalStyle } from "../src/utils/Global";
 import { withKnobs } from "@storybook/addon-knobs";
 
 addDecorator((story) => (
