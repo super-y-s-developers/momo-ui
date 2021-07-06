@@ -8,7 +8,7 @@ export default {
   title: "Atoms/Input",
   argTypes: {
     type: {
-      options: INPUT_TYPES,
+      options: Object.keys(INPUT_TYPES),
       control: { type: "select" },
     },
     modifiers: {
@@ -20,21 +20,65 @@ export default {
 
 const Template: Story<InputProps> = (args) => <Input {...args} />;
 
-export const Text = Template.bind({});
-Text.args = {
+export const Default = Template.bind({});
+Default.args = {
   placeholder: "Placeholder"
 };
 
-export const TextWithLabel = Template.bind({});
-TextWithLabel.args = {
-  ...Text.args,
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  ...Default.args,
+  type: "text",
   modifiers: "label",
   label: "Título"
 };
 
-export const TextWithIcon = Template.bind({});
-TextWithIcon.args = {
-  ...Text.args,
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  ...Default.args,
+  type: "text",
   modifiers: "icon",
   icon: "arrow-right"
+};
+
+export const Select = Template.bind({});
+Select.args = {
+  ...Default.args,
+  type: "select",
+};
+
+export const TextArea = Template.bind({});
+TextArea.args = {
+  ...Default.args,
+  type: "textarea",
+};
+
+export const Checkbox = Template.bind({});
+Checkbox.args = {
+  ...Default.args,
+  type: "checkbox",
+};
+
+export const Radio = Template.bind({});
+Radio.args = {
+  ...Default.args,
+  type: "radio",
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  ...Default.args,
+  modifiers: "warning",
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  ...Default.args,
+  modifiers: "error",
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  ...Default.args,
+  modifiers: "success",
 };
