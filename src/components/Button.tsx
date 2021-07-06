@@ -73,7 +73,7 @@ export const BUTTON_MODIFIERS = {
 };
 
 export type ButtonProps = {
-  modifiers?: keyof typeof BUTTON_MODIFIERS | keyof typeof BUTTON_MODIFIERS[];
+  modifiers?: keyof typeof BUTTON_MODIFIERS | keyof typeof BUTTON_MODIFIERS[],
   // variant: "primary" | "secondary" | "tertiary" | undefined;
 };
 

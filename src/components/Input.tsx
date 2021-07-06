@@ -1,10 +1,33 @@
 import styled from "styled-components";
 import { defaultTheme, typeScale } from "../utils";
-// import { applyStyleModifiers } from "styled-components-modifiers";
+import { applyStyleModifiers } from "styled-components-modifiers";
 
-// const INPUT_MODIFIERS = {};
+export const INPUT_MODIFIERS = {
+  icon: () => ``,
+  label: () => ``,
+  
+  // States
+  warning: () => ``,
+  error: () => ``,
+  success: () => ``,
+};
 
-const Input = styled.input`
+export const INPUT_TYPES = {
+  text: () => ``,
+  select: () => ``,
+  checkbox: () => ``,
+  radio: () => ``,
+  textarea: () => ``,
+};
+
+export type InputProps = {
+  modifiers?: keyof typeof INPUT_MODIFIERS | keyof typeof INPUT_MODIFIERS[],
+  type?: keyof typeof INPUT_TYPES,
+  label?: string,
+  icon?: string,
+};
+
+const Input = styled.input<InputProps>`
   font-family: ${defaultTheme.primaryFont};
   font-size: ${typeScale.paragraph};
   background-color: ${defaultTheme.inputColor};
@@ -29,8 +52,9 @@ const Input = styled.input`
     outline: none;
     box-shadow: 2px 2px 15px ${defaultTheme.inputShadowColorFocus};
     border-color: ${defaultTheme.inputBorderColorFocus};
-    border-style: dotted;
   }
+
+  ${applyStyleModifiers(INPUT_MODIFIERS)}
 `;
 
 export default Input;
