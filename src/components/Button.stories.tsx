@@ -1,4 +1,5 @@
 import React from "react";
+import { Story, Meta } from '@storybook/react';
 
 import Button, {
   SecondaryButton,
@@ -9,16 +10,16 @@ import Button, {
 
 export default {
   component: Button,
-  title: "Button",
+  title: "Atoms/Button",
   argTypes: {
     modifiers: {
       options: Object.keys(BUTTON_MODIFIERS),
       control: { type: "check" },
     },
   },
-};
+} as Meta;
 
-const Template = (args: ButtonProps) => <Button {...args}>Hello</Button>;
+const Template: Story<ButtonProps> = (args) => <Button {...args}>Hello</Button>;
 
 export const Primary = Template.bind({});
 
