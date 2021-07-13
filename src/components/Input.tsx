@@ -2,8 +2,38 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { defaultTheme, typeScale } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
+import * as Icon from "phosphor-react";
 
-const inputStyles = css`
+export const INPUT_TYPES = [
+  "text",
+  "select",
+  "checkbox",
+  "radio",
+  "textarea",
+] as const;
+
+function isRadioOrCheckbox(type: typeof INPUT_TYPES[number]) {
+  return ["radio", "checkbox"].indexOf(type) !== -1;
+}
+
+// TODO: InputProps should support ALL possible input html props
+// Can be an interface that extends InputHTMLAttributes<HTMLInputElement>
+// But that doesn't take into account select and textarea props
+// Think on separating those three components: input, select, textarea
+export type InputProps = {
+  type: typeof INPUT_TYPES[number];
+  id?: string;
+  modifiers?: keyof typeof INPUT_MODIFIERS | keyof typeof INPUT_MODIFIERS[];
+  label?: string;
+  icon?: string;
+  message?: string;
+  disabled?: boolean;
+  options?: { text: string; value: string }[];
+  placeholder?: string;
+  required?: boolean;
+};
+
+const inputStyles = (props: InputProps) => css`
   font-family: ${defaultTheme.primaryFont};
   font-size: ${typeScale.paragraph};
   background-color: ${defaultTheme.inputColor};
@@ -28,6 +58,12 @@ const inputStyles = css`
     box-shadow: 2px 2px 15px ${defaultTheme.inputShadowColorFocus};
     border-color: ${defaultTheme.inputBorderColorFocus};
   }
+
+  /* Conditional styles */
+  ${props.icon &&
+  css`
+    padding-left: 54px;
+  `}
 `;
 
 const checkboxRadioStyles = css`
@@ -98,40 +134,11 @@ export const INPUT_MODIFIERS = {
   `,
 };
 
-export const INPUT_TYPES = [
-  "text",
-  "select",
-  "checkbox",
-  "radio",
-  "textarea",
-] as const;
-
-function isRadioOrCheckbox(type: typeof INPUT_TYPES[number]) {
-  return ["radio", "checkbox"].indexOf(type) !== -1;
-}
-
-// TODO: InputProps should support ALL possible input html props
-// Can be an interface that extends InputHTMLAttributes<HTMLInputElement>
-// But that doesn't take into account select and textarea props
-// Think on separating those three components: input, select, textarea
-export type InputProps = {
-  type: typeof INPUT_TYPES[number];
-  id?: string;
-  modifiers?: keyof typeof INPUT_MODIFIERS | keyof typeof INPUT_MODIFIERS[];
-  label?: string;
-  icon?: string;
-  message?: string;
-  disabled?: boolean;
-  options?: { text: string; value: string }[];
-  placeholder?: string;
-  required?: boolean;
-};
-
-const InputWrapper = styled.label`
+const InputWrapper = styled.label<InputProps>`
   input,
   select,
   textarea {
-    ${inputStyles}
+    ${(props) => inputStyles(props)}
   }
   input[type="radio"][type="checkbox"] {
     ${checkboxRadioStyles}
@@ -142,17 +149,20 @@ const InputWrapper = styled.label`
   textarea {
     ${textareaStyles}
   }
-  .header-label {
+  .input-header {
     font-weight: bold;
     display: block;
     margin-bottom: 9px;
   }
-  .text-label {
+  .input-text {
     margin-left: 12px;
+  }
+  .input-icon {
+    color: ${defaultTheme.inputPlaceholderColor};
   }
   .input-message {
     margin-top: 5px;
-    margin-left: 12px;
+    margin-left: 11px;
     font-size: ${typeScale.subParagraph};
     color: ${defaultTheme.inputMessageColor};
   }
@@ -171,12 +181,18 @@ const Select = (props: InputProps) => (
 
 const Label = (props: InputProps) => {
   const className = isRadioOrCheckbox(props.type)
-    ? "text-label"
-    : "header-label";
+    ? "input-text"
+    : "input-header";
   return <span className={className}>{props.label}</span>;
 };
 
 function Input(props: InputProps = { type: "text" }) {
+  const capitalizedIconName = props.icon
+    ?.split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("");
+  const ChosenIcon = capitalizedIconName && Icon[capitalizedIconName];
+
   return (
     <InputWrapper {...props}>
       {!isRadioOrCheckbox(props.type) && <Label {...props} />}
@@ -191,6 +207,9 @@ function Input(props: InputProps = { type: "text" }) {
 
       {isRadioOrCheckbox(props.type) && <Label {...props} />}
       {props.message && <div className="input-message">{props.message}</div>}
+      {props.icon && !isRadioOrCheckbox(props.type) && (
+        <ChosenIcon className="input-icon" size={22} />
+      )}
     </InputWrapper>
   );
 }
