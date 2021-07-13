@@ -21,6 +21,7 @@ export const typeScale = {
   s: "1.3rem",
   xs: "1.2rem",
   paragraph: "1rem",
+  subParagraph: "0.86rem",
   helperText: "0.8rem",
   copyrightText: "0.75rem",
 };

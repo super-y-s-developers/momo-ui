@@ -37,6 +37,7 @@ export const defaultTheme = {
   inputBorderColorDisabled: neutral[500],
   inputPlaceholderColor: neutral[500],
   inputShadowColorFocus: "rgba(68, 140, 255, 0.3)",
+  inputMessageColor: neutral[600],
 
   primaryFont,
   titlesFont,

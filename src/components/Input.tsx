@@ -1,11 +1,9 @@
+import React from "react";
 import styled from "styled-components";
 import { defaultTheme, typeScale } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
 
 export const INPUT_MODIFIERS = {
-  icon: () => ``,
-  label: () => ``,
-
   // States
   warning: () => `
     border-color: ${defaultTheme.status.warningColorLight};
@@ -46,6 +44,7 @@ export type InputProps = {
   type?: keyof typeof INPUT_TYPES;
   label?: string;
   icon?: string;
+  message?: string;
 };
 
 const Input = styled.input<InputProps>`
@@ -62,7 +61,6 @@ const Input = styled.input<InputProps>`
   ::placeholder {
     color: ${defaultTheme.inputPlaceholderColor};
   }
-
   &:disabled {
     cursor: not-allowed;
     color: ${defaultTheme.inputBorderColorDisabled};
@@ -78,4 +76,20 @@ const Input = styled.input<InputProps>`
   ${applyStyleModifiers(INPUT_MODIFIERS)}
 `;
 
-export default Input;
+const InputMessage = styled.div`
+  margin-top: 8px;
+  margin-left: 10px;
+  font-size: ${typeScale.subParagraph};
+  color: ${defaultTheme.inputMessageColor};
+`;
+
+function InputWrapper(props: InputProps) {
+  return (
+    <>
+      <Input {...props} />
+      {props.message && <InputMessage>{props.message}</InputMessage>}
+    </>
+  );
+}
+
+export default InputWrapper;

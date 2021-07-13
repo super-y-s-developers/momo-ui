@@ -23,29 +23,33 @@ const Template: Story<InputProps> = (args) => <Input {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   placeholder: "Placeholder goes here",
+  type: "text",
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Default.args,
-  type: "text",
   disabled: true,
 };
 
 export const WithLabel = Template.bind({});
 WithLabel.args = {
   ...Default.args,
-  type: "text",
-  modifiers: "label",
   label: "Title",
 };
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   ...Default.args,
-  type: "text",
-  modifiers: "icon",
   icon: "arrow-right",
+};
+
+export const WithMessage = Template.bind({});
+WithMessage.args = {
+  ...Default.args,
+  type: "password",
+  message:
+    "8 characters with at least one: lowercase and uppercase letter, number, and special character",
 };
 
 export const Select = Template.bind({});
