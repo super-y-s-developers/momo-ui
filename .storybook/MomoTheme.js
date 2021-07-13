@@ -10,9 +10,6 @@ export default create({
   // UI
   appBg: "#FAFAFA",
 
-  // Typography
-  fontCode: "monospace",
-
   // Text colors
   textColor: "#333333",
   textInverseColor: "white",
