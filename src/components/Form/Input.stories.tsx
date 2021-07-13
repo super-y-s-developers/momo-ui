@@ -9,7 +9,7 @@ export default {
   title: "Atoms/Input",
   argTypes: {
     modifiers: {
-      options: Object.keys(MODIFIERS),
+      options: MODIFIERS,
       control: { type: "check" },
     },
     message: {
@@ -34,13 +34,14 @@ Default.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Default.args,
+  value: "Ana Palacios",
   disabled: true,
 };
 
 export const WithLabel = Template.bind({});
 WithLabel.args = {
   ...Default.args,
-  label: "Title",
+  label: "Name",
 };
 
 export const WithIcon = Template.bind({});
@@ -52,6 +53,7 @@ WithIcon.args = {
 export const WithMessage = Template.bind({});
 WithMessage.args = {
   ...Default.args,
+  placeholder: "Set a strong password",
   type: "password",
   message:
     "8 characters with at least one number, lowercase and uppercase letter",
@@ -61,22 +63,26 @@ export const Warning = Template.bind({});
 Warning.args = {
   ...Default.args,
   modifiers: "warning",
-  defaultValue: "Hello world",
-  message: "You should pay attention to this ...",
+  label: "Email",
+  defaultValue: "hello@myemail.com",
+  message: "You get a better experience when using a Gmail account",
 };
 
 export const Error = Template.bind({});
 Error.args = {
   ...Default.args,
   modifiers: "error",
-  defaultValue: "Hello world",
-  message: "Ups! something went wrong",
+  label: "Password",
+  type: "password",
+  defaultValue: "Weak",
+  message: "This password will be hacked soon",
 };
 
 export const Success = Template.bind({});
 Success.args = {
   ...Default.args,
   modifiers: "success",
-  defaultValue: "Hello world",
-  message: "Everything okay!",
+  label: "Username",
+  defaultValue: "pollencio",
+  message: "That username is awesome! (and available)",
 };
