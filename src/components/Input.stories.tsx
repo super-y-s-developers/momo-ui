@@ -8,7 +8,7 @@ export default {
   title: "Atoms/Input",
   argTypes: {
     type: {
-      options: Object.keys(INPUT_TYPES),
+      options: INPUT_TYPES,
       control: { type: "select" },
     },
     modifiers: {

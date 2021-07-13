@@ -9,7 +9,7 @@ const inputBaseStyles = css`
   background-color: ${defaultTheme.inputColor};
   color: ${defaultTheme.textColor};
   padding: 12px 20px;
-  border-radius: 100px;
+  border-radius: 30px;
   border: 2px solid ${defaultTheme.inputBorderColor};
   box-sizing: border-box;
   transition: background-color 0.2s linear, color 0.2s linear,
@@ -28,6 +28,18 @@ const inputBaseStyles = css`
     box-shadow: 2px 2px 15px ${defaultTheme.inputShadowColorFocus};
     border-color: ${defaultTheme.inputBorderColorFocus};
   }
+`;
+
+const selectStyles = css`
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-right: 4em;
+`;
+
+const textareaStyles = css`
+  border-radius: 10px;
+  padding: 15px 20px;
 `;
 
 export const INPUT_MODIFIERS = {
@@ -73,26 +85,37 @@ export const INPUT_MODIFIERS = {
   `,
 };
 
-export const INPUT_TYPES = {
-  text: () => ``,
-  select: () => ``,
-  checkbox: () => ``,
-  radio: () => ``,
-  textarea: () => ``,
-};
+export const INPUT_TYPES = [
+  "text",
+  "select",
+  "checkbox",
+  "radio",
+  "textarea",
+] as const;
 
 export type InputProps = {
   modifiers?: keyof typeof INPUT_MODIFIERS | keyof typeof INPUT_MODIFIERS[];
-  type?: keyof typeof INPUT_TYPES;
+  type?: typeof INPUT_TYPES[number];
   label?: string;
   icon?: string;
   message?: string;
   disabled?: boolean;
+  options?: { text: string; value: string }[];
+  placeholder?: string;
+  required?: boolean;
 };
 
-const InputWrapper = styled.label`
-  input {
+const InputWrapper = styled.div`
+  input,
+  select,
+  textarea {
     ${inputBaseStyles}
+  }
+  select {
+    ${selectStyles}
+  }
+  textarea {
+    ${textareaStyles}
   }
   .input-message {
     margin-top: 5px;
@@ -104,10 +127,25 @@ const InputWrapper = styled.label`
   ${applyStyleModifiers(INPUT_MODIFIERS)}
 `;
 
+const Select = (props: InputProps) => (
+  <select {...props}>
+    <option value="">{props.placeholder}</option>
+    {props.options?.map((item) => (
+      <option value={item.value}>{item.text}</option>
+    ))}
+  </select>
+);
+
 function InputComponent(props: InputProps) {
   return (
     <InputWrapper {...props}>
-      <input {...props} />
+      {props.type === "select" ? (
+        <Select {...props} />
+      ) : props.type === "textarea" ? (
+        <textarea {...props} />
+      ) : (
+        <input {...props} />
+      )}
       {props.message && <div className="input-message">{props.message}</div>}
     </InputWrapper>
   );
