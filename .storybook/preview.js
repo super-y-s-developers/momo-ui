@@ -1,7 +1,6 @@
 import momoTheme from "./MomoTheme";
 import { addDecorator } from "@storybook/react";
 import { GlobalStyle } from "../src/utils/Global";
-import { withKnobs } from "@storybook/addon-knobs";
 
 addDecorator((story) => (
   <>
@@ -9,8 +8,6 @@ addDecorator((story) => (
     <GlobalStyle />
   </>
 ));
-
-addDecorator(withKnobs);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

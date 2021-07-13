@@ -15,16 +15,19 @@ export const defaultTheme = {
 
   status: {
     warningColor: yellow[200],
-    warningColorHover: yellow[300],
-    warningColorTertiary: yellow[100],
+    warningColorDark: yellow[300],
+    warningColorLight: yellow[100],
+    warningInputShadowColorFocus: "rgba(201, 163, 0, 0.3)",
 
     errorColor: red[200],
-    errorColorHover: red[300],
-    errorColorTertiary: red[100],
+    errorColorDark: red[300],
+    errorColorLight: red[100],
+    errorInputShadowColorFocus: "rgba(255, 101, 105, 0.3)",
 
     successColor: green[300],
-    successColorHover: green[400],
-    successColorTertiary: green[100],
+    successColorDark: green[400],
+    successColorLight: green[100],
+    successInputShadowColorFocus: "rgba(28, 184, 144, 0.3)",
   },
 
   inputColor: neutral[100],
@@ -34,6 +37,7 @@ export const defaultTheme = {
   inputBorderColorDisabled: neutral[500],
   inputPlaceholderColor: neutral[500],
   inputShadowColorFocus: "rgba(68, 140, 255, 0.3)",
+  inputMessageColor: neutral[600],
 
   primaryFont,
   titlesFont,

@@ -3,6 +3,8 @@ name: "Chromatic"
 # The event that will trigger the action
 on:
   push:
+    branches:
+      - main
   pull_request:
     branches:
       - main

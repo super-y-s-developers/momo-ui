@@ -1,33 +1,9 @@
-import styled from "styled-components";
+import React from "react";
+import styled, { css } from "styled-components";
 import { defaultTheme, typeScale } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
 
-export const INPUT_MODIFIERS = {
-  icon: () => ``,
-  label: () => ``,
-  
-  // States
-  warning: () => ``,
-  error: () => ``,
-  success: () => ``,
-};
-
-export const INPUT_TYPES = {
-  text: () => ``,
-  select: () => ``,
-  checkbox: () => ``,
-  radio: () => ``,
-  textarea: () => ``,
-};
-
-export type InputProps = {
-  modifiers?: keyof typeof INPUT_MODIFIERS | keyof typeof INPUT_MODIFIERS[],
-  type?: keyof typeof INPUT_TYPES,
-  label?: string,
-  icon?: string,
-};
-
-const Input = styled.input<InputProps>`
+const inputBaseStyles = css`
   font-family: ${defaultTheme.primaryFont};
   font-size: ${typeScale.paragraph};
   background-color: ${defaultTheme.inputColor};
@@ -41,7 +17,6 @@ const Input = styled.input<InputProps>`
   ::placeholder {
     color: ${defaultTheme.inputPlaceholderColor};
   }
-
   &:disabled {
     cursor: not-allowed;
     color: ${defaultTheme.inputBorderColorDisabled};
@@ -53,8 +28,89 @@ const Input = styled.input<InputProps>`
     box-shadow: 2px 2px 15px ${defaultTheme.inputShadowColorFocus};
     border-color: ${defaultTheme.inputBorderColorFocus};
   }
+`;
+
+export const INPUT_MODIFIERS = {
+  // States
+  warning: () => `
+    input {
+      border-color: ${defaultTheme.status.warningColorLight};
+      color: ${defaultTheme.status.warningColorDark};
+      &:focus {
+        box-shadow: 2px 2px 15px ${defaultTheme.status.warningInputShadowColorFocus};
+        border-color: ${defaultTheme.status.warningColor};
+      }
+    }
+    .input-message {
+      color: ${defaultTheme.status.warningColorDark};
+    }
+    `,
+  error: () => `
+    input {
+      border-color: ${defaultTheme.status.errorColorLight};
+      color: ${defaultTheme.status.errorColorDark};
+      &:focus {
+        box-shadow: 2px 2px 15px ${defaultTheme.status.errorInputShadowColorFocus};
+        border-color: ${defaultTheme.status.errorColor};
+      }
+    }
+    .input-message {
+      color: ${defaultTheme.status.errorColorDark};
+    }
+  `,
+  success: () => `
+    input {
+      border-color: ${defaultTheme.status.successColorLight};
+      color: ${defaultTheme.status.successColorDark};
+      &:focus {
+        box-shadow: 2px 2px 15px ${defaultTheme.status.successInputShadowColorFocus};
+        border-color: ${defaultTheme.status.successColor};
+      }
+    }
+    .input-message {
+      color: ${defaultTheme.status.successColorDark};
+    }
+  `,
+};
+
+export const INPUT_TYPES = {
+  text: () => ``,
+  select: () => ``,
+  checkbox: () => ``,
+  radio: () => ``,
+  textarea: () => ``,
+};
+
+export type InputProps = {
+  modifiers?: keyof typeof INPUT_MODIFIERS | keyof typeof INPUT_MODIFIERS[];
+  type?: keyof typeof INPUT_TYPES;
+  label?: string;
+  icon?: string;
+  message?: string;
+  disabled?: boolean;
+};
+
+const InputWrapper = styled.label`
+  input {
+    ${inputBaseStyles}
+  }
+  .input-message {
+    margin-top: 5px;
+    margin-left: 12px;
+    font-size: ${typeScale.subParagraph};
+    color: ${defaultTheme.inputMessageColor};
+  }
 
   ${applyStyleModifiers(INPUT_MODIFIERS)}
 `;
 
-export default Input;
+function InputComponent(props: InputProps) {
+  return (
+    <InputWrapper {...props}>
+      <input {...props} />
+      {props.message && <div className="input-message">{props.message}</div>}
+    </InputWrapper>
+  );
+}
+
+export default InputComponent;
