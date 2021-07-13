@@ -30,6 +30,11 @@ const inputBaseStyles = css`
   }
 `;
 
+const checkboxRadioBaseStyles = css`
+  width: 30px;
+  height: 30px;
+`;
+
 const selectBaseStyles = css`
   appearance: none;
   -moz-appearance: none;
@@ -110,11 +115,14 @@ export type InputProps = {
   required?: boolean;
 };
 
-const InputWrapper = styled.div`
+const InputWrapper = styled.label`
   input,
   select,
   textarea {
     ${inputBaseStyles}
+  }
+  input[type="radio"][type="checkbox"] {
+    ${checkboxRadioBaseStyles}
   }
   select {
     ${selectBaseStyles}
@@ -122,21 +130,19 @@ const InputWrapper = styled.div`
   textarea {
     ${textareaBaseStyles}
   }
+  .header-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 9px;
+  }
+  .text-label {
+    margin-left: 12px;
+  }
   .input-message {
     margin-top: 5px;
     margin-left: 12px;
     font-size: ${typeScale.subParagraph};
     color: ${defaultTheme.inputMessageColor};
-  }
-  label {
-    &.text {
-      margin-left: 12px;
-    }
-    &.header {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 9px;
-    }
   }
 
   ${applyStyleModifiers(INPUT_MODIFIERS)}
@@ -151,18 +157,18 @@ const Select = (props: InputProps) => (
   </select>
 );
 
-const Label = (props: InputProps & React.HTMLAttributes<HTMLDivElement>) => (
-  <label className={props.className} htmlFor={props.id}>
-    {props.label}
-  </label>
-);
+const Label = (props: InputProps) => {
+  const className = isRadioOrCheckbox(props.type)
+    ? "text-label"
+    : "header-label";
+  return <span className={className}>{props.label}</span>;
+};
 
-function InputComponent(props: InputProps = { type: "text" }) {
+function Input(props: InputProps = { type: "text" }) {
   return (
     <InputWrapper {...props}>
-      {!isRadioOrCheckbox(props.type) && (
-        <Label className="header" {...props} />
-      )}
+      {!isRadioOrCheckbox(props.type) && <Label {...props} />}
+
       {props.type === "select" ? (
         <Select {...props} />
       ) : props.type === "textarea" ? (
@@ -170,10 +176,11 @@ function InputComponent(props: InputProps = { type: "text" }) {
       ) : (
         <input {...props} />
       )}
-      {isRadioOrCheckbox(props.type) && <Label className="text" {...props} />}
+
+      {isRadioOrCheckbox(props.type) && <Label {...props} />}
       {props.message && <div className="input-message">{props.message}</div>}
     </InputWrapper>
   );
 }
 
-export default InputComponent;
+export default Input;

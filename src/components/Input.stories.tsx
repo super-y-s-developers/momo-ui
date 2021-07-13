@@ -23,7 +23,6 @@ const Template: Story<InputProps> = (args) => <Input {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   placeholder: "Placeholder goes here",
-  type: "text",
 };
 
 export const Disabled = Template.bind({});
@@ -67,6 +66,7 @@ TextArea.args = {
 export const Checkbox = Template.bind({});
 Checkbox.args = {
   ...Default.args,
+  id: "my-checkbox",
   type: "checkbox",
   label: "Hello world",
 };
@@ -74,6 +74,7 @@ Checkbox.args = {
 export const Radio = Template.bind({});
 Radio.args = {
   ...Default.args,
+  id: "my-radio",
   type: "radio",
   label: "Hello world",
 };
