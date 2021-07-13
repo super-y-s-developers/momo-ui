@@ -110,6 +110,10 @@ function isRadioOrCheckbox(type: typeof INPUT_TYPES[number]) {
   return ["radio", "checkbox"].indexOf(type) !== -1;
 }
 
+// TODO: InputProps should support ALL possible input html props
+// Can be an interface that extends InputHTMLAttributes<HTMLInputElement>
+// But that doesn't take into account select and textarea props
+// Think on separating those three components: input, select, textarea
 export type InputProps = {
   type: typeof INPUT_TYPES[number];
   id?: string;
