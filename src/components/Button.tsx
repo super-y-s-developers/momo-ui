@@ -19,18 +19,18 @@ export const BUTTON_MODIFIERS = {
     color: ${defaultTheme.textColor};
 
     &:hover, &:focus, &:active {
-      background-color: ${defaultTheme.status.warningColorHover};
+      background-color: ${defaultTheme.status.warningColorDark};
       color: ${defaultTheme.textColorInverted};
     }
   `,
   warningSecondary: () => `
     background-color: ${defaultTheme.textColorInverted};
-    box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.warningColorHover};
-    color: ${defaultTheme.status.warningColorHover};
+    box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.warningColorDark};
+    color: ${defaultTheme.status.warningColorDark};
   `,
   warningTertiary: () => `
     background-color: ${defaultTheme.textColorInverted};
-    color: ${defaultTheme.status.warningColorHover};
+    color: ${defaultTheme.status.warningColorDark};
   `,
 
   // Error buttons
@@ -38,18 +38,18 @@ export const BUTTON_MODIFIERS = {
     background-color: ${defaultTheme.status.errorColor};
 
     &:hover, &:focus, &:active {
-      background-color: ${defaultTheme.status.errorColorHover};
+      background-color: ${defaultTheme.status.errorColorDark};
       color: ${defaultTheme.textColorInverted};
     }
   `,
   errorSecondary: () => `
     background-color: ${defaultTheme.textColorInverted};
-    color: ${defaultTheme.status.errorColorHover};
-    box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.errorColorHover};
+    color: ${defaultTheme.status.errorColorDark};
+    box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.errorColorDark};
   `,
   errorTertiary: () => `
     background-color: ${defaultTheme.textColorInverted};
-    color: ${defaultTheme.status.errorColorHover};
+    color: ${defaultTheme.status.errorColorDark};
   `,
 
   // Success buttons
@@ -57,23 +57,23 @@ export const BUTTON_MODIFIERS = {
     background-color: ${defaultTheme.status.successColor};
 
     &:hover, &:focus, &:active {
-      background-color: ${defaultTheme.status.successColorHover};
+      background-color: ${defaultTheme.status.successColorDark};
       color: ${defaultTheme.textColorInverted};
     }
   `,
   successSecondary: () => `
     background-color: ${defaultTheme.textColorInverted};
-    color: ${defaultTheme.status.successColorHover};
-    box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.successColorHover};
+    color: ${defaultTheme.status.successColorDark};
+    box-shadow: inset 0px 0px 0px 3px ${defaultTheme.status.successColorDark};
   `,
   successTertiary: () => `
     background-color: ${defaultTheme.textColorInverted};
-    color: ${defaultTheme.status.successColorHover};
+    color: ${defaultTheme.status.successColorDark};
   `,
 };
 
 export type ButtonProps = {
-  modifiers?: keyof typeof BUTTON_MODIFIERS | keyof typeof BUTTON_MODIFIERS[],
+  modifiers?: keyof typeof BUTTON_MODIFIERS | keyof typeof BUTTON_MODIFIERS[];
   // variant: "primary" | "secondary" | "tertiary" | undefined;
 };
 
