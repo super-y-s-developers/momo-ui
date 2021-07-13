@@ -68,12 +68,14 @@ export const Checkbox = Template.bind({});
 Checkbox.args = {
   ...Default.args,
   type: "checkbox",
+  label: "Hello world",
 };
 
 export const Radio = Template.bind({});
 Radio.args = {
   ...Default.args,
   type: "radio",
+  label: "Hello world",
 };
 
 export const Warning = Template.bind({});

@@ -30,14 +30,14 @@ const inputBaseStyles = css`
   }
 `;
 
-const selectStyles = css`
+const selectBaseStyles = css`
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   padding-right: 4em;
 `;
 
-const textareaStyles = css`
+const textareaBaseStyles = css`
   border-radius: 10px;
   padding: 15px 20px;
 `;
@@ -93,9 +93,14 @@ export const INPUT_TYPES = [
   "textarea",
 ] as const;
 
+function isRadioOrCheckbox(type: typeof INPUT_TYPES[number]) {
+  return ["radio", "checkbox"].indexOf(type) !== -1;
+}
+
 export type InputProps = {
+  type: typeof INPUT_TYPES[number];
+  id?: string;
   modifiers?: keyof typeof INPUT_MODIFIERS | keyof typeof INPUT_MODIFIERS[];
-  type?: typeof INPUT_TYPES[number];
   label?: string;
   icon?: string;
   message?: string;
@@ -112,16 +117,26 @@ const InputWrapper = styled.div`
     ${inputBaseStyles}
   }
   select {
-    ${selectStyles}
+    ${selectBaseStyles}
   }
   textarea {
-    ${textareaStyles}
+    ${textareaBaseStyles}
   }
   .input-message {
     margin-top: 5px;
     margin-left: 12px;
     font-size: ${typeScale.subParagraph};
     color: ${defaultTheme.inputMessageColor};
+  }
+  label {
+    &.text {
+      margin-left: 12px;
+    }
+    &.header {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 9px;
+    }
   }
 
   ${applyStyleModifiers(INPUT_MODIFIERS)}
@@ -136,9 +151,18 @@ const Select = (props: InputProps) => (
   </select>
 );
 
-function InputComponent(props: InputProps) {
+const Label = (props: InputProps & React.HTMLAttributes<HTMLDivElement>) => (
+  <label className={props.className} htmlFor={props.id}>
+    {props.label}
+  </label>
+);
+
+function InputComponent(props: InputProps = { type: "text" }) {
   return (
     <InputWrapper {...props}>
+      {!isRadioOrCheckbox(props.type) && (
+        <Label className="header" {...props} />
+      )}
       {props.type === "select" ? (
         <Select {...props} />
       ) : props.type === "textarea" ? (
@@ -146,6 +170,7 @@ function InputComponent(props: InputProps) {
       ) : (
         <input {...props} />
       )}
+      {isRadioOrCheckbox(props.type) && <Label className="text" {...props} />}
       {props.message && <div className="input-message">{props.message}</div>}
     </InputWrapper>
   );
