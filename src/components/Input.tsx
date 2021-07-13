@@ -48,25 +48,31 @@ const textareaStyles = css`
 `;
 
 export const INPUT_MODIFIERS = {
-  warning: () => `
-    input, select, textarea {
+  warning: () => css`
+    input,
+    select,
+    textarea {
       border-color: ${defaultTheme.status.warningColorLight};
       color: ${defaultTheme.status.warningColorDark};
       &:focus {
-        box-shadow: 2px 2px 15px ${defaultTheme.status.warningInputShadowColorFocus};
+        box-shadow: 2px 2px 15px
+          ${defaultTheme.status.warningInputShadowColorFocus};
         border-color: ${defaultTheme.status.warningColor};
       }
     }
     .input-message {
       color: ${defaultTheme.status.warningColorDark};
     }
-    `,
-  error: () => `
-    input, select, textarea {
+  `,
+  error: () => css`
+    input,
+    select,
+    textarea {
       border-color: ${defaultTheme.status.errorColorLight};
       color: ${defaultTheme.status.errorColorDark};
       &:focus {
-        box-shadow: 2px 2px 15px ${defaultTheme.status.errorInputShadowColorFocus};
+        box-shadow: 2px 2px 15px
+          ${defaultTheme.status.errorInputShadowColorFocus};
         border-color: ${defaultTheme.status.errorColor};
       }
     }
@@ -74,12 +80,15 @@ export const INPUT_MODIFIERS = {
       color: ${defaultTheme.status.errorColorDark};
     }
   `,
-  success: () => `
-    input, select, textarea {
+  success: () => css`
+    input,
+    select,
+    textarea {
       border-color: ${defaultTheme.status.successColorLight};
       color: ${defaultTheme.status.successColorDark};
       &:focus {
-        box-shadow: 2px 2px 15px ${defaultTheme.status.successInputShadowColorFocus};
+        box-shadow: 2px 2px 15px
+          ${defaultTheme.status.successInputShadowColorFocus};
         border-color: ${defaultTheme.status.successColor};
       }
     }
