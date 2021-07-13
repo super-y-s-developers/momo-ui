@@ -49,7 +49,7 @@ WithMessage.args = {
   ...Default.args,
   type: "password",
   message:
-    "8 characters with at least one: lowercase and uppercase letter, number, and special character",
+    "8 characters with at least one number, lowercase and uppercase letter",
 };
 
 export const Select = Template.bind({});
@@ -80,19 +80,22 @@ export const Warning = Template.bind({});
 Warning.args = {
   ...Default.args,
   modifiers: "warning",
-  value: "Hello world",
+  defaultValue: "Hello world",
+  message: "You should pay attention to this ...",
 };
 
 export const Error = Template.bind({});
 Error.args = {
   ...Default.args,
   modifiers: "error",
-  value: "Hello world",
+  defaultValue: "Hello world",
+  message: "Ups! something went wrong",
 };
 
 export const Success = Template.bind({});
 Success.args = {
   ...Default.args,
   modifiers: "success",
-  value: "Hello world",
+  defaultValue: "Hello world",
+  message: "Everything okay!",
 };
