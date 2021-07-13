@@ -5,11 +5,32 @@ import { applyStyleModifiers } from "styled-components-modifiers";
 export const INPUT_MODIFIERS = {
   icon: () => ``,
   label: () => ``,
-  
+
   // States
-  warning: () => ``,
-  error: () => ``,
-  success: () => ``,
+  warning: () => `
+    border-color: ${defaultTheme.status.warningColorLight};
+    color: ${defaultTheme.status.warningColorDark};
+    &:focus {
+      box-shadow: 2px 2px 15px ${defaultTheme.status.warningInputShadowColorFocus};
+      border-color: ${defaultTheme.status.warningColor};
+    }
+    `,
+  error: () => `
+    border-color: ${defaultTheme.status.errorColorLight};
+    color: ${defaultTheme.status.errorColorDark};
+    &:focus {
+      box-shadow: 2px 2px 15px ${defaultTheme.status.errorInputShadowColorFocus};
+      border-color: ${defaultTheme.status.errorColor};
+    }
+  `,
+  success: () => `
+    border-color: ${defaultTheme.status.successColorLight};
+    color: ${defaultTheme.status.successColorDark};
+    &:focus {
+      box-shadow: 2px 2px 15px ${defaultTheme.status.successInputShadowColorFocus};
+      border-color: ${defaultTheme.status.successColor};
+    }
+  `,
 };
 
 export const INPUT_TYPES = {
@@ -21,10 +42,10 @@ export const INPUT_TYPES = {
 };
 
 export type InputProps = {
-  modifiers?: keyof typeof INPUT_MODIFIERS | keyof typeof INPUT_MODIFIERS[],
-  type?: keyof typeof INPUT_TYPES,
-  label?: string,
-  icon?: string,
+  modifiers?: keyof typeof INPUT_MODIFIERS | keyof typeof INPUT_MODIFIERS[];
+  type?: keyof typeof INPUT_TYPES;
+  label?: string;
+  icon?: string;
 };
 
 const Input = styled.input<InputProps>`

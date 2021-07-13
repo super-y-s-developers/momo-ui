@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from '@storybook/react';
+import { Story, Meta } from "@storybook/react";
 
 import Input, { InputProps, INPUT_TYPES, INPUT_MODIFIERS } from "./Input";
 
@@ -13,8 +13,8 @@ export default {
     },
     modifiers: {
       options: Object.keys(INPUT_MODIFIERS),
-      control: { type: "check" }
-    }
+      control: { type: "check" },
+    },
   },
 } as Meta;
 
@@ -22,7 +22,14 @@ const Template: Story<InputProps> = (args) => <Input {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  placeholder: "Placeholder"
+  placeholder: "Placeholder goes here",
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Default.args,
+  type: "text",
+  disabled: true,
 };
 
 export const WithLabel = Template.bind({});
@@ -30,7 +37,7 @@ WithLabel.args = {
   ...Default.args,
   type: "text",
   modifiers: "label",
-  label: "Título"
+  label: "Title",
 };
 
 export const WithIcon = Template.bind({});
@@ -38,7 +45,7 @@ WithIcon.args = {
   ...Default.args,
   type: "text",
   modifiers: "icon",
-  icon: "arrow-right"
+  icon: "arrow-right",
 };
 
 export const Select = Template.bind({});
@@ -69,16 +76,19 @@ export const Warning = Template.bind({});
 Warning.args = {
   ...Default.args,
   modifiers: "warning",
+  value: "Hello world",
 };
 
 export const Error = Template.bind({});
 Error.args = {
   ...Default.args,
   modifiers: "error",
+  value: "Hello world",
 };
 
 export const Success = Template.bind({});
 Success.args = {
   ...Default.args,
   modifiers: "success",
+  value: "Hello world",
 };

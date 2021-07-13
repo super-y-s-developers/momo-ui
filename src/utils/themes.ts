@@ -17,14 +17,17 @@ export const defaultTheme = {
     warningColor: yellow[200],
     warningColorDark: yellow[300],
     warningColorLight: yellow[100],
+    warningInputShadowColorFocus: "rgba(201, 163, 0, 0.3)",
 
     errorColor: red[200],
     errorColorDark: red[300],
     errorColorLight: red[100],
+    errorInputShadowColorFocus: "rgba(255, 101, 105, 0.3)",
 
     successColor: green[300],
     successColorDark: green[400],
     successColorLight: green[100],
+    successInputShadowColorFocus: "rgba(28, 184, 144, 0.3)",
   },
 
   inputColor: neutral[100],
