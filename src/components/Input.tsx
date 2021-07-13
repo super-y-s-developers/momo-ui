@@ -97,7 +97,6 @@ const InputWrapper = styled.label`
   .input-message {
     margin-top: 5px;
     margin-left: 12px;
-    display: inline-block;
     font-size: ${typeScale.subParagraph};
     color: ${defaultTheme.inputMessageColor};
   }
