@@ -15,6 +15,9 @@ export default {
       options: Object.keys(INPUT_MODIFIERS),
       control: { type: "check" },
     },
+    message: {
+      control: { type: "text" },
+    },
   },
 } as Meta;
 

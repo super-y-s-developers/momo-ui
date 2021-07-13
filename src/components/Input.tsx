@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { defaultTheme, typeScale } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
 
-const inputBaseStyles = css`
+const inputStyles = css`
   font-family: ${defaultTheme.primaryFont};
   font-size: ${typeScale.paragraph};
   background-color: ${defaultTheme.inputColor};
@@ -30,27 +30,26 @@ const inputBaseStyles = css`
   }
 `;
 
-const checkboxRadioBaseStyles = css`
+const checkboxRadioStyles = css`
   width: 30px;
   height: 30px;
 `;
 
-const selectBaseStyles = css`
+const selectStyles = css`
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   padding-right: 4em;
 `;
 
-const textareaBaseStyles = css`
+const textareaStyles = css`
   border-radius: 10px;
   padding: 15px 20px;
 `;
 
 export const INPUT_MODIFIERS = {
-  // States
   warning: () => `
-    input {
+    input, select, textarea {
       border-color: ${defaultTheme.status.warningColorLight};
       color: ${defaultTheme.status.warningColorDark};
       &:focus {
@@ -63,7 +62,7 @@ export const INPUT_MODIFIERS = {
     }
     `,
   error: () => `
-    input {
+    input, select, textarea {
       border-color: ${defaultTheme.status.errorColorLight};
       color: ${defaultTheme.status.errorColorDark};
       &:focus {
@@ -76,7 +75,7 @@ export const INPUT_MODIFIERS = {
     }
   `,
   success: () => `
-    input {
+    input, select, textarea {
       border-color: ${defaultTheme.status.successColorLight};
       color: ${defaultTheme.status.successColorDark};
       &:focus {
@@ -119,16 +118,16 @@ const InputWrapper = styled.label`
   input,
   select,
   textarea {
-    ${inputBaseStyles}
+    ${inputStyles}
   }
   input[type="radio"][type="checkbox"] {
-    ${checkboxRadioBaseStyles}
+    ${checkboxRadioStyles}
   }
   select {
-    ${selectBaseStyles}
+    ${selectStyles}
   }
   textarea {
-    ${textareaBaseStyles}
+    ${textareaStyles}
   }
   .header-label {
     font-weight: bold;
