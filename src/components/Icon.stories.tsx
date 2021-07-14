@@ -1,13 +1,13 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import * as Icon from "phosphor-react";
+import Icon, { IconProps, ICON_WEIGHTS } from "./Icon";
 
 export default {
   component: Icon,
   title: "Atoms/Icon",
   argTypes: {
     weight: {
-      options: ["thin", "light", "regular", "bold", "fill", "duotone"],
+      options: ICON_WEIGHTS,
       control: { type: "radio" },
     },
     size: {
@@ -17,12 +17,13 @@ export default {
       control: { type: "color" },
     },
   },
-};
+} as Meta;
 
-const Template = (args) => <Icon.Horse {...args} />;
+const Template: Story<IconProps> = (args) => <Icon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  icon: "horse",
   size: 64,
   weight: "regular",
 };
@@ -49,10 +50,4 @@ export const Bold = Template.bind({});
 Bold.args = {
   ...Default.args,
   weight: "bold",
-};
-
-export const Duotone = Template.bind({});
-Duotone.args = {
-  ...Default.args,
-  weight: "duotone",
 };

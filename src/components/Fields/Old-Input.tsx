@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { defaultTheme, typeScale } from "../../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
-import * as Icon from "phosphor-react";
 
 export const INPUT_TYPES = [
   "text",
@@ -187,12 +186,6 @@ const Label = (props: InputProps) => {
 };
 
 function Input(props: InputProps = { type: "text" }) {
-  const capitalizedIconName = props.icon
-    ?.split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join("");
-  const ChosenIcon = capitalizedIconName && Icon[capitalizedIconName];
-
   return (
     <InputWrapper {...props}>
       {!isRadioOrCheckbox(props.type) && <Label {...props} />}
@@ -207,9 +200,6 @@ function Input(props: InputProps = { type: "text" }) {
 
       {isRadioOrCheckbox(props.type) && <Label {...props} />}
       {props.message && <div className="input-message">{props.message}</div>}
-      {props.icon && !isRadioOrCheckbox(props.type) && (
-        <ChosenIcon className="input-icon" size={22} />
-      )}
     </InputWrapper>
   );
 }
