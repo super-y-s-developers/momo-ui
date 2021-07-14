@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { applyStyleModifiers } from "styled-components-modifiers";
-import baseStyles from "./baseStyles";
+import baseStyles from "./styles";
 import modifiersStyles from "./modifiersStyles";
 
 const StyledFieldWrapper = styled.div`
@@ -8,11 +8,9 @@ const StyledFieldWrapper = styled.div`
   ${applyStyleModifiers(modifiersStyles)}
 `;
 
-function FieldWrapper({ modifiers, label, message, children }) {
+function FieldWrapper({ modifiers, message, children, style = {} }) {
   return (
-    <StyledFieldWrapper {...{ modifiers }}>
-      {label && <span className="field-header">{label}</span>}
-
+    <StyledFieldWrapper {...{ modifiers, style }}>
       {children}
 
       {message && <div className="field-message">{message}</div>}

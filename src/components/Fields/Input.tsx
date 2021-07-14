@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from "react";
 import MODIFIERS from "./constants/modifiers";
-import FieldWrapper from "./FieldWrapper";
+import FieldWrapper from "./components/FieldWrapper";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   modifiers?: typeof MODIFIERS[number] | typeof MODIFIERS[number][];
@@ -12,7 +12,8 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 function Input({ modifiers, label, icon, message, ...rest }: InputProps) {
   return (
     <label>
-      <FieldWrapper {...{ modifiers, label, message }}>
+      <FieldWrapper {...{ modifiers, message }}>
+        {label && <span className="field-header">{label}</span>}
         <input {...rest} />
       </FieldWrapper>
     </label>
