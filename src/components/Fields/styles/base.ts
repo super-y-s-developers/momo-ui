@@ -1,5 +1,6 @@
 import { css } from "styled-components";
 import { defaultTheme, typeScale } from "../../../utils";
+import FIELD_TYPES from "../constants/fieldTypes";
 
 const fieldStyles = css`
   font-family: ${defaultTheme.primaryFont};
@@ -28,30 +29,50 @@ const fieldStyles = css`
   }
 `;
 
-export default css`
+const isRadioOrCheck = (type: typeof FIELD_TYPES[number]) =>
+  ["radio", "checkbox"].includes(type);
+
+export default (type: typeof FIELD_TYPES[number], icon?: string) => css`
   input,
   select,
   textarea {
     ${fieldStyles}
+
+    /* Conditional styles */
+    ${icon && "padding-left: 54px;"}
   }
   .field-header {
     font-weight: bold;
     display: block;
     margin-bottom: 9px;
   }
-  .field-text {
-    margin-left: 12px;
-    &.disabled {
-      color: ${defaultTheme.inputBorderColorDisabled};
-    }
-  }
-  .field-icon {
-    color: ${defaultTheme.inputPlaceholderColor};
-  }
   .field-message {
     margin-top: 5px;
     margin-left: 11px;
     font-size: ${typeScale.subParagraph};
     color: ${defaultTheme.inputMessageColor};
+  }
+  .field-content {
+    position: relative;
+
+    /* Conditional styles */
+    ${isRadioOrCheck(type) &&
+    css`
+      display: flex;
+      align-items: center;
+    `}
+
+    .field-text {
+      margin-left: 12px;
+      &.disabled {
+        color: ${defaultTheme.inputBorderColorDisabled};
+      }
+    }
+    .field-icon {
+      color: ${defaultTheme.inputPlaceholderColor};
+      position: absolute;
+      left: 20px;
+      top: 11px;
+    }
   }
 `;
