@@ -3,12 +3,28 @@ import { defaultTheme } from "../../utils";
 import FieldWrapper from "./components/FieldWrapper";
 import { InputProps } from "./Input";
 
+// TODO: as the appearance is none we need to redo checked status styles
 const CheckboxInput = styled.input`
   appearance: none;
-  width: 30px;
-  height: 30px;
-  padding: 0 !important;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  padding: 1px 2px !important;
   border-radius: 5px !important;
+
+  &:checked {
+    border-color: ${defaultTheme.inputBorderColorFocus};
+    background-color: ${defaultTheme.inputBorderColorFocus};
+    /* show check mark icon from phosphor */
+    &::after {
+      content: "\f465";
+      color: white;
+      font-family: "Phosphor" !important;
+      font-style: normal !important;
+      font-weight: normal !important;
+    }
+  }
 `;
 
 function Checkbox({ modifiers, label, message, ...rest }: InputProps) {

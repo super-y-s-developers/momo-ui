@@ -63,7 +63,7 @@ export default (type: typeof FIELD_TYPES[number], icon?: string) => css`
     `}
 
     .field-text {
-      margin-left: 12px;
+      margin-left: 10px;
       &.disabled {
         color: ${defaultTheme.inputBorderColorDisabled};
       }
