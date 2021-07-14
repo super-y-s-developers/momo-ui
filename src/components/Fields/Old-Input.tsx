@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { defaultTheme, typeScale } from "../utils";
+import { defaultTheme, typeScale } from "../../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
 import * as Icon from "phosphor-react";
 

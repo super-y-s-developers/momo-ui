@@ -7,7 +7,7 @@ import { InputProps } from "./Input";
 
 export default {
   component: Checkbox,
-  title: "Atoms/Checkbox",
+  title: "Atoms/Fields/Checkbox",
   argTypes: {
     ...inputMeta.argTypes,
     checked: {

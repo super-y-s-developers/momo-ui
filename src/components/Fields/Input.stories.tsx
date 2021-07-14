@@ -2,14 +2,14 @@ import React from "react";
 import { Story, Meta } from "@storybook/react";
 
 import Input, { InputProps } from "./Input";
-import MODIFIERS from "./constants/modifiers";
+import FIELD_MODIFIERS from "./constants/fieldModifiers";
 
 export default {
   component: Input,
-  title: "Atoms/Input",
+  title: "Atoms/Fields/Input",
   argTypes: {
     modifiers: {
-      options: MODIFIERS,
+      options: FIELD_MODIFIERS,
       control: { type: "check" },
     },
     message: {

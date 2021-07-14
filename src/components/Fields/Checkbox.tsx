@@ -11,25 +11,11 @@ const CheckboxInput = styled.input`
   border-radius: 5px !important;
 `;
 
-function Checkbox({
-  modifiers,
-  label,
-  message,
-  disabled,
-  ...rest
-}: InputProps) {
+function Checkbox({ modifiers, label, message, ...rest }: InputProps) {
   return (
-    <label>
-      <FieldWrapper {...{ modifiers, label, message }}>
-        <CheckboxInput {...{ disabled, ...rest }} type="checkbox" />
-
-        {label && (
-          <span className={`field-text${disabled ? " disabled" : ""}`}>
-            {label}
-          </span>
-        )}
-      </FieldWrapper>
-    </label>
+    <FieldWrapper {...{ modifiers, label, message, type: "checkbox" }}>
+      <CheckboxInput {...rest} type="checkbox" />
+    </FieldWrapper>
   );
 }
 
