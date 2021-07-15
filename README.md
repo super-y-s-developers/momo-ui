@@ -1,6 +1,6 @@
 # Momo UI _Comic relief_ - Design System
 
-![Isologo Momo UI](./public/logos/isologo/296x80.png?raw=true "Botones de Momo UI")
+![Isologo Momo UI](./public/logos/isologo/296x80-bg.png?raw=true "Botones de Momo UI")
 
 Our goal is to create a design system that is lightweight for the user and contrasts with the stress situations they may be experiencing. As a result we want you to have a fun and quiet experience 😌
 
