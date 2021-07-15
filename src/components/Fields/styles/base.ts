@@ -52,8 +52,8 @@ export default (
     min-height: 8em;
     padding: 15px 20px;
   }
-  input[type="checkbox"]:disabled + span,
-  input[type="radio"]:disabled + span {
+  input[type="checkbox"]:disabled ~ .field-text,
+  input[type="radio"]:disabled ~ .field-text {
     color: ${defaultTheme.inputBorderColorDisabled};
     cursor: not-allowed;
   }
