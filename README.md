@@ -6,7 +6,7 @@ Our goal is to create a design system that is lightweight for the user and contr
 
 ## Check it out
 
-[See our storybook](https://60903c91deb02d003b84f0cb-cfivsiinqs.chromatic.com/?path=/story/introduction--page)
+[See our storybook](https://main--60903c91deb02d003b84f0cb.chromatic.com/)
 
 ## Get involved
 
