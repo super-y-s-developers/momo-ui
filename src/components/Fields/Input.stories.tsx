@@ -18,6 +18,12 @@ export default {
     icon: {
       control: { type: "text" },
     },
+    iconPos: {
+      control: {
+        options: ["left", "right"],
+        type: "radio",
+      },
+    },
     label: {
       control: { type: "text" },
     },
@@ -44,10 +50,19 @@ WithLabel.args = {
   label: "Name",
 };
 
-export const WithIcon = Template.bind({});
-WithIcon.args = {
+export const WithIconLeft = Template.bind({});
+WithIconLeft.args = {
   ...Default.args,
-  icon: "arrow-right",
+  icon: "magnifying-glass",
+  placeholder: "Search for your dream",
+};
+
+export const WithIconRight = Template.bind({});
+WithIconRight.args = {
+  ...Default.args,
+  icon: "lock-key",
+  iconPos: "right",
+  placeholder: "Set a good password",
 };
 
 export const WithMessage = Template.bind({});

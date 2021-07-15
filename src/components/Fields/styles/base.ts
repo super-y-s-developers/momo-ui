@@ -32,15 +32,33 @@ const fieldStyles = css`
 const isRadioOrCheck = (type: typeof FIELD_TYPES[number]) =>
   ["radio", "checkbox"].includes(type);
 
-export default (type: typeof FIELD_TYPES[number], icon?: string) => css`
+export default (
+  type: typeof FIELD_TYPES[number],
+  icon?: string,
+  iconPos?: "left" | "right"
+) => css`
   input,
   select,
   textarea {
     ${fieldStyles}
-
-    /* Conditional styles */
-    ${icon && "padding-left: 54px;"}
   }
+
+  /* Field-specific styles */
+  textarea {
+    border-radius: 10px;
+    min-height: 8em;
+    padding: 15px 20px;
+  }
+
+  /* IWith-icon styles */
+  input,
+  select,
+  textarea {
+    /* Conditional styles */
+    ${icon && iconPos === "left" && "padding-left: 48px;"}
+  }
+
+  /* Sibling elements styles */
   .field-header {
     font-weight: bold;
     display: block;
@@ -54,25 +72,24 @@ export default (type: typeof FIELD_TYPES[number], icon?: string) => css`
   }
   .field-content {
     position: relative;
-
     /* Conditional styles */
     ${isRadioOrCheck(type) &&
     css`
       display: flex;
       align-items: center;
     `}
-
+    .field-icon {
+      color: ${defaultTheme.inputPlaceholderColor};
+      position: absolute;
+      top: 11px;
+      ${iconPos === "right" && "right: 20px;"}
+      ${iconPos === "left" && "left: 20px;"}
+    }
     .field-text {
       margin-left: 10px;
       &.disabled {
         color: ${defaultTheme.inputBorderColorDisabled};
       }
-    }
-    .field-icon {
-      color: ${defaultTheme.inputPlaceholderColor};
-      position: absolute;
-      left: 20px;
-      top: 11px;
     }
   }
 `;

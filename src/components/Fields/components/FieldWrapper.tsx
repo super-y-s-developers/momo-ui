@@ -15,13 +15,14 @@ type FieldWrapperProps = {
   label?: string;
   message?: string;
   icon?: string;
+  iconPos?: "left" | "right";
 
   type: typeof FIELD_TYPES[number];
   children?: React.ReactNode;
 };
 
 const StyledFieldWrapper = styled.label<FieldWrapperProps>`
-  ${(props) => baseStyles(props.type, props.icon)}
+  ${(props) => baseStyles(props.type, props.icon, props.iconPos)}
   ${applyStyleModifiers(modifiersStyles)}
 `;
 
@@ -30,6 +31,7 @@ function FieldWrapper({
   label,
   message,
   icon,
+  iconPos = "left",
   type,
   children,
 }: FieldWrapperProps) {
@@ -37,7 +39,7 @@ function FieldWrapper({
     ["radio", "checkbox"].includes(type);
 
   return (
-    <StyledFieldWrapper {...{ modifiers, icon, type }}>
+    <StyledFieldWrapper {...{ modifiers, icon, iconPos, type }}>
       {label && !isRadioOrCheck(type) && (
         <span className="field-header">{label}</span>
       )}
