@@ -12,6 +12,7 @@ const CheckboxInput = styled.input`
   height: 22px;
   padding: 1px 2px !important;
   border-radius: 5px !important;
+  cursor: pointer;
 
   &:checked {
     border-color: ${defaultTheme.inputBorderColorFocus};

@@ -12,6 +12,7 @@ const RadioInput = styled.input`
   height: 22px;
   padding: 0 !important;
   border-radius: 50% !important;
+  cursor: pointer;
 
   &:checked {
     border-color: ${defaultTheme.inputBorderColorFocus};
@@ -23,6 +24,7 @@ const RadioInput = styled.input`
       height: 12px;
       border-radius: 50%;
       background-color: ${defaultTheme.inputBorderColorFocus};
+      cursor: pointer;
     }
   }
 `;
