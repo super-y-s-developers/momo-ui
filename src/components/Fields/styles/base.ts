@@ -52,6 +52,11 @@ export default (
     min-height: 8em;
     padding: 15px 20px;
   }
+  input[type="checkbox"]:disabled + span,
+  input[type="radio"]:disabled + span {
+    color: ${defaultTheme.inputBorderColorDisabled};
+    cursor: not-allowed;
+  }
 
   /* With-icon styles */
   input,
@@ -91,9 +96,6 @@ export default (
     }
     .field-text {
       margin-left: 10px;
-      &.disabled {
-        color: ${defaultTheme.inputBorderColorDisabled};
-      }
     }
   }
 `;
