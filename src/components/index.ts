@@ -1,5 +1,5 @@
 export { default as Button } from "./Button";
-export { default as Input } from "./Input";
+export { default as Input } from "./Fields/Input";
 
 export * from "./Button";
-export * from "./Input";
+export * from "./Fields/Input";

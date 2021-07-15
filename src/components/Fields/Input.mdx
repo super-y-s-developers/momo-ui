@@ -8,12 +8,15 @@ export default {
   title: "Atoms/Input",
   argTypes: {
     type: {
-      options: Object.keys(INPUT_TYPES),
+      options: INPUT_TYPES,
       control: { type: "select" },
     },
     modifiers: {
       options: Object.keys(INPUT_MODIFIERS),
       control: { type: "check" },
+    },
+    message: {
+      control: { type: "text" },
     },
   },
 } as Meta;
@@ -23,7 +26,6 @@ const Template: Story<InputProps> = (args) => <Input {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   placeholder: "Placeholder goes here",
-  type: "text",
 };
 
 export const Disabled = Template.bind({});
@@ -67,13 +69,17 @@ TextArea.args = {
 export const Checkbox = Template.bind({});
 Checkbox.args = {
   ...Default.args,
+  id: "my-checkbox",
   type: "checkbox",
+  label: "Hello world",
 };
 
 export const Radio = Template.bind({});
 Radio.args = {
   ...Default.args,
+  id: "my-radio",
   type: "radio",
+  label: "Hello world",
 };
 
 export const Warning = Template.bind({});
