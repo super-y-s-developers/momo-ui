@@ -37,25 +37,29 @@ export default (
   icon?: string,
   iconPos?: "left" | "right"
 ) => css`
+  display: inline-block;
+
+  /* General field styles */
   input,
   select,
   textarea {
     ${fieldStyles}
   }
 
-  /* Field-specific styles */
+  /* Specific field styles */
   textarea {
     border-radius: 10px;
     min-height: 8em;
     padding: 15px 20px;
   }
 
-  /* IWith-icon styles */
+  /* With-icon styles */
   input,
   select,
   textarea {
     /* Conditional styles */
     ${icon && iconPos === "left" && "padding-left: 48px;"}
+    ${icon && iconPos === "right" && "padding-right: 48px;"}
   }
 
   /* Sibling elements styles */
