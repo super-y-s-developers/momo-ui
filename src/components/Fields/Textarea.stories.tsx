@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import inputMeta from "./Input.stories";
 
 import Textarea from "./Textarea";
-import FieldProps from "./models/FieldProps";
+import { TextareaProps } from "./Textarea";
 
 export default {
   component: Textarea,
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<FieldProps> = (args) => <Textarea {...args} />;
+const Template: Story<TextareaProps> = (args) => <Textarea {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
