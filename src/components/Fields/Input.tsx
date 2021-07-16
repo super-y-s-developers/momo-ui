@@ -1,31 +1,20 @@
 import React from "react";
 import FieldWrapper from "./components/FieldWrapper";
-import FIELD_MODIFIERS from "./constants/fieldModifiers";
+import FieldProps from "./models/FieldProps";
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  modifiers?: typeof FIELD_MODIFIERS[number] | typeof FIELD_MODIFIERS[number][];
-  label?: string;
-  message?: string;
-  icon?: string;
+export interface InputProps extends FieldProps {
   iconPos?: "left" | "right";
 }
 
-function Input({
-  modifiers,
-  label,
-  message,
-  icon,
-  iconPos,
-  ...rest
-}: InputProps) {
+const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const { modifiers, label, message, icon, iconPos, ...rest } = props;
   return (
     <FieldWrapper
       {...{ modifiers, label, message, icon, iconPos, type: "input" }}
     >
-      <input {...rest} />
+      <input {...rest} ref={ref} />
     </FieldWrapper>
   );
-}
+});
 
 export default Input;
