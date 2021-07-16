@@ -1,12 +1,8 @@
-import React, { TextareaHTMLAttributes } from "react";
+import React from "react";
 import FieldWrapper from "./components/FieldWrapper";
 import FieldProps from "./models/FieldProps";
 
-export interface TextareaProps
-  extends FieldProps,
-    TextareaHTMLAttributes<HTMLTextAreaElement> {}
-
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+const Textarea = React.forwardRef<HTMLTextAreaElement, FieldProps>(
   ({ modifiers, label, message, icon, ...rest }) => {
     return (
       <FieldWrapper {...{ modifiers, label, message, icon, type: "input" }}>
