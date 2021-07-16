@@ -1,8 +1,10 @@
-import React from "react";
+import React, { InputHTMLAttributes } from "react";
 import FieldWrapper from "./components/FieldWrapper";
 import FieldProps from "./models/FieldProps";
 
-export interface InputProps extends FieldProps {
+export interface InputProps
+  extends FieldProps,
+    InputHTMLAttributes<HTMLInputElement> {
   iconPos?: "left" | "right";
 }
 
