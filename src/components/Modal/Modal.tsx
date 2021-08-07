@@ -29,7 +29,7 @@ export default function Modal({
     return ReactDOM.createPortal(
       <>
         <Shadow onClick={onBackdropClick} />
-        <StyledModal role="dialog" modifiers={modifiers}>
+        <StyledModal role="dialog" modifiers={modifiers} closeIcon={closeIcon}>
           {closeIcon ? (
             <CloseIcon onClick={onClose}>
               <Icon icon="x" size={22} weight="bold" />
@@ -53,6 +53,7 @@ export const MODAL_MODIFIERS = {
 
 type StyledModalProps = {
   modifiers: Modifiers;
+  closeIcon?: boolean;
 };
 
 const StyledModal = styled.div<StyledModalProps>`
@@ -64,14 +65,13 @@ const StyledModal = styled.div<StyledModalProps>`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 4rem 2em 2em;
+  padding: 46px 26px;
+  padding-top: ${(props) => (props.closeIcon ? "62px" : "46px")};
   width: calc(100% - 3em);
   background: ${(props) => props.theme.backgroundColor};
   border-radius: 10px;
   box-shadow: 4px 5px 16px rgba(0, 0, 0, 0.2);
   max-width: ${(props) => props.theme.breakpoints.sm};
-  max-height: calc(100% - 4em);
-  overflow: auto;
 
   ${applyStyleModifiers(MODAL_MODIFIERS)}
 `;

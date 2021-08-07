@@ -27,20 +27,18 @@ export default {
 
 const Template: Story<ModalProps> = (args) => {
   return (
-
-      <Modal container={document.getElementById('root')} {...args}>
-        <h1>Example Modal</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus,
-          doloribus!
-        </p>
-      </Modal>
-
+    <Modal container={document.getElementById("root")} {...args}>
+      <h1>Example Modal</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus,
+        doloribus!
+      </p>
+    </Modal>
   );
 };
 
 export const Default = Template.bind({});
 Default.args = {
   isOpened: true,
-  closeBtn: true,
+  closeIcon: true,
 };

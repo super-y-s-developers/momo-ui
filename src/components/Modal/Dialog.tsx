@@ -30,8 +30,10 @@ const Dialog = ({
     <Modal {...restProps}>
       <Container>
         {image && <Image src={image} alt={title} />}
-        {title && <h4>{title}</h4>}
-        {description && <p>{description}</p>}
+        <div>
+          {title && <h4>{title}</h4>}
+          {description && <p>{description}</p>}
+        </div>
         <Buttons>
           {cancelButton && (
             <TertiaryButton onClick={onCancel} modifiers={modifier}>{cancelButton}</TertiaryButton>
@@ -42,10 +44,15 @@ const Dialog = ({
     </Modal>
   );
 };
+
 export default Dialog;
 
 const Container = styled.div`
   text-align: center;
+
+  & > * + * {
+    margin-top: 30px;
+  }
 
   h4 {
     margin: 0;
@@ -56,8 +63,8 @@ const Buttons = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 2rem;
 `;
+
 const Image = styled.img`
   width: 100%;
   max-width: 400px;
