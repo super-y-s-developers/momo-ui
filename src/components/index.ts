@@ -6,6 +6,7 @@ export { default as Radio } from "./Fields/Radio";
 export { default as Textarea } from "./Fields/Textarea";
 export { default as Modal } from "./Modal/Modal";
 export { default as Dialog } from "./Modal/Dialog";
+export { default as Card } from "./Card";
 
 export * from "./Button";
 export * from "./Icon";
@@ -15,3 +16,4 @@ export * from "./Fields/Radio";
 export * from "./Fields/Textarea";
 export * from "./Modal/Modal";
 export * from "./Modal/Dialog";
+export * from "./Card";
