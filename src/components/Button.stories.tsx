@@ -16,6 +16,9 @@ export default {
       options: Object.keys(BUTTON_MODIFIERS),
       control: { type: "check" },
     },
+    loading: {
+      control: { type: "boolean" }
+    },
   },
 } as Meta;
 
@@ -24,6 +27,11 @@ const TemplateSecondary: Story<ButtonProps> = (args) => <SecondaryButton {...arg
 const TemplateTertiary: Story<ButtonProps> = (args) => <TertiaryButton {...args}>Hello</TertiaryButton>;
 
 export const Default = Template.bind({});
+
+export const Loading = Template.bind({});
+Loading.args = {
+  loading: true
+};
 
 export const Secondary = TemplateSecondary.bind({});
 

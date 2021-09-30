@@ -1,16 +1,31 @@
 import styled from "styled-components";
 import { defaultTheme, typeScale } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
+import React, { ReactNode } from "react";
+import Icon from "./Icon";
 
 export const BUTTON_MODIFIERS = {
   // Sizes
-  small: () => `
+  small: (props: { loading: boolean }) => `
     font-size: ${typeScale.paragraph};
     padding: 8px 16px;
+    
+    ${props.loading && `
+      padding: 8px 16px 4px 16px;
+    `}
+    i.loader {
+    font-size: ${typeScale.s};
+  }
   `,
-  large: () => `
+  large: (props: { loading: boolean }) => `
     font-size: ${typeScale.s};
     padding: 16px 32px;
+    
+    ${props.loading && `
+      padding: 15px 32px 10px 32px;
+    `}
+    i.loader {
+    font-size: ${typeScale.xl};
   `,
 
   // Warning buttons
@@ -75,9 +90,11 @@ export const BUTTON_MODIFIERS = {
 export type ButtonProps = {
   modifiers?: keyof typeof BUTTON_MODIFIERS | keyof typeof BUTTON_MODIFIERS[];
   // variant: "primary" | "secondary" | "tertiary" | undefined;
+  loading?: boolean;
+  children?: ReactNode | ReactNode[];
 };
 
-const Button = styled.button<ButtonProps>`
+const StyledButton = styled.button<ButtonProps>`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
@@ -101,7 +118,22 @@ const Button = styled.button<ButtonProps>`
     box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.primaryColor},
       inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+  ${(props) => props.loading && `
+    padding: 10px 24px 8px 24px;
+  `}
+  
+  i.loader {
+    font-size: ${typeScale.l};
+  }
 `;
+
+function Button({ children, loading, ...props }: ButtonProps) {
+  return (
+    <StyledButton {...props} loading={loading}>
+      {loading ? <Icon icon="spinner-gap" weight="bold" className="loader" /> : children}
+    </StyledButton>
+  );
+}
 
 export const PrimaryButton = styled(Button)`
   background-color: ${defaultTheme.primaryColor};
