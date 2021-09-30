@@ -122,15 +122,21 @@ const StyledButton = styled.button<ButtonProps>`
     padding: 11px 24px 7px 24px;
   `}
   
+  /* LOADER */
   i.loader {
     font-size: ${typeScale.l};
+    animation: spin 3s infinite linear;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
   }
 `;
 
 function Button({ children, loading, ...props }: ButtonProps) {
   return (
     <StyledButton {...props} loading={loading}>
-      {loading ? <Icon icon="spinner-gap" weight="bold" className="loader" /> : children}
+      {loading ? <Icon icon="cube" weight="bold" className="loader" /> : children}
     </StyledButton>
   );
 }
