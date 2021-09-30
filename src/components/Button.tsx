@@ -119,7 +119,7 @@ const StyledButton = styled.button<ButtonProps>`
       inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   ${(props) => props.loading && `
-    padding: 10px 24px 8px 24px;
+    padding: 11px 24px 7px 24px;
   `}
   
   i.loader {
