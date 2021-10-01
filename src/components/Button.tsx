@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { defaultTheme, typeScale } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
-import React, { ReactNode } from "react";
+import React from "react";
 import Icon from "./Icon";
 
 export const BUTTON_MODIFIERS = {
@@ -87,14 +87,13 @@ export const BUTTON_MODIFIERS = {
   `,
 };
 
-export type ButtonProps = {
+export type ButtonProps = JSX.IntrinsicElements["button"] & {
   modifiers?: keyof typeof BUTTON_MODIFIERS | keyof typeof BUTTON_MODIFIERS[];
   // variant: "primary" | "secondary" | "tertiary" | undefined;
   loading?: boolean;
-  children?: ReactNode | ReactNode[];
 };
 
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled(Button)`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
@@ -125,23 +124,23 @@ const StyledButton = styled.button<ButtonProps>`
   /* LOADER */
   i.loader {
     font-size: ${typeScale.l};
-    animation: spin 3s infinite linear;
+    animation: spin 2.5s infinite linear;
   }
   @keyframes spin {
     from { transform: rotate(0deg); }
-    to { transform: rotate(359deg); }
+    to { transform: rotate(360deg); }
   }
 `;
 
 function Button({ children, loading, ...props }: ButtonProps) {
   return (
-    <StyledButton {...props} loading={loading}>
-      {loading ? <Icon icon="cube" weight="bold" className="loader" /> : children}
-    </StyledButton>
+    <button {...props}>
+      {loading ? <Icon icon="spinner" weight="bold" className="loader" /> : children}
+    </button>
   );
 }
 
-export const PrimaryButton = styled(Button)`
+export const PrimaryButton = styled(StyledButton)`
   background-color: ${defaultTheme.primaryColor};
 
   &:hover,
