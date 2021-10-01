@@ -93,7 +93,7 @@ export type ButtonProps = JSX.IntrinsicElements["button"] & {
   loading?: boolean;
 };
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)<ButtonProps>`
   font-family: ${defaultTheme.subtitlesFont};
   font-size: ${typeScale.xs};
   font-weight: 600;
@@ -132,7 +132,7 @@ const StyledButton = styled(Button)`
   }
 `;
 
-function Button({ children, loading, ...props }: ButtonProps) {
+function Button({ loading, children, ...props }: ButtonProps) {
   return (
     <button {...props}>
       {loading ? <Icon icon="spinner" weight="bold" className="loader" /> : children}
@@ -140,7 +140,7 @@ function Button({ children, loading, ...props }: ButtonProps) {
   );
 }
 
-export const PrimaryButton = styled(StyledButton)`
+export const PrimaryButton = styled(StyledButton)<ButtonProps>`
   background-color: ${defaultTheme.primaryColor};
 
   &:hover,
@@ -155,7 +155,7 @@ export const PrimaryButton = styled(StyledButton)`
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
-export const SecondaryButton = styled(Button)`
+export const SecondaryButton = styled(StyledButton)<ButtonProps>`
   background-color: ${defaultTheme.textColorInverted};
   color: ${defaultTheme.primaryColorHover};
   box-shadow: inset 0px 0px 0px 3px ${defaultTheme.primaryColorHover};
@@ -174,7 +174,7 @@ export const SecondaryButton = styled(Button)`
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
-export const TertiaryButton = styled(Button)`
+export const TertiaryButton = styled(StyledButton)<ButtonProps>`
   color: ${defaultTheme.textColor};
   background-color: ${defaultTheme.tertiaryColor};
 
