@@ -27,6 +27,9 @@
   ],
   "exclude": [
     "node_modules",
-    "lib"
+    "lib",
+    ".storybook",
+    "storybook-static",
+    "**/*.stories.tsx"
   ]
 }
