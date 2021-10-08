@@ -10,9 +10,12 @@ export const BUTTON_MODIFIERS = {
     font-size: ${typeScale.paragraph};
     padding: 8px 16px;
     
-    ${props.loading && `
+    ${
+      props.loading &&
+      `
       padding: 8px 16px 4px 16px;
-    `}
+    `
+    }
     i.loader {
     font-size: ${typeScale.s};
   }
@@ -21,9 +24,12 @@ export const BUTTON_MODIFIERS = {
     font-size: ${typeScale.s};
     padding: 16px 32px;
     
-    ${props.loading && `
+    ${
+      props.loading &&
+      `
       padding: 15px 32px 10px 32px;
-    `}
+    `
+    }
     i.loader {
     font-size: ${typeScale.xl};
   `,
@@ -117,25 +123,35 @@ const StyledButton = styled(Button)<ButtonProps>`
     box-shadow: 0 0 0 4px white, 0 0 0 7px ${defaultTheme.primaryColor},
       inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-  ${(props) => props.loading && `
+  ${(props) =>
+    props.loading &&
+    `
     padding: 11px 24px 7px 24px;
   `}
-  
+
   /* LOADER */
   i.loader {
     font-size: ${typeScale.l};
     animation: spin 2.5s infinite linear;
   }
   @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 `;
 
 function Button({ loading, children, ...props }: ButtonProps) {
   return (
     <button {...props}>
-      {loading ? <Icon icon="spinner" weight="bold" className="loader" /> : children}
+      {loading ? (
+        <Icon icon="spinner" weight="bold" className="loader" />
+      ) : (
+        children
+      )}
     </button>
   );
 }
