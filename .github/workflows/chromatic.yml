@@ -10,8 +10,6 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - "src/**"
 
 # What the action will do
 jobs:
