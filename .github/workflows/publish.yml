@@ -21,7 +21,8 @@ jobs:
           scope: "@superys"
           registry-url: "https://registry.npmjs.org"
       - run: yarn
-      - run: yarn build
+      - run: yarn build:esm
+      - run: yarn build:cjs
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
