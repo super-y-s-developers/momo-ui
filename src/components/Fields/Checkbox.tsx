@@ -20,11 +20,11 @@ const CheckboxInput = styled.input`
     background-color: ${defaultTheme.inputBorderColorFocus};
     /* show check mark icon from phosphor */
     &::after {
-      content: "\f465";
+      content: "\f33e";
       color: white;
       font-family: "Phosphor" !important;
       font-style: normal !important;
-      font-weight: normal !important;
+      font-weight: bold !important;
     }
   }
 `;
