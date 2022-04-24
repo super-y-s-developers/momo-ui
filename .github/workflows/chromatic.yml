@@ -1,6 +1,4 @@
-# Name of our action
 name: "Chromatic"
-# The event that will trigger the action
 on:
   push:
     branches:
@@ -10,19 +8,21 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - "src/**"
 
-# What the action will do
 jobs:
-  test:
-    # The operating system it will run on
+  launch-chromatic:
     runs-on: ubuntu-latest
-    # The list of steps that the action will go through
     steps:
-      - uses: actions/checkout@v1
-      - run: yarn
-        #👇 Adds Chromatic as a step in the workflow
-      - uses: chromaui/action@v1
-        # Options required for Chromatic's GitHub Action
+      - name: Checkout 🛎️
+        uses: actions/checkout@v1
+
+      - name: Install 🔧
+        run: yarn
+
+      - name: Launch chromatic 🚀
+        uses: chromaui/action@v1
         with:
           #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/review/ to obtain it
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
