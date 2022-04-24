@@ -1,6 +1,6 @@
 {
   "name": "@superys/momo-ui",
-  "version": "0.0.14",
+  "version": "0.0.13",
   "description": "A design system that works as a comic relief. It's light and fun",
   "repository": {
     "type": "git",
@@ -8,8 +8,7 @@
   },
   "contributors": [
     "Yeliana Torres <yelis124@gmail.com> (https://github.com/pollencio)",
-    "Jesus F. Chavarro <jesusfchavarro@gmail.com> (https://github.com/jesusfchavarro)",
-    "Kevin Malaver (https://github.com/kevinmalaverr)"
+    "Jesus F. Chavarro <jesusfchavarro@gmail.com> (https://github.com/jesusfchavarro)"
   ],
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
