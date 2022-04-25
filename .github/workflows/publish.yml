@@ -14,14 +14,23 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@v1
+
+      - name: Setup node ⚙
+        uses: actions/setup-node@v2
         with:
           node-version: "14"
           scope: "@superys"
           registry-url: "https://registry.npmjs.org"
-      - run: yarn
-      - run: yarn build
-      - run: yarn publish
+
+      - name: Install and Build 🔧
+        run: |
+          yarn
+          yarn build:esm
+          yarn build:cjs
+
+      - name: Publish 🚀
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
