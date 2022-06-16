@@ -1,19 +1,18 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 
-import Button, {
-  SecondaryButton,
-  TertiaryButton,
-  ButtonProps,
-  BUTTON_MODIFIERS,
-} from "./Button";
+import Button, { SecondaryButton, TertiaryButton, ButtonProps } from "./Button";
+import sizeModifiers from "./styles/sizeModifiers";
+import statusModifiers from "./styles/statusModifiers";
+
+const modifiersStyles = { ...sizeModifiers, ...statusModifiers };
 
 export default {
   component: Button,
   title: "Atoms/Button",
   argTypes: {
     modifiers: {
-      options: Object.keys(BUTTON_MODIFIERS),
+      options: Object.keys(modifiersStyles),
       control: { type: "check" },
     },
     loading: {
