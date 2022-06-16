@@ -16,11 +16,11 @@ const CheckboxInput = styled.input`
 
   &:checked {
     border-color: ${(props) => props.theme.input.borderColor.focus};
-    background-color: ${(props) => props.theme.input.borderColor.focus};
+    background-color: ${(props) => props.theme.input.backgroundColor.focus};
     /* show check mark icon from phosphor */
     &::after {
       content: "\f33e";
-      color: white;
+      color: ${(props) => props.theme.input.backgroundColor.contrast};
       font-family: "Phosphor" !important;
       font-style: normal !important;
       font-weight: bold !important;
