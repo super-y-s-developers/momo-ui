@@ -24,6 +24,7 @@ const CheckboxInput = styled.input`
       font-family: "Phosphor" !important;
       font-style: normal !important;
       font-weight: bold !important;
+      margin: -1px; // to make it look centered
     }
   }
 `;
