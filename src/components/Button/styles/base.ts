@@ -4,7 +4,7 @@ export default (theme: DefaultTheme, loading?: boolean) => css`
   font-family: ${theme.fonts.subtitles};
   font-size: ${theme.typeScale.mobile.xs};
   font-weight: 600;
-  color: ${theme.textColor.inverted};
+  color: ${theme.primary.contrast};
   padding: 12px 24px;
   border-radius: 100px;
   cursor: pointer;

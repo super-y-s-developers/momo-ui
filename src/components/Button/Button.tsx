@@ -66,7 +66,7 @@ export const SecondaryButton = styled(StyledButton)<ButtonProps>`
 `;
 
 export const TertiaryButton = styled(StyledButton)<ButtonProps>`
-  color: ${(props) => props.theme.textColor.main};
+  color: ${(props) => props.theme.tertiary?.contrast};
   background-color: ${(props) => props.theme.tertiary?.main};
 
   &:hover,

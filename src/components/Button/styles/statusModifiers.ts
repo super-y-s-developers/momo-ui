@@ -4,7 +4,7 @@ export default {
   // Warning buttons
   warning: ({ theme }: { theme: DefaultTheme }) => css`
     background-color: ${theme.status.warningColor.main};
-    color: ${theme.textColor.main};
+    color: ${theme.status.warningColor.contrast};
 
     &:hover,
     &:focus,
@@ -31,7 +31,7 @@ export default {
     &:focus,
     &:active {
       background-color: ${theme.status.errorColor.dark};
-      color: ${theme.textColor.inverted};
+      color: ${theme.status.errorColor.contrast};
     }
   `,
   errorSecondary: ({ theme }: { theme: DefaultTheme }) => css`
@@ -52,7 +52,7 @@ export default {
     &:focus,
     &:active {
       background-color: ${theme.status.successColor.dark};
-      color: ${theme.textColor.inverted};
+      color: ${theme.status.successColor.contrast};
     }
   `,
   successSecondary: ({ theme }: { theme: DefaultTheme }) => css`

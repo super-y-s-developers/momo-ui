@@ -12,6 +12,7 @@ interface ColorI {
   focus?: string;
   disabled?: string;
   inverted?: string;
+  contrast?: string;
 }
 interface StatusI extends ColorI {
   inputFocusShadow: string;
