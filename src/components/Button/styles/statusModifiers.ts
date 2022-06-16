@@ -1,86 +1,67 @@
-import { css } from "styled-components";
-import { ComponentProps } from "styled-components-modifiers";
+import { css, DefaultTheme } from "styled-components";
 
 export default {
-  warning: ({ theme }: ComponentProps) => css`
-    input,
-    select,
-    textarea {
-      border-color: ${theme.status.warningColor.light};
-      color: ${theme.status.warningColor.dark};
-      &:focus {
-        box-shadow: 2px 2px 15px ${theme.status.warningColor.inputFocusShadow};
-        border-color: ${theme.status.warningColor.main};
-      }
-    }
-    .field-message {
-      color: ${theme.status.warningColor.dark};
-    }
-  `,
-};
-
-export const BUTTON_MODIFIERS = {
   // Warning buttons
-  warning: ({ theme }: ComponentProps) => css`
-    background-color: ${theme.status.warningColor};
+  warning: ({ theme }: { theme: DefaultTheme }) => css`
+    background-color: ${theme.status.warningColor.main};
     color: ${theme.textColor.main};
 
     &:hover,
     &:focus,
     &:active {
-      background-color: ${theme.status.warningColorDark};
+      background-color: ${theme.status.warningColor.dark};
       color: ${theme.textColor.inverted};
     }
   `,
-  warningSecondary: ({ theme }: ComponentProps) => css`
+  warningSecondary: ({ theme }: { theme: DefaultTheme }) => css`
     background-color: ${theme.textColor.inverted};
-    box-shadow: inset 0px 0px 0px 3px ${theme.status.warningColorDark};
-    color: ${theme.status.warningColorDark};
+    box-shadow: inset 0px 0px 0px 3px ${theme.status.warningColor.dark};
+    color: ${theme.status.warningColor.dark};
   `,
-  warningTertiary: ({ theme }: ComponentProps) => css`
+  warningTertiary: ({ theme }: { theme: DefaultTheme }) => css`
     background-color: ${theme.textColor.inverted};
-    color: ${theme.status.warningColorDark};
+    color: ${theme.status.warningColor.dark};
   `,
 
   // Error buttons
-  error: ({ theme }: ComponentProps) => css`
-    background-color: ${theme.status.errorColor};
+  error: ({ theme }: { theme: DefaultTheme }) => css`
+    background-color: ${theme.status.errorColor.main};
 
     &:hover,
     &:focus,
     &:active {
-      background-color: ${theme.status.errorColorDark};
+      background-color: ${theme.status.errorColor.dark};
       color: ${theme.textColor.inverted};
     }
   `,
-  errorSecondary: ({ theme }: ComponentProps) => css`
+  errorSecondary: ({ theme }: { theme: DefaultTheme }) => css`
     background-color: ${theme.textColor.inverted};
-    color: ${theme.status.errorColorDark};
-    box-shadow: inset 0px 0px 0px 3px ${theme.status.errorColorDark};
+    color: ${theme.status.errorColor.dark};
+    box-shadow: inset 0px 0px 0px 3px ${theme.status.errorColor.dark};
   `,
-  errorTertiary: ({ theme }: ComponentProps) => css`
+  errorTertiary: ({ theme }: { theme: DefaultTheme }) => css`
     background-color: ${theme.textColor.inverted};
-    color: ${theme.status.errorColorDark};
+    color: ${theme.status.errorColor.dark};
   `,
 
   // Success buttons
-  success: ({ theme }: ComponentProps) => css`
-    background-color: ${theme.status.successColor};
+  success: ({ theme }: { theme: DefaultTheme }) => css`
+    background-color: ${theme.status.successColor.main};
 
     &:hover,
     &:focus,
     &:active {
-      background-color: ${theme.status.successColorDark};
+      background-color: ${theme.status.successColor.dark};
       color: ${theme.textColor.inverted};
     }
   `,
-  successSecondary: ({ theme }: ComponentProps) => css`
+  successSecondary: ({ theme }: { theme: DefaultTheme }) => css`
     background-color: ${theme.textColor.inverted};
-    color: ${theme.status.successColorDark};
-    box-shadow: inset 0px 0px 0px 3px ${theme.status.successColorDark};
+    color: ${theme.status.successColor.dark};
+    box-shadow: inset 0px 0px 0px 3px ${theme.status.successColor.dark};
   `,
-  successTertiary: ({ theme }: ComponentProps) => css`
+  successTertiary: ({ theme }: { theme: DefaultTheme }) => css`
     background-color: ${theme.textColor.inverted};
-    color: ${theme.status.successColorDark};
+    color: ${theme.status.successColor.dark};
   `,
 };
