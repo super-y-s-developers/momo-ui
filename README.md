@@ -10,13 +10,13 @@ Our goal is to create a design system that is lightweight for the user and contr
 
 We use Storybook to document and review the development of our design system. There you will find what components do we have, how they look, and what code you should use to implement them.
 
-[See our storybook](https://main--60903c91deb02d003b84f0cb.chromatic.com/)
+[See our storybook](https://super-y-s-developers.github.io/momo-ui)
 
 ## Use it in your app
 
 Momo UI components are developed with [React.js](https://reactjs.org/) using [styled-components](https://styled-components.com/). To set general styles and use it in your own React project, follow these instructions:
 
-Install the npm [momo-ui package](https://www.npmjs.com/package/@superys/momo-ui) in your project
+1. Install the npm [momo-ui package](https://www.npmjs.com/package/@superys/momo-ui) in your project
 
 ```
 yarn add @superys/momo-ui
@@ -26,7 +26,7 @@ or
 npm i @superys/momo-ui
 ```
 
-Load fonts and icons ([phosphor icons](https://phosphoricons.com/)) in your `public/index.html` head tag
+2. Load fonts and icons ([phosphor icons](https://phosphoricons.com/)) in your `public/index.html` head tag
 
 ```html
 <head>
@@ -45,23 +45,24 @@ Load fonts and icons ([phosphor icons](https://phosphoricons.com/)) in your `pub
 </head>
 ```
 
-Set the global styles before your app is mounted (probably `src/index.jsx`)
+3. Wrap everything with `MomoStyleWrapper` before your app is mounted (probably `src/index.jsx`)
 
 ```jsx
 ...
-import { GlobalStyle } from "@superys/momo-ui";
+import { MomoStyleWrapper } from "@superys/momo-ui";
 ...
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <MomoStyleWrapper>
+      <App />
+    </MomoStyleWrapper>
   </React.StrictMode>,
   document.getElementById("root")
 );
 ```
 
-Use the components in your app!
+4. Use the **components** in your app! [Check our storybook](https://super-y-s-developers.github.io/momo-ui) to see the available components and how to sue them.
 
 ```jsx
 import { Button } from "@superys/momo-ui";
@@ -76,11 +77,50 @@ function App() {
 }
 ```
 
-You're ready to go. To know more about momo-ui components, please [check our storybook](https://main--60903c91deb02d003b84f0cb.chromatic.com/) where you will find everything you need.
+5. (Optional) Use the **utils** variables (colors, type scales, fonts, etc) in case you need them!
+
+```jsx
+import styled from 'styled-components';
+import { yellow } from '@superys/momo-ui';
+
+const WarningBox = styled.div`
+  border: 2px solid yellow[300];
+  background-color: yellow[200];
+`
+```
+
+### Create a custom theme
+
+We know you love or colors and style! But we also know you might need to tweak them sometimes to match your brand. You can do it by creating a custom theme, based on our `defaultTheme` and passing it to the `MomoStyleWrapper`.
+
+```jsx
+...
+import { MomoStyleWrapper, defaultTheme } from "@superys/momo-ui";
+...
+
+const pink = { [300]: "#EF6AC3", [400]: "#EF6AC3" };
+
+const customTheme = {
+  ...defaultTheme,
+  palettes: { ...defaultTheme.palettes, pink },
+  primary: { main: pink[400], hover: pink[300] }
+};
+
+ReactDOM.render(
+  <React.StrictMode>
+    <MomoStyleWrapper theme={customTheme}>
+      <App />
+    </MomoStyleWrapper>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```
+
+You're ready to go. To know more about momo-ui components, please [check our storybook](https://super-y-s-developers.github.io/momo-ui) where you will find everything you need to use our components.
 
 ## Get involved
 
-We're still working hard to make momo-ui grow and be available for anyone. If you'd like to contribute designing or coding, please get in touch! -> yelis124@gmail.com
+We're still working hard to make momo-ui grow and be available for anyone. If you'd like to contribute designing or coding, please get in touch! yelis124@gmail.com
 
 - Find ways to contribute [contribution docs in progress ...]
 - Prep to commit code [code-contribution docs in progress ...]
