@@ -2,7 +2,7 @@ import { css, DefaultTheme } from "styled-components";
 
 export default (theme: DefaultTheme, loading?: boolean) => css`
   font-family: ${theme.fonts.subtitles};
-  font-size: ${theme.typeScale.desktop.xs};
+  font-size: ${theme.typeScale.mobile.xs};
   font-weight: 600;
   color: ${theme.textColor.inverted};
   padding: 12px 24px;
@@ -24,11 +24,11 @@ export default (theme: DefaultTheme, loading?: boolean) => css`
     box-shadow: 0 0 0 4px white, 0 0 0 7px ${theme.primary.main},
       inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-  ${loading && "padding: 10px 10px 7px;"}
+  ${loading && "padding: 11px 24px 7px 24px;"}
 
   /* LOADER */
   i.loader {
-    font-size: ${theme.typeScale.desktop.sm};
+    font-size: ${theme.typeScale.mobile.lg};
     animation: spin 2.5s infinite linear;
   }
   @keyframes spin {

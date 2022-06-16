@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 
   ${({ theme }) => css`
     html {
-      font-size: ${theme.typeScale.desktop.basePx};
+      font-size: ${theme.typeScale.mobile.basePx};
       box-sizing: border-box;
 
       *,
@@ -47,19 +47,19 @@ export const GlobalStyle = createGlobalStyle`
         }
       }
       h1 {
-        font-size: ${theme.typeScale.desktop.xl};
+        font-size: ${theme.typeScale.mobile.xl};
       }
       h2 {
-        font-size: ${theme.typeScale.desktop.l};
+        font-size: ${theme.typeScale.mobile.l};
       }
       h3 {
-        font-size: ${theme.typeScale.desktop.m};
+        font-size: ${theme.typeScale.mobile.m};
       }
       h4 {
-        font-size: ${theme.typeScale.desktop.s};
+        font-size: ${theme.typeScale.mobile.s};
       }
       h5 {
-        font-size: ${theme.typeScale.desktop.xs};
+        font-size: ${theme.typeScale.mobile.xs};
       }
     }
   `}

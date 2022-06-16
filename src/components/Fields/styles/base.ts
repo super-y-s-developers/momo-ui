@@ -3,7 +3,7 @@ import FIELD_TYPES from "../constants/fieldTypes";
 
 const fieldStyles = (theme: DefaultTheme) => css`
   font-family: ${theme.fonts.body};
-  font-size: ${theme.typeScale.desktop.paragraph};
+  font-size: ${theme.typeScale.mobile.paragraph};
   background-color: ${theme.input.backgroundColor.main};
   color: ${theme.textColor.main};
   padding: 12px 20px;
@@ -76,7 +76,7 @@ export default (
   .field-message {
     margin-top: 5px;
     margin-left: 11px;
-    font-size: ${theme.typeScale.desktop.subParagraph};
+    font-size: ${theme.typeScale.mobile.subParagraph};
     color: ${theme.input.messageColor};
   }
   .field-content {

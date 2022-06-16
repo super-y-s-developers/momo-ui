@@ -3,19 +3,20 @@ import { ComponentProps } from "styled-components-modifiers";
 
 export default {
   small: ({ theme, loading }: ComponentProps) => css`
-    font-size: ${theme.typeScale.desktop.paragraph};
+    font-size: ${theme.typeScale.mobile.paragraph};
     padding: 8px 16px;
     ${loading && "padding: 8px 16px 4px 16px;"}
     i.loader {
-      font-size: ${theme.typeScale.desktop.s};
+      font-size: ${theme.typeScale.mobile.s};
     }
   `,
 
   large: ({ theme, loading }: ComponentProps) => css`
-    font-size: ${theme.typeScale.desktop.s};
+    font-size: ${theme.typeScale.mobile.s};
     padding: 16px 32px;
     ${loading && "padding: 15px 32px 10px 32px;"}
     i.loader {
-    font-size: ${theme.typeScale.desktop.xl};
+      font-size: ${theme.typeScale.mobile.xl};
+    }
   `,
 };
