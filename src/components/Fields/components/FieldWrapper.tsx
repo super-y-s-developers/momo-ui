@@ -17,7 +17,7 @@ interface FieldWrapperProps extends FieldProps {
 }
 
 const StyledFieldWrapper = styled.label<FieldWrapperProps>`
-  ${(props) => baseStyles(props.type, props.icon, props.iconPos)}
+  ${(props) => baseStyles(props.theme, props.type, props.icon, props.iconPos)}
   ${applyStyleModifiers(modifiersStyles)}
 `;
 

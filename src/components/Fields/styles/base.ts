@@ -1,38 +1,38 @@
-import { css } from "styled-components";
-import { defaultTheme, typeScale } from "../../../utils";
+import { css, DefaultTheme } from "styled-components";
 import FIELD_TYPES from "../constants/fieldTypes";
 
-const fieldStyles = css`
-  font-family: ${defaultTheme.primaryFont};
-  font-size: ${typeScale.paragraph};
-  background-color: ${defaultTheme.inputColor};
-  color: ${defaultTheme.textColor};
+const fieldStyles = (theme: DefaultTheme) => css`
+  font-family: ${theme.fonts.body};
+  font-size: ${theme.typeScale.mobile.paragraph};
+  background-color: ${theme.input.backgroundColor.main};
+  color: ${theme.textColor.main};
   padding: 12px 20px;
   border-radius: 30px;
-  border: 2px solid ${defaultTheme.inputBorderColor};
+  border: 2px solid ${theme.input.borderColor.main};
   box-sizing: border-box;
   transition: background-color 0.2s linear, color 0.2s linear,
     box-shadow 0.2s linear;
   ::placeholder {
-    color: ${defaultTheme.inputPlaceholderColor};
+    color: ${theme.input.placeholderColor};
   }
   &:disabled {
     cursor: not-allowed;
-    color: ${defaultTheme.inputBorderColorDisabled};
-    background-color: ${defaultTheme.inputColorDisabled};
-    border-color: ${defaultTheme.inputBorderColorDisabled};
+    color: ${theme.input.borderColor.disabled};
+    background-color: ${theme.input.backgroundColor.disabled};
+    border-color: ${theme.input.borderColor.disabled};
   }
   &:focus {
     outline: none;
-    box-shadow: 2px 2px 15px ${defaultTheme.inputShadowColorFocus};
-    border-color: ${defaultTheme.inputBorderColorFocus};
+    box-shadow: 2px 2px 15px ${theme.input.focusShadowColor};
+    border-color: ${theme.input.borderColor.focus};
   }
 `;
 
 const isRadioOrCheck = (type: typeof FIELD_TYPES[number]) =>
   ["radio", "checkbox"].includes(type);
 
-export default (
+const baseStyles = (
+  theme: DefaultTheme,
   type: typeof FIELD_TYPES[number],
   icon?: string,
   iconPos?: "left" | "right"
@@ -43,7 +43,7 @@ export default (
   input,
   select,
   textarea {
-    ${fieldStyles}
+    ${fieldStyles(theme)}
   }
 
   /* Specific field styles */
@@ -54,7 +54,7 @@ export default (
   }
   input[type="checkbox"]:disabled ~ .field-text,
   input[type="radio"]:disabled ~ .field-text {
-    color: ${defaultTheme.inputBorderColorDisabled};
+    color: ${theme.input.borderColor.disabled};
     cursor: not-allowed;
   }
 
@@ -76,8 +76,8 @@ export default (
   .field-message {
     margin-top: 5px;
     margin-left: 11px;
-    font-size: ${typeScale.subParagraph};
-    color: ${defaultTheme.inputMessageColor};
+    font-size: ${theme.typeScale.mobile.subParagraph};
+    color: ${theme.input.messageColor};
   }
   .field-content {
     position: relative;
@@ -88,7 +88,7 @@ export default (
       align-items: center;
     `}
     .field-icon {
-      color: ${defaultTheme.inputPlaceholderColor};
+      color: ${theme.input.placeholderColor};
       position: absolute;
       top: 11px;
       ${iconPos === "right" && "right: 20px;"}
@@ -99,3 +99,5 @@ export default (
     }
   }
 `;
+
+export default baseStyles;

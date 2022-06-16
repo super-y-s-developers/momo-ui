@@ -1,15 +1,9 @@
 import momoTheme from "./MomoTheme";
 import { addDecorator } from "@storybook/react";
-import { GlobalStyle } from "../src/utils/Global";
-import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "../src/utils/themes";
+import { MomoStyleWrapper } from "../src/utils/MomoStyle";
+// import { darkTheme } from "../src/utils/themes";
 
-addDecorator((story) => (
-  <ThemeProvider theme={defaultTheme}>
-    {story()}
-    <GlobalStyle />
-  </ThemeProvider>
-));
+addDecorator((story) => <MomoStyleWrapper>{story()}</MomoStyleWrapper>);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

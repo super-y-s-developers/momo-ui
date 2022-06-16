@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import { Button } from "..";
-import { TertiaryButton } from "../Button";
+import { TertiaryButton } from "../Button/Button";
 import Modal, { ModalProps } from "./Modal";
 
 export interface Props extends ModalProps {
@@ -36,9 +36,15 @@ const Dialog = ({
         </div>
         <Buttons>
           {cancelButton && (
-            <TertiaryButton onClick={onCancel} modifiers={modifier}>{cancelButton}</TertiaryButton>
+            <TertiaryButton onClick={onCancel} modifiers={modifier}>
+              {cancelButton}
+            </TertiaryButton>
           )}
-          {okButton && <Button onClick={onOk} modifiers={modifier}>{okButton}</Button>}
+          {okButton && (
+            <Button onClick={onOk} modifiers={modifier}>
+              {okButton}
+            </Button>
+          )}
         </Buttons>
       </Container>
     </Modal>

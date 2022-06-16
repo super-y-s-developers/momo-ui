@@ -1,11 +1,4 @@
-import { createGlobalStyle } from "styled-components";
-import {
-  primaryFont,
-  titlesFont,
-  subtitlesFont,
-  typeScale,
-} from "./typography";
-import { defaultTheme } from "./themes";
+import { createGlobalStyle, css } from "styled-components";
 import { normalize } from "polished";
 
 export const GlobalStyle = createGlobalStyle`
@@ -13,55 +6,63 @@ export const GlobalStyle = createGlobalStyle`
   
   // -------- CUSTOM STYLES --------- //
 
-  html {
-    font-size: 14px; //mobile
-    /* font-size: 16px; //desktop */
-    box-sizing: border-box;
+  ${({ theme }) => css`
+    html {
+      font-size: ${theme.typeScale.mobile.basePx};
+      box-sizing: border-box;
 
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
 
-    body {
-      margin: 0;
-      font-family: ${primaryFont};
-      color: ${defaultTheme.textColor};
-      background-color: ${defaultTheme.backgroundColor};
-    }
+      body {
+        margin: 0;
+        font-family: ${theme.fonts.body};
+        color: ${theme.textColor.main};
+        background-color: ${theme.backgroundColor};
+      }
 
-    main {
-      max-width: 90%;
-      margin: 0 auto;
-    }
+      main {
+        max-width: 90%;
+        margin: 0 auto;
+      }
 
-    // Titles
-    h1, h2, h3, h4, h5, .title {
-      font-family: ${titlesFont};
-      letter-spacing: 0.04em;
-      font-weight: 400;
-
-      &.subtitle {
-        font-family: ${subtitlesFont};
+      // Titles
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .title {
+        font-family: ${theme.fonts.titles};
         letter-spacing: 0.04em;
-        font-weight: 700;
+        font-weight: 400;
+
+        &.subtitle {
+          font-family: ${theme.fonts.subtitles};
+          letter-spacing: 0.04em;
+          font-weight: 700;
+        }
+      }
+      h1 {
+        font-size: ${theme.typeScale.mobile.xl};
+      }
+      h2 {
+        font-size: ${theme.typeScale.mobile.lg};
+      }
+      h3 {
+        font-size: ${theme.typeScale.mobile.md};
+      }
+      h4 {
+        font-size: ${theme.typeScale.mobile.sm};
+      }
+      h5 {
+        font-size: ${theme.typeScale.mobile.xs};
       }
     }
-    h1 {
-      font-size: ${typeScale.xl};
-    }
-    h2 {
-      font-size: ${typeScale.l};
-    }
-    h3 {
-      font-size: ${typeScale.m};
-    }
-    h4 {
-      font-size: ${typeScale.s};
-    }
-    h5 {
-      font-size: ${typeScale.xs};
-    }
-  }
+  `}
 
   // ------------ FONTS ------------- //
 

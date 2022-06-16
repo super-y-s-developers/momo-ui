@@ -1,53 +1,117 @@
-import { green, yellow, red, blue, neutral } from "./palettes";
-import { primaryFont, titlesFont, subtitlesFont } from "./typography";
+import { DefaultTheme } from "styled-components";
+import palette, { green, yellow, red, blue, neutral } from "./palettes";
+import { bodyFont, titlesFont, subtitlesFont, typeScale } from "./typography";
 
-export const defaultTheme = {
+export const defaultTheme: DefaultTheme = {
+  palette,
+
   backgroundColor: neutral[200],
+  textColor: { main: neutral[800], inverted: neutral[100] },
 
-  primaryColor: green[300],
-  primaryColorHover: green[400],
-
-  tertiaryColor: neutral[300],
-  tertiaryColorHover: neutral[400],
-
-  textColor: neutral[800],
-  textColorInverted: neutral[100],
+  primary: { main: green[300], hover: green[400], contrast: neutral[100] },
+  tertiary: { main: neutral[300], hover: neutral[400], contrast: neutral[800] },
 
   status: {
-    warningColor: yellow[200],
-    warningColorDark: yellow[300],
-    warningColorLight: yellow[100],
-    warningInputShadowColorFocus: "rgba(201, 163, 0, 0.3)",
-
-    errorColor: red[200],
-    errorColorDark: red[300],
-    errorColorLight: red[100],
-    errorInputShadowColorFocus: "rgba(255, 101, 105, 0.3)",
-
-    successColor: green[300],
-    successColorDark: green[400],
-    successColorLight: green[100],
-    successInputShadowColorFocus: "rgba(28, 184, 144, 0.3)",
+    warningColor: {
+      main: yellow[200],
+      dark: yellow[300],
+      light: yellow[100],
+      contrast: neutral[800],
+      inputFocusShadow: "rgba(201, 163, 0, 0.3)",
+    },
+    errorColor: {
+      main: red[200],
+      dark: red[300],
+      light: red[100],
+      contrast: neutral[100],
+      inputFocusShadow: "rgba(255, 101, 105, 0.3)",
+    },
+    successColor: {
+      main: green[300],
+      dark: green[400],
+      light: green[100],
+      contrast: neutral[100],
+      inputFocusShadow: "rgba(28, 184, 144, 0.3)",
+    },
   },
 
-  inputColor: neutral[100],
-  inputBorderColor: neutral[400],
-  inputBorderColorFocus: blue[200],
-  inputColorDisabled: neutral[300],
-  inputBorderColorDisabled: neutral[500],
-  inputPlaceholderColor: neutral[500],
-  inputShadowColorFocus: "rgba(68, 140, 255, 0.3)",
-  inputMessageColor: neutral[600],
+  input: {
+    backgroundColor: {
+      main: neutral[100],
+      disabled: neutral[300],
+      focus: blue[200],
+      contrast: neutral[100],
+    },
+    borderColor: {
+      main: neutral[400],
+      focus: blue[200],
+      disabled: neutral[500],
+    },
+    placeholderColor: neutral[500],
+    focusShadowColor: "rgba(68, 140, 255, 0.3)",
+    messageColor: neutral[600],
+  },
 
-  primaryFont,
-  titlesFont,
-  subtitlesFont,
+  fonts: {
+    body: bodyFont,
+    titles: titlesFont,
+    subtitles: subtitlesFont,
+  },
 
   breakpoints: {
-    xs: '0',
-    sm: '576px',
-    md: '768px',
-    lg: '992px',
-    xl: '1200px',
-  }
+    xs: "0",
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
+  },
+
+  typeScale,
+};
+
+export const darkTheme: DefaultTheme = {
+  ...defaultTheme,
+
+  backgroundColor: neutral[800],
+  textColor: { main: neutral[100], inverted: neutral[800] },
+
+  primary: { main: green[300], hover: green[200], contrast: neutral[100] },
+  tertiary: { main: neutral[700], hover: neutral[600], contrast: neutral[100] },
+
+  status: {
+    warningColor: {
+      ...defaultTheme.status.warningColor,
+      main: yellow[200],
+      light: yellow[300],
+      dark: yellow[100],
+    },
+    errorColor: {
+      ...defaultTheme.status.errorColor,
+      main: red[200],
+      light: red[300],
+      dark: red[100],
+    },
+    successColor: {
+      ...defaultTheme.status.successColor,
+      main: green[300],
+      light: green[400],
+      dark: green[200],
+    },
+  },
+
+  input: {
+    ...defaultTheme.input,
+    backgroundColor: {
+      main: neutral[700],
+      disabled: neutral[600],
+      focus: neutral[100],
+      contrast: neutral[800],
+    },
+    borderColor: {
+      main: "transparent",
+    },
+    placeholderColor: neutral[400],
+    focusShadowColor: "rgba(255, 255, 255, 0.1)",
+    messageColor: neutral[200],
+  },
 };

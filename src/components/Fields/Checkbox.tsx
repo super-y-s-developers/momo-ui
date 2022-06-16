@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { defaultTheme } from "../../utils";
 import FieldWrapper from "./components/FieldWrapper";
 import { InputProps } from "./Input";
 
@@ -16,15 +15,16 @@ const CheckboxInput = styled.input`
   cursor: pointer;
 
   &:checked {
-    border-color: ${defaultTheme.inputBorderColorFocus};
-    background-color: ${defaultTheme.inputBorderColorFocus};
+    border-color: ${(props) => props.theme.input.borderColor.focus};
+    background-color: ${(props) => props.theme.input.backgroundColor.focus};
     /* show check mark icon from phosphor */
     &::after {
       content: "\f33e";
-      color: white;
+      color: ${(props) => props.theme.input.backgroundColor.contrast};
       font-family: "Phosphor" !important;
       font-style: normal !important;
       font-weight: bold !important;
+      margin: -1px; // to make it look centered
     }
   }
 `;

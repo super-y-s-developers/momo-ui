@@ -1,53 +1,51 @@
-import { css } from "styled-components";
-import { defaultTheme } from "../../../utils";
+import { css, DefaultTheme } from "styled-components";
 
-export default {
-  warning: () => css`
+const modifiers = {
+  warning: ({ theme }: { theme: DefaultTheme }) => css`
     input,
     select,
     textarea {
-      border-color: ${defaultTheme.status.warningColorLight};
-      color: ${defaultTheme.status.warningColorDark};
+      border-color: ${theme.status.warningColor.light};
+      color: ${theme.status.warningColor.dark};
       &:focus {
-        box-shadow: 2px 2px 15px
-          ${defaultTheme.status.warningInputShadowColorFocus};
-        border-color: ${defaultTheme.status.warningColor};
+        box-shadow: 2px 2px 15px ${theme.status.warningColor.inputFocusShadow};
+        border-color: ${theme.status.warningColor.main};
       }
     }
     .field-message {
-      color: ${defaultTheme.status.warningColorDark};
+      color: ${theme.status.warningColor.dark};
     }
   `,
-  error: () => css`
+  error: ({ theme }: { theme: DefaultTheme }) => css`
     input,
     select,
     textarea {
-      border-color: ${defaultTheme.status.errorColorLight};
-      color: ${defaultTheme.status.errorColorDark};
+      border-color: ${theme.status.errorColor.light};
+      color: ${theme.status.errorColor.dark};
       &:focus {
-        box-shadow: 2px 2px 15px
-          ${defaultTheme.status.errorInputShadowColorFocus};
-        border-color: ${defaultTheme.status.errorColor};
+        box-shadow: 2px 2px 15px ${theme.status.errorColor.inputFocusShadow};
+        border-color: ${theme.status.errorColor.main};
       }
     }
     .field-message {
-      color: ${defaultTheme.status.errorColorDark};
+      color: ${theme.status.errorColor.dark};
     }
   `,
-  success: () => css`
+  success: ({ theme }: { theme: DefaultTheme }) => css`
     input,
     select,
     textarea {
-      border-color: ${defaultTheme.status.successColorLight};
-      color: ${defaultTheme.status.successColorDark};
+      border-color: ${theme.status.successColor.light};
+      color: ${theme.status.successColor.dark};
       &:focus {
-        box-shadow: 2px 2px 15px
-          ${defaultTheme.status.successInputShadowColorFocus};
-        border-color: ${defaultTheme.status.successColor};
+        box-shadow: 2px 2px 15px ${theme.status.successColor.inputFocusShadow};
+        border-color: ${theme.status.successColor.main};
       }
     }
     .field-message {
-      color: ${defaultTheme.status.successColorDark};
+      color: ${theme.status.successColor.dark};
     }
   `,
 };
+
+export default modifiers;
