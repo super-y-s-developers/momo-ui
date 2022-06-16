@@ -1,12 +1,8 @@
-import { css, DefaultTheme } from "styled-components";
-
-interface SizeModifierI {
-  theme: DefaultTheme;
-  loading?: boolean;
-}
+import { css } from "styled-components";
+import { ComponentProps } from "styled-components-modifiers";
 
 export default {
-  small: ({ theme, loading }: SizeModifierI) => css`
+  small: ({ theme, loading }: ComponentProps) => css`
     font-size: ${theme.typeScale.mobile.paragraph};
     padding: 8px 16px;
     ${loading && "padding: 8px 16px 4px 16px;"}
@@ -15,7 +11,7 @@ export default {
     }
   `,
 
-  large: ({ theme, loading }: SizeModifierI) => css`
+  large: ({ theme, loading }: ComponentProps) => css`
     font-size: ${theme.typeScale.mobile.sm};
     padding: 16px 32px;
     ${loading && "padding: 15px 32px 10px 32px;"}

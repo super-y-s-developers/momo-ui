@@ -17,7 +17,6 @@ export type ButtonProps = JSX.IntrinsicElements["button"] & {
 
 const StyledButton = styled(Button)<ButtonProps>`
   ${(props) => baseStyles(props.theme, props.loading)}
-  ${applyStyleModifiers(modifiersStyles)}
 `;
 
 function Button({ loading, children, ...props }: ButtonProps) {
