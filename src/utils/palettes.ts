@@ -44,4 +44,6 @@ export const red = {
   300: "#FD3C41",
 };
 
-export default { neutral, green, pink, yellow, blue, red };
+const palettes = { neutral, green, pink, yellow, blue, red };
+
+export default palettes;

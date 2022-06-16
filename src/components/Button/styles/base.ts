@@ -1,6 +1,6 @@
 import { css, DefaultTheme } from "styled-components";
 
-export default (theme: DefaultTheme, loading?: boolean) => css`
+const baseStyles = (theme: DefaultTheme, loading?: boolean) => css`
   font-family: ${theme.fonts.subtitles};
   font-size: ${theme.typeScale.mobile.xs};
   font-weight: 600;
@@ -40,3 +40,5 @@ export default (theme: DefaultTheme, loading?: boolean) => css`
     }
   }
 `;
+
+export default baseStyles;

@@ -50,13 +50,13 @@ export const GlobalStyle = createGlobalStyle`
         font-size: ${theme.typeScale.mobile.xl};
       }
       h2 {
-        font-size: ${theme.typeScale.mobile.l};
+        font-size: ${theme.typeScale.mobile.lg};
       }
       h3 {
-        font-size: ${theme.typeScale.mobile.m};
+        font-size: ${theme.typeScale.mobile.md};
       }
       h4 {
-        font-size: ${theme.typeScale.mobile.s};
+        font-size: ${theme.typeScale.mobile.sm};
       }
       h5 {
         font-size: ${theme.typeScale.mobile.xs};

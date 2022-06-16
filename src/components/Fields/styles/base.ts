@@ -31,7 +31,7 @@ const fieldStyles = (theme: DefaultTheme) => css`
 const isRadioOrCheck = (type: typeof FIELD_TYPES[number]) =>
   ["radio", "checkbox"].includes(type);
 
-export default (
+const baseStyles = (
   theme: DefaultTheme,
   type: typeof FIELD_TYPES[number],
   icon?: string,
@@ -99,3 +99,5 @@ export default (
     }
   }
 `;
+
+export default baseStyles;

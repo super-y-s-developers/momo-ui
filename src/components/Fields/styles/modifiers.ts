@@ -1,6 +1,6 @@
 import { css, DefaultTheme } from "styled-components";
 
-export default {
+const modifiers = {
   warning: ({ theme }: { theme: DefaultTheme }) => css`
     input,
     select,
@@ -47,3 +47,5 @@ export default {
     }
   `,
 };
+
+export default modifiers;

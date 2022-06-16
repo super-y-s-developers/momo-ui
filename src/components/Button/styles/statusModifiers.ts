@@ -1,6 +1,6 @@
 import { css, DefaultTheme } from "styled-components";
 
-export default {
+const statusModifiers = {
   // Warning buttons
   warning: ({ theme }: { theme: DefaultTheme }) => css`
     background-color: ${theme.status.warningColor.main};
@@ -74,3 +74,5 @@ export default {
     color: ${theme.status.successColor.dark};
   `,
 };
+
+export default statusModifiers;

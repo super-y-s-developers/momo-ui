@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 import { ComponentProps } from "styled-components-modifiers";
 
-export default {
+const sizeModifiers = {
   small: ({ theme, loading }: ComponentProps) => css`
     font-size: ${theme.typeScale.mobile.paragraph};
     padding: 8px 16px;
@@ -20,3 +20,5 @@ export default {
     }
   `,
 };
+
+export default sizeModifiers;
