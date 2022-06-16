@@ -1,4 +1,4 @@
-export { default as Button } from "./Button";
+export { default as Button } from "./Button/Button";
 export { default as Icon } from "./Icon";
 export { default as Input } from "./Fields/Input";
 export { default as Checkbox } from "./Fields/Checkbox";
@@ -8,7 +8,7 @@ export { default as Modal } from "./Modal/Modal";
 export { default as Dialog } from "./Modal/Dialog";
 export { default as Card } from "./Card";
 
-export * from "./Button";
+export * from "./Button/Button";
 export * from "./Icon";
 export * from "./Fields/Input";
 export * from "./Fields/Checkbox";
