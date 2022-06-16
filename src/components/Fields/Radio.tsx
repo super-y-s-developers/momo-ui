@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { defaultTheme } from "../../utils";
 import FieldWrapper from "./components/FieldWrapper";
 import { InputProps } from "./Input";
 
@@ -16,7 +15,7 @@ const RadioInput = styled.input`
   cursor: pointer;
 
   &:checked {
-    border-color: ${defaultTheme.inputBorderColorFocus};
+    border-color: ${(props) => props.theme.input.borderColor.focus};
     /* show blue dot */
     & + .radio-control {
       position: absolute;
@@ -24,7 +23,7 @@ const RadioInput = styled.input`
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: ${defaultTheme.inputBorderColorFocus};
+      background-color: ${(props) => props.theme.input.borderColor.focus};
       cursor: pointer;
     }
   }
