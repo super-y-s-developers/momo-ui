@@ -1,8 +1,8 @@
 import momoTheme from "./MomoTheme";
 import { addDecorator } from "@storybook/react";
-import { MomoStyle } from "../src/utils/MomoStyle";
+import { MomoStyleWrapper } from "../src/utils/MomoStyle";
 
-addDecorator((story) => <MomoStyle>{story()}</MomoStyle>);
+addDecorator((story) => <MomoStyleWrapper>{story()}</MomoStyleWrapper>);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

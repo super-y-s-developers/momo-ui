@@ -5,7 +5,10 @@ import { defaultTheme } from "./themes";
 
 type MomoStyleProps = { children: React.ReactNode; theme: DefaultTheme };
 
-export function MomoStyle({ children, theme = defaultTheme }: MomoStyleProps) {
+export function MomoStyleWrapper({
+  children,
+  theme = defaultTheme,
+}: MomoStyleProps) {
   return (
     <ThemeProvider theme={theme}>
       {children}
