@@ -8,26 +8,29 @@ export const defaultTheme: DefaultTheme = {
   backgroundColor: neutral[200],
   textColor: { main: neutral[800], inverted: neutral[100] },
 
-  primary: { main: green[300], hover: green[400] },
-  tertiary: { main: neutral[300], hover: neutral[400] },
+  primary: { main: green[300], hover: green[400], contrast: neutral[100] },
+  tertiary: { main: neutral[300], hover: neutral[400], contrast: neutral[800] },
 
   status: {
     warningColor: {
       main: yellow[200],
       dark: yellow[300],
       light: yellow[100],
+      contrast: neutral[800],
       inputFocusShadow: "rgba(201, 163, 0, 0.3)",
     },
     errorColor: {
       main: red[200],
       dark: red[300],
       light: red[100],
+      contrast: neutral[100],
       inputFocusShadow: "rgba(255, 101, 105, 0.3)",
     },
     successColor: {
       main: green[300],
       dark: green[400],
       light: green[100],
+      contrast: neutral[100],
       inputFocusShadow: "rgba(28, 184, 144, 0.3)",
     },
   },
@@ -59,4 +62,41 @@ export const defaultTheme: DefaultTheme = {
   },
 
   typeScale,
+};
+
+export const darkTheme: DefaultTheme = {
+  ...defaultTheme,
+
+  backgroundColor: neutral[800],
+  textColor: { main: neutral[100], inverted: neutral[800] },
+
+  primary: { main: green[300], hover: green[200], contrast: neutral[100] },
+  tertiary: { main: neutral[700], hover: neutral[600], contrast: neutral[100] },
+
+  status: {
+    warningColor: {
+      ...defaultTheme.status.warningColor,
+      main: yellow[200],
+      dark: yellow[300],
+      light: yellow[100],
+      contrast: neutral[800],
+      inputFocusShadow: "rgba(201, 163, 0, 0.3)",
+    },
+    errorColor: {
+      ...defaultTheme.status.errorColor,
+      main: red[200],
+      dark: red[300],
+      light: red[100],
+      contrast: neutral[100],
+      inputFocusShadow: "rgba(255, 101, 105, 0.3)",
+    },
+    successColor: {
+      ...defaultTheme.status.successColor,
+      main: green[300],
+      dark: green[400],
+      light: green[100],
+      contrast: neutral[100],
+      inputFocusShadow: "rgba(28, 184, 144, 0.3)",
+    },
+  },
 };
