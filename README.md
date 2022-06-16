@@ -84,18 +84,18 @@ import styled from 'styled-components';
 import { yellow } from '@superys/momo-ui';
 
 const WarningBox = styled.div`
-  border: 2px solid yellow[300];
-  background-color: yellow[200];
+  border: 2px solid ${yellow[300]};
+  background-color: ${yellow[200]};
 `
 ```
 
 ### Create a custom theme
 
-We know you love or colors and style! But we also know you might need to tweak them sometimes to match your brand. You can do it by creating a custom theme, based on our `defaultTheme` and passing it to the `MomoStyleWrapper`.
+We know you love our colors and style! But we also know you might need to tweak them sometimes to match your brand. You can do it by creating a custom theme, based on our `defaultTheme` and passing it to the `MomoStyleWrapper`.
 
 ```jsx
 ...
-import { MomoStyleWrapper, defaultTheme } from "@superys/momo-ui";
+import { MomoStyleWrapper, defaultTheme, neutral } from "@superys/momo-ui";
 ...
 
 const pink = { [300]: "#EF6AC3", [400]: "#EF6AC3" };
@@ -103,7 +103,7 @@ const pink = { [300]: "#EF6AC3", [400]: "#EF6AC3" };
 const customTheme = {
   ...defaultTheme,
   palettes: { ...defaultTheme.palettes, pink },
-  primary: { main: pink[400], hover: pink[300] }
+  primary: { main: pink[400], hover: pink[300], contrast: neutral[100] },
 };
 
 ReactDOM.render(
