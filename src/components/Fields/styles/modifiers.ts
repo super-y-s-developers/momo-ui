@@ -1,7 +1,8 @@
-import { css, DefaultTheme } from "styled-components";
+import { css } from "styled-components";
+import { ComponentProps } from "styled-components-modifiers";
 
 export default {
-  warning: (theme: DefaultTheme) => css`
+  warning: ({ theme }: ComponentProps) => css`
     input,
     select,
     textarea {
@@ -16,7 +17,7 @@ export default {
       color: ${theme.status.warningColor.dark};
     }
   `,
-  error: (theme: DefaultTheme) => css`
+  error: ({ theme }: ComponentProps) => css`
     input,
     select,
     textarea {
@@ -31,7 +32,7 @@ export default {
       color: ${theme.status.errorColor.dark};
     }
   `,
-  success: (theme: DefaultTheme) => css`
+  success: ({ theme }: ComponentProps) => css`
     input,
     select,
     textarea {
