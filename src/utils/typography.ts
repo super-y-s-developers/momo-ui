@@ -4,6 +4,7 @@ export const subtitlesFont = "Quicksand, Verdana";
 
 export const typeScale = {
   desktop: {
+    basePx: "16px",
     xl: "3rem",
     l: "2.4rem",
     m: "2rem",
@@ -15,6 +16,7 @@ export const typeScale = {
   },
 
   mobile: {
+    basePx: "14px",
     xxl: "1.9rem",
     xl: "1.75rem",
     l: "1.6rem",

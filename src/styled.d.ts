@@ -17,6 +17,7 @@ interface StatusI extends ColorI {
   inputFocusShadow: string;
 }
 interface TypeScaleI {
+  basePx: string;
   xxl?: string;
   xl: string;
   l: string;
@@ -34,7 +35,7 @@ declare module "styled-components" {
     palette: Palette;
 
     backgroundColor: string;
-    textColor?: ColorI;
+    textColor: ColorI;
 
     primary: ColorI;
     secondary?: ColorI;
@@ -62,9 +63,9 @@ declare module "styled-components" {
 
     breakpoints: {
       xs: string;
-      sm: string;
-      md: string;
-      lg: string;
+      s: string;
+      m: string;
+      l: string;
       xl: string;
     };
 

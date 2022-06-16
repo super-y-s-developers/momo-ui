@@ -52,9 +52,9 @@ export const defaultTheme: DefaultTheme = {
 
   breakpoints: {
     xs: "0",
-    sm: "576px",
-    md: "768px",
-    lg: "992px",
+    s: "576px",
+    m: "768px",
+    l: "992px",
     xl: "1200px",
   },
 
