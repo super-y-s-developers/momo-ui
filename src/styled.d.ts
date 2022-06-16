@@ -20,9 +20,9 @@ interface TypeScaleI {
   basePx: string;
   xxl?: string;
   xl: string;
-  l: string;
-  m: string;
-  s: string;
+  lg: string;
+  md: string;
+  sm: string;
   xs: string;
   paragraph: string;
   subParagraph?: string;
@@ -63,9 +63,9 @@ declare module "styled-components" {
 
     breakpoints: {
       xs: string;
-      s: string;
-      m: string;
-      l: string;
+      sm: string;
+      md: string;
+      lg: string;
       xl: string;
     };
 
