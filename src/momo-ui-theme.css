@@ -1,0 +1,25 @@
+:root {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-weight: 400;
+  --font-size: 18px;
+  --border-radius: 1.5rem;
+  --border-width: 2px;
+  --outline-width: 3px;
+}
+
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --background-color: #f5f8fd;
+
+  --primary: #3fbe67;
+  --primary-hover: #329852;
+  --primary-focus: rgba(38, 114, 62, 0.25);
+  --primary-inverse: #fff;
+
+  --secondary: #d5e0fb;
+  --secondary-hover: #c0cce2;
+  --secondary-focus: rgba(164, 167, 194, 0.25);
+  --secondary-inverse: #2c2c48;
+}
