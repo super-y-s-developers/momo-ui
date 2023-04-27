@@ -51,7 +51,7 @@ input[type="reset"],
   padding: var(--form-element-spacing-vertical)
     var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);

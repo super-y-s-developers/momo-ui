@@ -55,7 +55,7 @@ nav {
     margin: calc(var(--nav-link-spacing-vertical) * -1)
       calc(var(--nav-link-spacing-horizontal) * -1);
     padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
-    border-radius: var(--border-radius);
+    border-radius: var(--button-border-radius);
     text-decoration: none;
 
     &:is([aria-current], :hover, :active, :focus) {

@@ -2,7 +2,7 @@
 
 // Default: Dark theme
 @mixin dark {
-  --background-color: #{mix($black, $neutral-900, 37.5%)};
+  --background-color: #{mix($black, $neutral-850, 37.5%)};
 
   // Texts colors
   --color: #{$neutral-200};
@@ -89,7 +89,7 @@
   --table-row-stripped-background-color: #{rgba($neutral-500, 0.05)};
 
   // Code
-  --code-background-color: #{mix($black, $neutral-900, 12.5%)};
+  --code-background-color: #{mix($black, $neutral-800, 12.5%)};
   --code-color: var(--muted-color);
   --code-kbd-background-color: var(--contrast);
   --code-kbd-color: var(--contrast-inverse);
@@ -108,7 +108,7 @@
   $box-shadow-elevation: 1rem;
   $box-shadow-blur-strengh: 6rem;
   $box-shadow-opacity: 0.06;
-  --card-background-color: #{mix($black, $neutral-900, 25%)};
+  --card-background-color: #{mix($black, $neutral-800, 25%)};
   --card-border-color: var(--card-background-color);
   --card-box-shadow:
     #{($box-shadow-elevation * 0.5 * 0.029)} #{($box-shadow-elevation * 0.029)} #{($box-shadow-blur-strengh * 0.029)} #{rgba($black, ($box-shadow-opacity * 0.283))},
@@ -118,7 +118,7 @@
     #{($box-shadow-elevation * 0.5 * 0.417)} #{($box-shadow-elevation * 0.417)} #{($box-shadow-blur-strengh * 0.417)} #{rgba($black, ($box-shadow-opacity * 0.717))},
     #{($box-shadow-elevation * 0.5)} #{$box-shadow-elevation} #{$box-shadow-blur-strengh} #{rgba($black, $box-shadow-opacity)},
     0 0 0 0.0625rem #{rgba($black, ($box-shadow-opacity * 0.25) )};
-  --card-sectionning-background-color: #{mix($black, $neutral-900, 12.5%)};
+  --card-sectioning-background-color: #{mix($black, $neutral-900, 12.5%)};
 
   // Dropdown (<details role="list">)
   --dropdown-background-color: #{$neutral-900};

@@ -104,7 +104,7 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     padding: calc(var(--form-element-spacing-vertical) * 0.5)
       calc(var(--form-element-spacing-horizontal) * 0.5);
     border: var(--border-width) solid var(--border-color);
-    border-radius: var(--border-radius);
+    border-radius: var(--button-border-radius);
     outline: none;
     background-color: var(--background-color);
     box-shadow: var(--box-shadow);

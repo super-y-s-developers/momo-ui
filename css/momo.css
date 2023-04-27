@@ -16,7 +16,9 @@
   --font-weight: 400;
   --font-size: 17px;
   --border-radius: 0.8rem;
-  --border-width: 1px;
+  --code-border-radius: 0.3rem;
+  --button-border-radius: 2rem;
+  --border-width: 2px;
   --outline-width: 3px;
   --spacing: 1rem;
   --typography-spacing-vertical: 1.5rem;
@@ -208,7 +210,7 @@ kbd {
 
 [data-theme=light],
 :root:not([data-theme=dark]) {
-  --background-color: #FFF;
+  --background-color: #F5F8FD;
   --color: #464871;
   --h1-color: #131524;
   --h2-color: #202136;
@@ -217,7 +219,7 @@ kbd {
   --h5-color: #464871;
   --h6-color: #555880;
   --muted-color: #81839F;
-  --muted-border-color: #F5F8FD;
+  --muted-border-color: #E2EEFC;
   --primary: #329852;
   --primary-hover: #26723E;
   --primary-focus: rgba(50, 152, 82, 0.125);
@@ -264,8 +266,8 @@ kbd {
   --range-thumb-hover-color: var(--secondary-hover);
   --range-thumb-active-color: var(--primary);
   --table-border-color: var(--muted-border-color);
-  --table-row-stripped-background-color: #fafcfe;
-  --code-background-color: #F5F8FD;
+  --table-row-stripped-background-color: #f1f7fe;
+  --code-background-color: #FFF;
   --code-color: var(--muted-color);
   --code-kbd-background-color: var(--contrast);
   --code-kbd-color: var(--contrast-inverse);
@@ -286,12 +288,12 @@ kbd {
     0.2085rem 0.417rem 2.502rem rgba(19, 21, 36, 0.04302),
     0.5rem 1rem 6rem rgba(19, 21, 36, 0.06),
     0 0 0 0.0625rem rgba(19, 21, 36, 0.015);
-  --card-sectionning-background-color: #fdfdff;
-  --dropdown-background-color: #fdfdff;
-  --dropdown-border-color: #ecf3fd;
+  --card-sectioning-background-color: white;
+  --dropdown-background-color: white;
+  --dropdown-border-color: #f1f7fe;
   --dropdown-box-shadow: var(--card-box-shadow);
   --dropdown-color: var(--color);
-  --dropdown-hover-background-color: #F5F8FD;
+  --dropdown-hover-background-color: #FFF;
   --modal-overlay-background-color: rgba(226, 238, 252, 0.7);
   --progress-background-color: #E2EEFC;
   --progress-color: var(--primary);
@@ -314,7 +316,7 @@ kbd {
 
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --background-color: #0c0d17;
+    --background-color: #151623;
     --color: #D5E0FB;
     --h1-color: #F5F8FD;
     --h2-color: #ecf3fd;
@@ -371,7 +373,7 @@ kbd {
     --range-thumb-active-color: var(--primary);
     --table-border-color: var(--muted-border-color);
     --table-row-stripped-background-color: rgba(129, 131, 159, 0.05);
-    --code-background-color: #111220;
+    --code-background-color: #27273f;
     --code-color: var(--muted-color);
     --code-kbd-background-color: var(--contrast);
     --code-kbd-color: var(--contrast-inverse);
@@ -383,7 +385,7 @@ kbd {
     --accordion-active-summary-color: var(--primary);
     --accordion-close-summary-color: var(--color);
     --accordion-open-summary-color: var(--muted-color);
-    --card-background-color: #0e101b;
+    --card-background-color: #212136;
     --card-border-color: var(--card-background-color);
     --card-box-shadow:
       0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
@@ -393,7 +395,7 @@ kbd {
       0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302),
       0.5rem 1rem 6rem rgba(0, 0, 0, 0.06),
       0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
-    --card-sectionning-background-color: #111220;
+    --card-sectioning-background-color: #111220;
     --dropdown-background-color: #131524;
     --dropdown-border-color: #202136;
     --dropdown-box-shadow: var(--card-box-shadow);
@@ -420,7 +422,7 @@ kbd {
   }
 }
 [data-theme=dark] {
-  --background-color: #0c0d17;
+  --background-color: #151623;
   --color: #D5E0FB;
   --h1-color: #F5F8FD;
   --h2-color: #ecf3fd;
@@ -477,7 +479,7 @@ kbd {
   --range-thumb-active-color: var(--primary);
   --table-border-color: var(--muted-border-color);
   --table-row-stripped-background-color: rgba(129, 131, 159, 0.05);
-  --code-background-color: #111220;
+  --code-background-color: #27273f;
   --code-color: var(--muted-color);
   --code-kbd-background-color: var(--contrast);
   --code-kbd-color: var(--contrast-inverse);
@@ -489,7 +491,7 @@ kbd {
   --accordion-active-summary-color: var(--primary);
   --accordion-close-summary-color: var(--color);
   --accordion-open-summary-color: var(--muted-color);
-  --card-background-color: #0e101b;
+  --card-background-color: #212136;
   --card-border-color: var(--card-background-color);
   --card-box-shadow:
     0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
@@ -499,7 +501,7 @@ kbd {
     0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302),
     0.5rem 1rem 6rem rgba(0, 0, 0, 0.06),
     0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
-  --card-sectionning-background-color: #111220;
+  --card-sectioning-background-color: #111220;
   --dropdown-background-color: #131524;
   --dropdown-border-color: #202136;
   --dropdown-box-shadow: var(--card-box-shadow);
@@ -962,7 +964,7 @@ input[type=reset],
   --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
@@ -1495,7 +1497,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
           margin-inline-end: calc(var(--spacing) / 2);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
@@ -1523,7 +1525,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
           margin-inline-end: calc(var(--spacing) / 2);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
@@ -1550,7 +1552,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   margin-inline-end: calc(var(--spacing) / 2);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
@@ -1736,7 +1738,7 @@ pre {
 pre,
 code,
 kbd {
-  border-radius: var(--border-radius);
+  border-radius: var(--code-border-radius);
   background: var(--code-background-color);
   color: var(--code-color);
   font-weight: var(--font-weight);
@@ -1896,7 +1898,7 @@ article > footer {
   margin-right: calc(var(--block-spacing-horizontal) * -1);
   margin-left: calc(var(--block-spacing-horizontal) * -1);
   padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
-  background-color: var(--card-sectionning-background-color);
+  background-color: var(--card-sectioning-background-color);
 }
 article > header {
   margin-top: calc(var(--block-spacing-vertical) * -1);
@@ -2084,7 +2086,7 @@ nav :where(a, [role=link]) {
   display: inline-block;
   margin: calc(var(--nav-link-spacing-vertical) * -1) calc(var(--nav-link-spacing-horizontal) * -1);
   padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   text-decoration: none;
 }
 nav :where(a, [role=link]):is([aria-current], :hover, :active, :focus) {
