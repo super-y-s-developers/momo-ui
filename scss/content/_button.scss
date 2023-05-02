@@ -56,11 +56,15 @@ input[type="reset"],
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
-  font-weight: var(--font-weight);
+  // font-weight: var(--font-weight);
   font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
+  // TODO: should this styles go here? their not dynamic, but specific to button style
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: Fredoka;letter-spacing: 0.04em;
 
   @if $enable-transitions {
     transition: background-color var(--transition),

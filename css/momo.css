@@ -6,7 +6,7 @@
 /**
  * Theme: default
  */
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap");
 :root {
   --font-family: "Nunito", system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
@@ -14,10 +14,10 @@
     "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
-  --font-size: 17px;
+  --font-size: 16px;
   --border-radius: 0.8rem;
-  --code-border-radius: 0.3rem;
   --button-border-radius: 2rem;
+  --code-border-radius: 0.25rem;
   --border-width: 2px;
   --outline-width: 3px;
   --spacing: 1rem;
@@ -27,7 +27,7 @@
   --grid-spacing-vertical: 0;
   --grid-spacing-horizontal: var(--spacing);
   --form-element-spacing-vertical: 0.75rem;
-  --form-element-spacing-horizontal: 1rem;
+  --form-element-spacing-horizontal: 1.5rem;
   --nav-element-spacing-vertical: 1rem;
   --nav-element-spacing-horizontal: 0.5rem;
   --nav-link-spacing-vertical: 0.5rem;
@@ -35,97 +35,6 @@
   --form-label-font-weight: var(--font-weight);
   --transition: 0.2s ease-in-out;
   --modal-overlay-backdrop-filter: blur(0.25rem);
-}
-@media (min-width: 576px) {
-  :root {
-    --font-size: 17px;
-  }
-}
-@media (min-width: 768px) {
-  :root {
-    --font-size: 18px;
-  }
-}
-@media (min-width: 992px) {
-  :root {
-    --font-size: 19px;
-  }
-}
-@media (min-width: 1200px) {
-  :root {
-    --font-size: 20px;
-  }
-}
-
-@media (min-width: 576px) {
-  body > header,
-  body > main,
-  body > footer,
-  section {
-    --block-spacing-vertical: calc(var(--spacing) * 2.5);
-  }
-}
-@media (min-width: 768px) {
-  body > header,
-  body > main,
-  body > footer,
-  section {
-    --block-spacing-vertical: calc(var(--spacing) * 3);
-  }
-}
-@media (min-width: 992px) {
-  body > header,
-  body > main,
-  body > footer,
-  section {
-    --block-spacing-vertical: calc(var(--spacing) * 3.5);
-  }
-}
-@media (min-width: 1200px) {
-  body > header,
-  body > main,
-  body > footer,
-  section {
-    --block-spacing-vertical: calc(var(--spacing) * 4);
-  }
-}
-
-@media (min-width: 576px) {
-  article {
-    --block-spacing-horizontal: calc(var(--spacing) * 1.25);
-  }
-}
-@media (min-width: 768px) {
-  article {
-    --block-spacing-horizontal: calc(var(--spacing) * 1.5);
-  }
-}
-@media (min-width: 992px) {
-  article {
-    --block-spacing-horizontal: calc(var(--spacing) * 1.75);
-  }
-}
-@media (min-width: 1200px) {
-  article {
-    --block-spacing-horizontal: calc(var(--spacing) * 2);
-  }
-}
-
-dialog > article {
-  --block-spacing-vertical: calc(var(--spacing) * 2);
-  --block-spacing-horizontal: var(--spacing);
-}
-@media (min-width: 576px) {
-  dialog > article {
-    --block-spacing-vertical: calc(var(--spacing) * 2.5);
-    --block-spacing-horizontal: calc(var(--spacing) * 1.25);
-  }
-}
-@media (min-width: 768px) {
-  dialog > article {
-    --block-spacing-vertical: calc(var(--spacing) * 3);
-    --block-spacing-horizontal: calc(var(--spacing) * 1.5);
-  }
 }
 
 a {
@@ -197,7 +106,6 @@ tfoot td {
 
 pre,
 code,
-kbd,
 samp {
   --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace",
     "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace,
@@ -205,7 +113,7 @@ samp {
 }
 
 kbd {
-  --font-weight: bolder;
+  --font-weight: bold;
 }
 
 [data-theme=light],
@@ -969,11 +877,14 @@ input[type=reset],
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
-  font-weight: var(--font-weight);
   font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: Fredoka;
+  letter-spacing: 0.04em;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 button:is([aria-current], :hover, :active, :focus),
@@ -1745,10 +1656,14 @@ kbd {
   line-height: initial;
 }
 
-code,
-kbd {
+code {
   display: inline-block;
   padding: 0.375rem 0.5rem;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.125rem 0.25rem;
 }
 
 pre {
@@ -1785,6 +1700,7 @@ kbd {
   background-color: var(--code-kbd-background-color);
   color: var(--code-kbd-color);
   vertical-align: baseline;
+  text-transform: uppercase;
 }
 
 /**
@@ -1888,7 +1804,7 @@ details[open] > summary::after {
  */
 article {
   margin: var(--block-spacing-vertical) 0;
-  padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
+  padding: var(--block-spacing-horizontal) var(--block-spacing-horizontal);
   border-radius: var(--border-radius);
   background: var(--card-background-color);
   box-shadow: var(--card-box-shadow);

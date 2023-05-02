@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
 
 // Commons Styles
@@ -9,7 +9,7 @@
     "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
-  --font-size: 17px;
+  --font-size: 16px;
 
   // Responsive typography
   @if $enable-responsive-typography {
@@ -40,8 +40,8 @@
 
   // Borders
   --border-radius: 0.8rem;
-  --code-border-radius: 0.3rem;
   --button-border-radius: 2rem;
+  --code-border-radius: 0.25rem;
   --border-width: 2px;
   --outline-width: 3px;
 
@@ -62,7 +62,7 @@
 
   // Spacings for form elements and button
   --form-element-spacing-vertical: 0.75rem;
-  --form-element-spacing-horizontal: 1rem;
+  --form-element-spacing-horizontal: 1.5rem;
 
   // Spacings for nav component
   --nav-element-spacing-vertical: 1rem;
@@ -164,7 +164,7 @@
 // Link
 a {
   --text-decoration: none;
-
+  
   // Secondary & Contrast
   @if $enable-classes {
     &.secondary,
@@ -244,7 +244,6 @@ tfoot {
 // Code
 pre,
 code,
-kbd,
 samp {
   --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace",
     "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace,
@@ -252,5 +251,5 @@ samp {
 }
 
 kbd {
-  --font-weight: bolder;
+  --font-weight: bold;
 }

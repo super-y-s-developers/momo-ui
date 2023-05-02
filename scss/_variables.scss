@@ -16,11 +16,11 @@ $enable-viewport: true !default;
 
 // Enable responsive spacings for <header>, <main>, <footer>, <section>, <article>
 // Fixed spacings if disabled
-$enable-responsive-spacings: true !default;
+$enable-responsive-spacings: false !default;
 
 // Enable responsive typography
 // Fixed root element size if disabled
-$enable-responsive-typography: true !default;
+$enable-responsive-typography: false !default;
 
 // Enable .classes
 // .classless version if disabled
