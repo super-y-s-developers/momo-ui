@@ -130,21 +130,21 @@ input[type="reset"],
   :is(button, input[type="submit"], input[type="button"], [role="button"]).outline,
   input[type="reset"].outline {
     --background-color: transparent;
-    --color: var(--primary);
+    --color: var(--primary-focus);
 
     &:is([aria-current], :hover, :active, :focus) {
-      --background-color: transparent;
-      --color: var(--primary-hover);
+      --background-color: var(--primary);
+      --color: var(--primary-inverse);
     }
   }
 
   // Outline (secondary)
   :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.secondary,
   input[type="reset"].outline {
-    --color: var(--secondary);
+    --color: var(--secondary-focus);
 
     &:is([aria-current], :hover, :active, :focus) {
-      --color: var(--secondary-hover);
+      --background-color: var(--secondary);
     }
   }
 

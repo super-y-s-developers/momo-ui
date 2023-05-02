@@ -128,14 +128,14 @@ kbd {
   --h6-color: #555880;
   --muted-color: #81839F;
   --muted-border-color: #E2EEFC;
-  --primary: #329852;
-  --primary-hover: #26723E;
-  --primary-focus: rgba(50, 152, 82, 0.125);
+  --primary: #3FBE67;
+  --primary-hover: #329852;
+  --primary-focus: #26723E;
   --primary-inverse: #FFF;
-  --secondary: #64678E;
-  --secondary-hover: #464871;
-  --secondary-focus: rgba(100, 103, 142, 0.125);
-  --secondary-inverse: #FFF;
+  --secondary: #D5E0FB;
+  --secondary-hover: #C0CCE2;
+  --secondary-focus: #464871;
+  --secondary-inverse: --color;
   --contrast: #131524;
   --contrast-hover: #000;
   --contrast-focus: rgba(100, 103, 142, 0.125);
@@ -791,11 +791,11 @@ del {
 }
 
 ::-moz-selection {
-  background-color: var(--primary-focus);
+  background-color: var(--primary);
 }
 
 ::selection {
-  background-color: var(--primary-focus);
+  background-color: var(--primary);
 }
 
 /**
@@ -943,21 +943,21 @@ input[type=reset]:focus {
 :is(button, input[type=submit], input[type=button], [role=button]).outline,
 input[type=reset].outline {
   --background-color: transparent;
-  --color: var(--primary);
+  --color: var(--primary-focus);
 }
 :is(button, input[type=submit], input[type=button], [role=button]).outline:is([aria-current], :hover, :active, :focus),
 input[type=reset].outline:is([aria-current], :hover, :active, :focus) {
-  --background-color: transparent;
-  --color: var(--primary-hover);
+  --background-color: var(--primary);
+  --color: var(--primary-inverse);
 }
 
 :is(button, input[type=submit], input[type=button], [role=button]).outline.secondary,
 input[type=reset].outline {
-  --color: var(--secondary);
+  --color: var(--secondary-focus);
 }
 :is(button, input[type=submit], input[type=button], [role=button]).outline.secondary:is([aria-current], :hover, :active, :focus),
 input[type=reset].outline:is([aria-current], :hover, :active, :focus) {
-  --color: var(--secondary-hover);
+  --background-color: var(--secondary);
 }
 
 :is(button, input[type=submit], input[type=button], [role=button]).outline.contrast {
