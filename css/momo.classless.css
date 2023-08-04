@@ -199,8 +199,7 @@ kbd {
   --card-focus-background-color: #E2EEFC;
   --card-border-color: var(--muted-border-color);
   --card-outline-border-color: var(--secondary-hover);
-  --card-box-shadow: 3px 3px 6px
-    rgba(70, 72, 113, 0.1);
+  --card-box-shadow: 3px 3px 6px 0px rgba(70, 72, 113, 0.1);
   --card-sectioning-background-color: white;
   --dropdown-background-color: white;
   --dropdown-border-color: #f1f7fe;
@@ -306,18 +305,7 @@ kbd {
     --card-background-color: #2C2C48;
     --card-focus-background-color: #464871;
     --card-outline-border-color: #464871;
-    --card-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
-      0.0335rem 0.067rem
-        0.402rem rgba(0, 0, 0, 0.024),
-      0.0625rem 0.125rem
-        0.75rem rgba(0, 0, 0, 0.03),
-      0.1125rem 0.225rem
-        1.35rem rgba(0, 0, 0, 0.036),
-      0.2085rem 0.417rem
-        2.502rem rgba(0, 0, 0, 0.04302),
-      0.5rem 1rem 6rem
-        rgba(0, 0, 0, 0.06),
-      0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
+    --card-box-shadow: 2px 2px 6px 0px rgba(19, 21, 36, 0.75);
     --card-sectioning-background-color: #111220;
     --dropdown-background-color: #131524;
     --dropdown-border-color: #202136;
@@ -422,18 +410,7 @@ kbd {
   --card-background-color: #2C2C48;
   --card-focus-background-color: #464871;
   --card-outline-border-color: #464871;
-  --card-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
-    0.0335rem 0.067rem
-      0.402rem rgba(0, 0, 0, 0.024),
-    0.0625rem 0.125rem
-      0.75rem rgba(0, 0, 0, 0.03),
-    0.1125rem 0.225rem
-      1.35rem rgba(0, 0, 0, 0.036),
-    0.2085rem 0.417rem
-      2.502rem rgba(0, 0, 0, 0.04302),
-    0.5rem 1rem 6rem
-      rgba(0, 0, 0, 0.06),
-    0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
+  --card-box-shadow: 2px 2px 6px 0px rgba(19, 21, 36, 0.75);
   --card-sectioning-background-color: #111220;
   --dropdown-background-color: #131524;
   --dropdown-border-color: #202136;
