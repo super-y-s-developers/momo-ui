@@ -175,7 +175,8 @@ a {
 }
 
 // Small
-small {
+small,
+span.badge {
   --font-size: 0.875em;
 }
 

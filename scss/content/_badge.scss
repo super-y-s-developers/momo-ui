@@ -1,0 +1,53 @@
+/**
+ * Badge
+ */
+
+span.badge {
+  --font-weight: bold;
+  --color: var(--badge-color);
+  --background: var(--badge-background);
+
+  border-radius: var(--code-border-radius);
+  background: var(--background);
+  color: var(--color);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: initial;
+  display: inline-block;
+  padding: 0.0625rem 0.25rem;
+  vertical-align: baseline;
+  text-transform: uppercase;
+
+  &[data-color="green"] {
+    --color: var(--badge-color-green);
+    --background: var(--badge-background-green);
+  }
+  &[data-color="blue"] {
+    --color: var(--badge-color-blue);
+    --background: var(--badge-background-blue);
+  }
+  &[data-color="red"] {
+    --color: var(--badge-color-red);
+    --background: var(--badge-background-red);
+  }
+  &[data-color="yellow"] {
+    --color: var(--badge-color-yellow);
+    --background: var(--badge-background-yellow);
+  }
+  &[data-color="orange"] {
+    --color: var(--badge-color-orange);
+    --background: var(--badge-background-orange);
+  }
+  &[data-color="pink"] {
+    --color: var(--badge-color-pink);
+    --background: var(--badge-background-pink);
+  }
+  &[data-color="purple"] {
+    --color: var(--badge-color-purple);
+    --background: var(--badge-background-purple);
+  }
+  &[data-color="aqua"] {
+    --color: var(--badge-color-aqua);
+    --background: var(--badge-background-aqua);
+  }
+}

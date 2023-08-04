@@ -36,14 +36,10 @@ kbd {
   line-height: initial;
 }
 
-code {
-  display: inline-block;
-  padding: 0.375rem 0.5rem;
-}
-
+code,
 kbd {
   display: inline-block;
-  padding: 0.125rem 0.25rem;
+  padding: 0.375rem 0.5rem;
 }
 
 pre {
@@ -92,11 +88,4 @@ kbd {
   background-color: var(--code-kbd-background-color);
   color: var(--code-kbd-color);
   vertical-align: baseline;
-  text-transform: uppercase;
-
-  // colors
-  &.blue {
-    color: var(--blue-color);
-    background-color: var(--blue-background);
-  }
 }

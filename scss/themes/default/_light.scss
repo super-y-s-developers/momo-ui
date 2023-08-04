@@ -104,6 +104,26 @@
   --table-border-color: var(--muted-border-color);
   --table-row-stripped-background-color: #{mix($neutral-100, $white)};
 
+  // Badge
+  --badge-color: #{$neutral-800};
+  --badge-background: var(--secondary);
+  --badge-color-green: #{$primary-800};
+  --badge-background-green: #{$primary-100};
+  --badge-color-blue: #{$blue-800};
+  --badge-background-blue: #{$blue-100};
+  --badge-color-red: #{$red-800};
+  --badge-background-red: #{$red-100};
+  --badge-color-yellow: #{$yellow-800};
+  --badge-background-yellow: #{$yellow-100};
+  --badge-color-orange: #{$orange-800};
+  --badge-background-orange: #{$orange-100};
+  --badge-color-pink: #{$pink-800};
+  --badge-background-pink: #{$pink-100};
+  --badge-color-purple: #{$purple-800};
+  --badge-background-purple: #{$purple-100};
+  --badge-color-aqua: #{$aqua-800};
+  --badge-background-aqua: #{$aqua-100};
+
   // Code
   --code-background-color: #{$white};
   --code-color: var(--muted-color);
