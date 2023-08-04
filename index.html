@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="UTF-8" />
@@ -5,48 +6,50 @@
     <title>Momo UI - showcase</title>
     <link rel="stylesheet" href="/css/momo.css" />
     <script src="./theme-toggle.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
 
   <body>
-    <a
-      id="theme-toggle"
-      href="#"
-      role="button"
-      class="contrast"
-      style="position: fixed; top: 20; right: 20"
-      >Cambiar tema</a
-    >
-
+    <!-- <header><h1>Momo UI</h1></header> -->
     <main class="container">
-      <h1>Buttons</h1>
+      <hgroup>
+        <h2>Buttons</h2>
+        <h3>2 styles, 2 variants</h3>
+      </hgroup>
       <div class="grid">
         <section>
-          <h4>Filled</h4>
+          <h5>Filled</h5>
           <a href="#" role="button">Primary</a>
           <a href="#" role="button" class="secondary">Secondary</a>
         </section>
         <section>
-          <h4>Outlined</h4>
+          <h5>Outlined</h5>
           <a href="#" role="button" class="outline">Primary</a>
           <a href="#" role="button" class="secondary outline">Secondary</a>
         </section>
       </div>
-      <h1>Cards</h1>
+      <hgroup>
+        <h2>Cards</h2>
+        <h3>3 styles</h3>
+      </hgroup>
       <div class="grid">
         <section>
-          <h4>Filled</h4>
+          <h5>Filled</h5>
           <article>I'm a card!</article>
         </section>
         <section>
-          <h4>Elevated (link)</h4>
+          <h5>Elevated (link)</h5>
           <a href="#"><article>I'm a card!</article></a>
         </section>
         <section>
-          <h4>Outlined</h4>
+          <h5>Outlined</h5>
           <article class="outline">I'm a card!</article>
         </section>
       </div>
-      <h1>Badges</h1>
+      <hgroup>
+        <h2>Badges</h2>
+        <h3>1 neutral, 8 colors</h3>
+      </hgroup>
       <section>
         <span class="badge">Neutral</span>
         <span class="badge" data-color="green">Green</span>
@@ -58,6 +61,56 @@
         <span class="badge" data-color="purple">Purple</span>
         <span class="badge" data-color="aqua">Aqua</span>
       </section>
+
+      <hgroup>
+        <h2>Icons</h2>
+        <h3>
+          6 weights. More info on
+          <a href="https://phosphoricons.com/" target="”_blank”"
+            >Phosphor icons</a
+          >
+        </h3>
+      </hgroup>
+      <div class="grid">
+        <section>
+          <h5>Regular</h5>
+          <i class="ph ph-butterfly" style="font-size: 40px"></i>
+        </section>
+        <section>
+          <h5>Thin</h5>
+          <i class="ph-thin ph-butterfly" style="font-size: 40px"></i>
+        </section>
+        <section>
+          <h5>Light</h5>
+          <i class="ph-light ph-butterfly" style="font-size: 40px"></i>
+        </section>
+        <section>
+          <h5>Bold</h5>
+          <i class="ph-bold ph-butterfly" style="font-size: 40px"></i>
+        </section>
+        <section>
+          <h5>Fill</h5>
+          <i class="ph-fill ph-butterfly" style="font-size: 40px"></i>
+        </section>
+        <section>
+          <h5>Duotone</h5>
+          <i class="ph-duotone ph-butterfly" style="font-size: 40px"></i>
+        </section>
+      </div>
     </main>
+
+    <button
+      id="theme-toggle"
+      class="contrast"
+      style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: auto;
+        padding: 0.5rem 0.5rem 0.25rem;
+      "
+    >
+      <i class="ph-fill ph-circle-half" style="font-size: 30px"></i>
+    </button>
   </body>
 </html>
