@@ -64,7 +64,8 @@ input[type="reset"],
   // TODO: should this styles go here? their not dynamic, but specific to button style
   font-weight: 500;
   text-transform: uppercase;
-  font-family: Fredoka;letter-spacing: 0.04em;
+  font-family: Fredoka;
+  letter-spacing: 0.04em;
 
   @if $enable-transitions {
     transition: background-color var(--transition),
@@ -87,9 +88,13 @@ input[type="reset"],
 
 // .secondary, .contrast & .outline
 @if $enable-classes {
-
   // Secondary
-  :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
+  :is(
+      button,
+      input[type="submit"],
+      input[type="button"],
+      [role="button"]
+    ).secondary,
   input[type="reset"] {
     --background-color: var(--secondary);
     --border-color: var(--secondary);
@@ -109,7 +114,12 @@ input[type="reset"],
   }
 
   // Contrast
-  :is(button, input[type="submit"], input[type="button"], [role="button"]).contrast {
+  :is(
+      button,
+      input[type="submit"],
+      input[type="button"],
+      [role="button"]
+    ).contrast {
     --background-color: var(--contrast);
     --border-color: var(--contrast);
     --color: var(--contrast-inverse);
@@ -127,37 +137,52 @@ input[type="reset"],
   }
 
   // Outline (primary)
-  :is(button, input[type="submit"], input[type="button"], [role="button"]).outline,
+  :is(
+      button,
+      input[type="submit"],
+      input[type="button"],
+      [role="button"]
+    ).outline,
   input[type="reset"].outline {
     --background-color: transparent;
     --color: var(--primary-focus);
+    --border-color: var(--primary-outline-button);
 
     &:is([aria-current], :hover, :active, :focus) {
-      --background-color: var(--primary);
-      --color: var(--primary-inverse);
+      --background-color: var(--primary-hover-outline-button);
     }
   }
 
   // Outline (secondary)
-  :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.secondary,
+  :is(
+      button,
+      input[type="submit"],
+      input[type="button"],
+      [role="button"]
+    ).outline.secondary,
   input[type="reset"].outline {
     --color: var(--secondary-focus);
+    --border-color: var(--secondary-outline-button);
 
     &:is([aria-current], :hover, :active, :focus) {
-      --background-color: var(--secondary);
+      --background-color: var(--secondary-hover-outline-button);
     }
   }
 
   // Outline (contrast)
-  :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.contrast {
+  :is(
+      button,
+      input[type="submit"],
+      input[type="button"],
+      [role="button"]
+    ).outline.contrast {
     --color: var(--contrast);
 
     &:is([aria-current], :hover, :active, :focus) {
       --color: var(--contrast-hover);
     }
   }
-} 
-@else {
+} @else {
   // Secondary button without .class
   input[type="reset"] {
     --background-color: var(--secondary);
@@ -179,8 +204,21 @@ input[type="reset"],
 
 // Button [disabled]
 // Links without href are disabled by default
-:where(button, [type="submit"], [type="button"], [type="reset"], [role="button"])[disabled],
-:where(fieldset[disabled]) :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]),
+:where(
+    button,
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [role="button"]
+  )[disabled],
+:where(fieldset[disabled])
+  :is(
+    button,
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [role="button"]
+  ),
 a[role="button"]:not([href]) {
   opacity: 0.5;
   pointer-events: none;

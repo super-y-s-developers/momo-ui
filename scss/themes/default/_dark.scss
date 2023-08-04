@@ -21,14 +21,20 @@
   // Primary colors
   --primary: #{$primary-600};
   --primary-hover: #{$primary-500};
-  --primary-focus: #{rgba($primary-600, 0.25)};
+  --primary-focus: #{$primary-200};
   --primary-inverse: #{$white};
+
+  --primary-outline-button: #{$primary-600};
+  --primary-hover-outline-button: #{$primary-700};
 
   // Secondary colors
   --secondary: #{$neutral-600};
   --secondary-hover: #{$neutral-500};
-  --secondary-focus: #{rgba($neutral-500, 0.25)};
+  --secondary-focus: #{$neutral-300};
   --secondary-inverse: #{$white};
+
+  --secondary-outline-button: #{$neutral-500};
+  --secondary-hover-outline-button: #{$neutral-700};
 
   // Contrast colors
   --contrast: #{$neutral-50};

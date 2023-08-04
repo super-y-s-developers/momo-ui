@@ -47,6 +47,10 @@ a:is([aria-current], :hover, :active, :focus) > article {
   background-color: var(--card-focus-background-color);
 }
 
+a:focus article {
+  outline: var(--outline-width) solid var(--secondary-focus);
+}
+
 a:has(> article):is([aria-current], :hover, :active, :focus) {
   --text-decoration: none;
   --color: var(--font-color);

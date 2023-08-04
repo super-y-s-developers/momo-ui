@@ -138,10 +138,14 @@ kbd {
   --primary-hover: #329852;
   --primary-focus: #26723E;
   --primary-inverse: #FFF;
+  --primary-outline-button: #B2E5C2;
+  --primary-hover-outline-button: #D9F2E1;
   --secondary: #D5E0FB;
   --secondary-hover: #C0CCE2;
   --secondary-focus: #464871;
   --secondary-inverse: --color;
+  --secondary-outline-button: #D5E0FB;
+  --secondary-hover-outline-button: #E2EEFC;
   --contrast: #131524;
   --contrast-hover: #000;
   --contrast-focus: rgba(100, 103, 142, 0.125);
@@ -200,6 +204,7 @@ kbd {
   --accordion-open-summary-color: var(--muted-color);
   --card-background-color: #FFF;
   --card-focus-background-color: #E2EEFC;
+  --card-border-color: var(--muted-border-color);
   --card-outline-border-color: var(--secondary-hover);
   --card-box-shadow: 3px 3px 6px
     rgba(70, 72, 113, 0.1);
@@ -244,12 +249,16 @@ kbd {
     --muted-border-color: #191b2d;
     --primary: #329852;
     --primary-hover: #3FBE67;
-    --primary-focus: rgba(50, 152, 82, 0.25);
+    --primary-focus: #B2E5C2;
     --primary-inverse: #FFF;
+    --primary-outline-button: #329852;
+    --primary-hover-outline-button: #26723E;
     --secondary: #64678E;
     --secondary-hover: #81839F;
-    --secondary-focus: rgba(129, 131, 159, 0.25);
+    --secondary-focus: #C0CCE2;
     --secondary-inverse: #FFF;
+    --secondary-outline-button: #81839F;
+    --secondary-hover-outline-button: #464871;
     --contrast: #F5F8FD;
     --contrast-hover: #FFF;
     --contrast-focus: rgba(129, 131, 159, 0.25);
@@ -356,12 +365,16 @@ kbd {
   --muted-border-color: #191b2d;
   --primary: #329852;
   --primary-hover: #3FBE67;
-  --primary-focus: rgba(50, 152, 82, 0.25);
+  --primary-focus: #B2E5C2;
   --primary-inverse: #FFF;
+  --primary-outline-button: #329852;
+  --primary-hover-outline-button: #26723E;
   --secondary: #64678E;
   --secondary-hover: #81839F;
-  --secondary-focus: rgba(129, 131, 159, 0.25);
+  --secondary-focus: #C0CCE2;
   --secondary-inverse: #FFF;
+  --secondary-outline-button: #81839F;
+  --secondary-hover-outline-button: #464871;
   --contrast: #F5F8FD;
   --contrast-hover: #FFF;
   --contrast-focus: rgba(129, 131, 159, 0.25);
@@ -917,69 +930,114 @@ input[type=reset]:focus,
     0 0 0 var(--outline-width) var(--primary-focus);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).secondary,
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).secondary,
 input[type=reset] {
   --background-color: var(--secondary);
   --border-color: var(--secondary);
   --color: var(--secondary-inverse);
   cursor: pointer;
 }
-:is(button, input[type=submit], input[type=button], [role=button]).secondary:is([aria-current], :hover, :active, :focus),
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).secondary:is([aria-current], :hover, :active, :focus),
 input[type=reset]:is([aria-current], :hover, :active, :focus) {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
   --color: var(--secondary-inverse);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).secondary:focus,
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).secondary:focus,
 input[type=reset]:focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--secondary-focus);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).contrast {
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).contrast {
   --background-color: var(--contrast);
   --border-color: var(--contrast);
   --color: var(--contrast-inverse);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).contrast:is([aria-current], :hover, :active, :focus) {
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).contrast:is([aria-current], :hover, :active, :focus) {
   --background-color: var(--contrast-hover);
   --border-color: var(--contrast-hover);
   --color: var(--contrast-inverse);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).contrast:focus {
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).contrast:focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--contrast-focus);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).outline,
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).outline,
 input[type=reset].outline {
   --background-color: transparent;
   --color: var(--primary-focus);
+  --border-color: var(--primary-outline-button);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).outline:is([aria-current], :hover, :active, :focus),
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).outline:is([aria-current], :hover, :active, :focus),
 input[type=reset].outline:is([aria-current], :hover, :active, :focus) {
-  --background-color: var(--primary);
-  --color: var(--primary-inverse);
+  --background-color: var(--primary-hover-outline-button);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).outline.secondary,
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).outline.secondary,
 input[type=reset].outline {
   --color: var(--secondary-focus);
+  --border-color: var(--secondary-outline-button);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).outline.secondary:is([aria-current], :hover, :active, :focus),
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).outline.secondary:is([aria-current], :hover, :active, :focus),
 input[type=reset].outline:is([aria-current], :hover, :active, :focus) {
-  --background-color: var(--secondary);
+  --background-color: var(--secondary-hover-outline-button);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).outline.contrast {
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).outline.contrast {
   --color: var(--contrast);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).outline.contrast:is([aria-current], :hover, :active, :focus) {
+:is(button,
+input[type=submit],
+input[type=button],
+[role=button]).outline.contrast:is([aria-current], :hover, :active, :focus) {
   --color: var(--contrast-hover);
 }
 
-:where(button, [type=submit], [type=button], [type=reset], [role=button])[disabled],
-:where(fieldset[disabled]) :is(button, [type=submit], [type=button], [type=reset], [role=button]),
+:where(button,
+[type=submit],
+[type=button],
+[type=reset],
+[role=button])[disabled],
+:where(fieldset[disabled]) :is(button,
+[type=submit],
+[type=button],
+[type=reset],
+[role=button]),
 a[role=button]:not([href]) {
   opacity: 0.5;
   pointer-events: none;
