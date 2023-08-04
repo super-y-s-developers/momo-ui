@@ -118,8 +118,8 @@
   $box-shadow-blur-strength: 6px;
   $box-shadow-opacity: 0.1;
   --card-background-color: #{$white};
-  --card-focus-background-color: var(--secondary);
-  --card-border-color: var(--muted-border-color);
+  --card-focus-background-color: #{$neutral-100};
+  // --card-border-color: var(--muted-border-color);
   --card-outline-border-color: var(--secondary-hover);
   --card-box-shadow: #{$box-shadow-elevation} #{$box-shadow-elevation} #{$box-shadow-blur-strength}
     #{rgba($neutral-700, $box-shadow-opacity)};

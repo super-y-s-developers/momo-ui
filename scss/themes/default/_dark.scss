@@ -2,7 +2,7 @@
 
 // Default: Dark theme
 @mixin dark {
-  --background-color: #{mix($black, $neutral-850, 37.5%)};
+  --background-color: #{$neutral-850};
   --font-color: #{$neutral-200};
 
   // Texts colors
@@ -109,8 +109,9 @@
   $box-shadow-elevation: 1rem;
   $box-shadow-blur-strengh: 6rem;
   $box-shadow-opacity: 0.06;
-  --card-background-color: #{mix($black, $neutral-800, 25%)};
-  --card-border-color: var(--card-background-color);
+  --card-background-color: #{$neutral-800};
+  --card-focus-background-color: #{$neutral-700};
+  --card-outline-border-color: #{$neutral-700};
   --card-box-shadow: #{($box-shadow-elevation * 0.5 * 0.029)} #{(
         $box-shadow-elevation * 0.029
       )} #{($box-shadow-blur-strengh * 0.029)} #{rgba(
