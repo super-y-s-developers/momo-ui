@@ -37,12 +37,19 @@ article {
 // Link cards
 a > article {
   box-shadow: var(--card-box-shadow);
-  color: #{$neutral-700};
+}
+
+a:has(> article) {
+  --color: var(--font-color);
 }
 
 a:is([aria-current], :hover, :active, :focus) > article {
   background-color: var(--card-focus-background-color);
-  text-decoration: none;
+}
+
+a:has(> article):is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none;
+  --color: var(--font-color);
 }
 
 // .outline

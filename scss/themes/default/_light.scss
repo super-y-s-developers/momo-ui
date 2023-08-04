@@ -4,9 +4,10 @@
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
   --background-color: #{$neutral-50};
+  --font-color: #{$neutral-700};
 
   // Texts colors
-  --color: #{$neutral-700};
+  --color: var(--font-color);
   --h1-color: #{$neutral-900};
   --h2-color: #{mix($neutral-900, $neutral-800)};
   --h3-color: #{$neutral-800};
@@ -35,6 +36,14 @@
   --contrast-hover: #{$black};
   --contrast-focus: #{rgba($neutral-600, 0.125)};
   --contrast-inverse: #{$white};
+
+  // Blue colors
+  --blue: #{$blue-500};
+  --blue-hover: #{$blue-600};
+  --blue-focus: #{$blue-700};
+  --blue-inverse: #{$white};
+  --blue-background: #{$blue-100};
+  --blue-color: #{$blue-800};
 
   // Highlighted text (<mark>)
   --mark-background-color: #{mix($yellow-100, $yellow-50)};

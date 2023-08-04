@@ -117,7 +117,8 @@ kbd {
 [data-theme=light],
 :root:not([data-theme=dark]) {
   --background-color: #F5F8FD;
-  --color: #464871;
+  --font-color: #464871;
+  --color: var(--font-color);
   --h1-color: #131524;
   --h2-color: #202136;
   --h3-color: #2C2C48;
@@ -138,6 +139,12 @@ kbd {
   --contrast-hover: #000;
   --contrast-focus: rgba(100, 103, 142, 0.125);
   --contrast-inverse: #FFF;
+  --blue: #2297F7;
+  --blue-hover: #1B79C6;
+  --blue-focus: #145B94;
+  --blue-inverse: #FFF;
+  --blue-background: #D3EAFD;
+  --blue-color: #0E3C63;
   --mark-background-color: #fff7d9;
   --mark-color: #28241b;
   --ins-color: #26723E;
@@ -219,7 +226,8 @@ kbd {
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --background-color: #151623;
-    --color: #D5E0FB;
+    --font-color: #D5E0FB;
+    --color: var(--font-color);
     --h1-color: #F5F8FD;
     --h2-color: #ecf3fd;
     --h3-color: #E2EEFC;
@@ -289,13 +297,17 @@ kbd {
     --accordion-open-summary-color: var(--muted-color);
     --card-background-color: #212136;
     --card-border-color: var(--card-background-color);
-    --card-box-shadow:
-      0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
-      0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024),
-      0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03),
-      0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036),
-      0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302),
-      0.5rem 1rem 6rem rgba(0, 0, 0, 0.06),
+    --card-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
+      0.0335rem 0.067rem
+        0.402rem rgba(0, 0, 0, 0.024),
+      0.0625rem 0.125rem
+        0.75rem rgba(0, 0, 0, 0.03),
+      0.1125rem 0.225rem
+        1.35rem rgba(0, 0, 0, 0.036),
+      0.2085rem 0.417rem
+        2.502rem rgba(0, 0, 0, 0.04302),
+      0.5rem 1rem 6rem
+        rgba(0, 0, 0, 0.06),
       0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
     --card-sectioning-background-color: #111220;
     --dropdown-background-color: #131524;
@@ -325,7 +337,8 @@ kbd {
 }
 [data-theme=dark] {
   --background-color: #151623;
-  --color: #D5E0FB;
+  --font-color: #D5E0FB;
+  --color: var(--font-color);
   --h1-color: #F5F8FD;
   --h2-color: #ecf3fd;
   --h3-color: #E2EEFC;
@@ -395,13 +408,17 @@ kbd {
   --accordion-open-summary-color: var(--muted-color);
   --card-background-color: #212136;
   --card-border-color: var(--card-background-color);
-  --card-box-shadow:
-    0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
-    0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024),
-    0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03),
-    0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036),
-    0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302),
-    0.5rem 1rem 6rem rgba(0, 0, 0, 0.06),
+  --card-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
+    0.0335rem 0.067rem
+      0.402rem rgba(0, 0, 0, 0.024),
+    0.0625rem 0.125rem
+      0.75rem rgba(0, 0, 0, 0.03),
+    0.1125rem 0.225rem
+      1.35rem rgba(0, 0, 0, 0.036),
+    0.2085rem 0.417rem
+      2.502rem rgba(0, 0, 0, 0.04302),
+    0.5rem 1rem 6rem
+      rgba(0, 0, 0, 0.06),
     0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
   --card-sectioning-background-color: #111220;
   --dropdown-background-color: #131524;

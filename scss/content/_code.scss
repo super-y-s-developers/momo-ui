@@ -93,4 +93,10 @@ kbd {
   color: var(--code-kbd-color);
   vertical-align: baseline;
   text-transform: uppercase;
+
+  // colors
+  &.blue {
+    color: var(--blue-color);
+    background-color: var(--blue-background);
+  }
 }
