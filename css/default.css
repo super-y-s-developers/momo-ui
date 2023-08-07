@@ -40,9 +40,12 @@ a.secondary, a.contrast {
   --text-decoration: underline;
 }
 
-small,
-span.badge {
+small {
   --font-size: 0.875em;
+}
+
+span.badge {
+  --font-size: 0.875rem;
 }
 
 h1,

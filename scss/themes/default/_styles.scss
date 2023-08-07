@@ -175,9 +175,13 @@ a {
 }
 
 // Small
-small,
-span.badge {
+small {
   --font-size: 0.875em;
+}
+
+// Badge
+span.badge {
+  --font-size: 0.875rem;
 }
 
 // Headings
