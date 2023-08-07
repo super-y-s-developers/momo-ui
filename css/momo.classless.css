@@ -1682,9 +1682,9 @@ span.badge {
   color: var(--color);
   font-weight: var(--font-weight);
   font-size: var(--font-size);
-  line-height: 1.3rem;
+  line-height: initial;
   display: inline-block;
-  padding: 0.0625rem 0.25rem;
+  padding: 0.125 0.25rem;
   vertical-align: baseline;
   text-transform: uppercase;
 }
