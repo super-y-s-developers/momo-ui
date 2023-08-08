@@ -17,6 +17,7 @@
   --font-size: 16px;
   --border-radius: 0.8rem;
   --button-border-radius: 2rem;
+  --checkbox-border-radius: 0.25rem;
   --code-border-radius: 0.25rem;
   --border-width: 2px;
   --card-border-width: 1px;
@@ -26,7 +27,7 @@
   --block-spacing-vertical: calc(var(--spacing) * 2);
   --block-spacing-horizontal: var(--spacing);
   --form-element-spacing-vertical: 0.75rem;
-  --form-element-spacing-horizontal: 1.5rem;
+  --form-element-spacing-horizontal: 1.25rem;
   --nav-element-spacing-vertical: 1rem;
   --nav-element-spacing-horizontal: 0.5rem;
   --nav-link-spacing-vertical: 0.5rem;
@@ -140,7 +141,7 @@ kbd {
   --secondary: #D5E0FB;
   --secondary-hover: #C0CCE2;
   --secondary-focus: #464871;
-  --secondary-inverse: --color;
+  --secondary-inverse: var(--font-color);
   --secondary-outline-button: #D5E0FB;
   --secondary-hover-outline-button: #E2EEFC;
   --contrast: #131524;
@@ -151,8 +152,6 @@ kbd {
   --blue-hover: #1B79C6;
   --blue-focus: #145B94;
   --blue-inverse: #FFF;
-  --blue-background: #D3EAFD;
-  --blue-color: #0E3C63;
   --mark-background-color: #fff7d9;
   --mark-color: #28241b;
   --ins-color: #26723E;
@@ -162,30 +161,30 @@ kbd {
   --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --form-element-background-color: #FFF;
-  --form-element-border-color: #C0CCE2;
+  --form-element-border-color: var(--secondary);
   --form-element-color: var(--color);
   --form-element-placeholder-color: var(--muted-color);
   --form-element-active-background-color: #FFF;
-  --form-element-active-border-color: var(--primary);
-  --form-element-focus-color: var(--primary-focus);
-  --form-element-disabled-background-color: #E2EEFC;
+  --form-element-active-border-color: var(--blue);
+  --form-element-focus-color: var(--blue-focus);
+  --form-element-disabled-background-color: #d7e2ef;
   --form-element-disabled-border-color: #C0CCE2;
-  --form-element-disabled-opacity: 0.5;
-  --form-element-invalid-border-color: #913542;
-  --form-element-invalid-active-border-color: #C24758;
-  --form-element-invalid-focus-color: rgba(194, 71, 88, 0.125);
-  --form-element-valid-border-color: #26723E;
-  --form-element-valid-active-border-color: #329852;
-  --form-element-valid-focus-color: rgba(50, 152, 82, 0.125);
+  --form-element-disabled-opacity: 0.7;
+  --form-element-invalid-border-color: #C24758;
+  --form-element-invalid-active-border-color: #F2596E;
+  --form-element-invalid-focus-color: rgba(97, 36, 44, 0.125);
+  --form-element-valid-border-color: #329852;
+  --form-element-valid-active-border-color: #3FBE67;
+  --form-element-valid-focus-color: rgba(25, 76, 41, 0.125);
   --switch-background-color: #D5E0FB;
-  --switch-color: var(--primary-inverse);
-  --switch-checked-background-color: var(--primary);
-  --range-border-color: #E2EEFC;
-  --range-active-border-color: #D5E0FB;
+  --switch-color: var(--blue-inverse);
+  --switch-checked-background-color: var(--blue);
+  --range-border-color: #D5E0FB;
+  --range-active-border-color: #C0CCE2;
   --range-thumb-border-color: var(--background-color);
-  --range-thumb-color: var(--secondary);
-  --range-thumb-hover-color: var(--secondary-hover);
-  --range-thumb-active-color: var(--primary);
+  --range-thumb-color: #81839F;
+  --range-thumb-hover-color: #64678E;
+  --range-thumb-active-color: var(--blue);
   --table-border-color: var(--muted-border-color);
   --table-row-stripped-background-color: #f1f7fe;
   --badge-color: #2C2C48;
@@ -230,7 +229,7 @@ kbd {
   --dropdown-hover-background-color: #FFF;
   --modal-overlay-background-color: rgba(226, 238, 252, 0.7);
   --progress-background-color: #E2EEFC;
-  --progress-color: var(--primary);
+  --progress-color: var(--blue);
   --loading-spinner-opacity: 0.5;
   --tooltip-background-color: var(--contrast);
   --tooltip-color: var(--contrast-inverse);
@@ -277,6 +276,10 @@ kbd {
     --contrast-hover: #FFF;
     --contrast-focus: rgba(129, 131, 159, 0.25);
     --contrast-inverse: #000;
+    --blue: #1B79C6;
+    --blue-hover: #2297F7;
+    --blue-focus: #A7D5FC;
+    --blue-inverse: #FFF;
     --mark-background-color: #e0d398;
     --mark-color: #0c0d17;
     --ins-color: #26723E;
@@ -285,31 +288,31 @@ kbd {
     --blockquote-footer-color: var(--muted-color);
     --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    --form-element-background-color: #0c0d17;
+    --form-element-background-color: #1a1a2a;
     --form-element-border-color: #393a5d;
     --form-element-color: var(--color);
     --form-element-placeholder-color: var(--muted-color);
     --form-element-active-background-color: var(--form-element-background-color);
-    --form-element-active-border-color: var(--primary);
-    --form-element-focus-color: var(--primary-focus);
-    --form-element-disabled-background-color: #2C2C48;
+    --form-element-active-border-color: var(--blue);
+    --form-element-focus-color: var(--blue-focus);
+    --form-element-disabled-background-color: #30304c;
     --form-element-disabled-border-color: #464871;
-    --form-element-disabled-opacity: 0.5;
-    --form-element-invalid-border-color: #61242C;
-    --form-element-invalid-active-border-color: #913542;
-    --form-element-invalid-focus-color: rgba(145, 53, 66, 0.25);
-    --form-element-valid-border-color: #194C29;
-    --form-element-valid-active-border-color: #26723E;
-    --form-element-valid-focus-color: rgba(38, 114, 62, 0.25);
+    --form-element-disabled-opacity: 0.7;
+    --form-element-invalid-border-color: #913542;
+    --form-element-invalid-active-border-color: #C24758;
+    --form-element-invalid-focus-color: rgba(194, 71, 88, 0.25);
+    --form-element-valid-border-color: #26723E;
+    --form-element-valid-active-border-color: #329852;
+    --form-element-valid-focus-color: rgba(50, 152, 82, 0.25);
     --switch-background-color: #393a5d;
-    --switch-color: var(--primary-inverse);
-    --switch-checked-background-color: var(--primary);
-    --range-border-color: #202136;
+    --switch-color: var(--blue-inverse);
+    --switch-checked-background-color: var(--blue);
+    --range-border-color: #3c3e59;
     --range-active-border-color: #2C2C48;
     --range-thumb-border-color: var(--background-color);
     --range-thumb-color: var(--secondary);
     --range-thumb-hover-color: var(--secondary-hover);
-    --range-thumb-active-color: var(--primary);
+    --range-thumb-active-color: var(--blue);
     --table-border-color: var(--muted-border-color);
     --table-row-stripped-background-color: rgba(129, 131, 159, 0.05);
     --badge-color: #E2EEFC;
@@ -354,7 +357,7 @@ kbd {
     --dropdown-hover-background-color: rgba(32, 33, 54, 0.75);
     --modal-overlay-background-color: rgba(32, 33, 54, 0.8);
     --progress-background-color: #202136;
-    --progress-color: var(--primary);
+    --progress-color: var(--blue);
     --loading-spinner-opacity: 0.5;
     --tooltip-background-color: var(--contrast);
     --tooltip-color: var(--contrast-inverse);
@@ -400,6 +403,10 @@ kbd {
   --contrast-hover: #FFF;
   --contrast-focus: rgba(129, 131, 159, 0.25);
   --contrast-inverse: #000;
+  --blue: #1B79C6;
+  --blue-hover: #2297F7;
+  --blue-focus: #A7D5FC;
+  --blue-inverse: #FFF;
   --mark-background-color: #e0d398;
   --mark-color: #0c0d17;
   --ins-color: #26723E;
@@ -408,31 +415,31 @@ kbd {
   --blockquote-footer-color: var(--muted-color);
   --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --form-element-background-color: #0c0d17;
+  --form-element-background-color: #1a1a2a;
   --form-element-border-color: #393a5d;
   --form-element-color: var(--color);
   --form-element-placeholder-color: var(--muted-color);
   --form-element-active-background-color: var(--form-element-background-color);
-  --form-element-active-border-color: var(--primary);
-  --form-element-focus-color: var(--primary-focus);
-  --form-element-disabled-background-color: #2C2C48;
+  --form-element-active-border-color: var(--blue);
+  --form-element-focus-color: var(--blue-focus);
+  --form-element-disabled-background-color: #30304c;
   --form-element-disabled-border-color: #464871;
-  --form-element-disabled-opacity: 0.5;
-  --form-element-invalid-border-color: #61242C;
-  --form-element-invalid-active-border-color: #913542;
-  --form-element-invalid-focus-color: rgba(145, 53, 66, 0.25);
-  --form-element-valid-border-color: #194C29;
-  --form-element-valid-active-border-color: #26723E;
-  --form-element-valid-focus-color: rgba(38, 114, 62, 0.25);
+  --form-element-disabled-opacity: 0.7;
+  --form-element-invalid-border-color: #913542;
+  --form-element-invalid-active-border-color: #C24758;
+  --form-element-invalid-focus-color: rgba(194, 71, 88, 0.25);
+  --form-element-valid-border-color: #26723E;
+  --form-element-valid-active-border-color: #329852;
+  --form-element-valid-focus-color: rgba(50, 152, 82, 0.25);
   --switch-background-color: #393a5d;
-  --switch-color: var(--primary-inverse);
-  --switch-checked-background-color: var(--primary);
-  --range-border-color: #202136;
+  --switch-color: var(--blue-inverse);
+  --switch-checked-background-color: var(--blue);
+  --range-border-color: #3c3e59;
   --range-active-border-color: #2C2C48;
   --range-thumb-border-color: var(--background-color);
   --range-thumb-color: var(--secondary);
   --range-thumb-hover-color: var(--secondary-hover);
-  --range-thumb-active-color: var(--primary);
+  --range-thumb-active-color: var(--blue);
   --table-border-color: var(--muted-border-color);
   --table-row-stripped-background-color: rgba(129, 131, 159, 0.05);
   --badge-color: #E2EEFC;
@@ -477,7 +484,7 @@ kbd {
   --dropdown-hover-background-color: rgba(32, 33, 54, 0.75);
   --modal-overlay-background-color: rgba(32, 33, 54, 0.8);
   --progress-background-color: #202136;
-  --progress-color: var(--primary);
+  --progress-color: var(--blue);
   --loading-spinner-opacity: 0.5;
   --tooltip-background-color: var(--contrast);
   --tooltip-color: var(--contrast-inverse);
@@ -499,7 +506,7 @@ progress,
 [type=checkbox],
 [type=radio],
 [type=range] {
-  accent-color: var(--primary);
+  accent-color: var(--blue);
 }
 
 /**
@@ -874,6 +881,7 @@ input[type=reset],
   --border-color: var(--primary);
   --color: var(--primary-inverse);
   --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  --font-weight: 500;
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--button-border-radius);
@@ -881,11 +889,11 @@ input[type=reset],
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
+  font-weight: var(--font-weight);
   font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
-  font-weight: 500;
   text-transform: uppercase;
   font-family: Fredoka;
   letter-spacing: 0.04em;
@@ -1061,7 +1069,7 @@ textarea {
   --color: var(--form-element-color);
   --box-shadow: none;
   border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
@@ -1069,34 +1077,61 @@ textarea {
   font-weight: var(--font-weight);
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
+input:is([type=checkbox]),
+select:is([type=checkbox]),
+textarea:is([type=checkbox]) {
+  border-radius: var(--checkbox-border-radius);
+}
 
-input:not([type=submit], [type=button], [type=reset], [type=checkbox], [type=radio], [readonly]):is(:active, :focus),
+input:not([type=submit],
+[type=button],
+[type=reset],
+[type=checkbox],
+[type=radio],
+[readonly]):is(:active, :focus),
 :where(select, textarea):is(:active, :focus) {
   --background-color: var(--form-element-active-background-color);
 }
 
-input:not([type=submit], [type=button], [type=reset], [role=switch], [readonly]):is(:active, :focus),
+input:not([type=submit],
+[type=button],
+[type=reset],
+[role=switch],
+[readonly]):is(:active, :focus),
 :where(select, textarea):is(:active, :focus) {
   --border-color: var(--form-element-active-border-color);
 }
 
-input:not([type=submit], [type=button], [type=reset], [type=range], [type=file], [readonly]):focus,
+input:not([type=submit],
+[type=button],
+[type=reset],
+[type=range],
+[type=file],
+[readonly]):focus,
 select:focus,
 textarea:focus {
-  --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
+  --box-shadow: var(--card-box-shadow);
 }
 
 input:not([type=submit], [type=button], [type=reset])[disabled],
 select[disabled],
 textarea[disabled],
-:where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
+:where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]),
+select,
+textarea) {
   --background-color: var(--form-element-disabled-background-color);
   --border-color: var(--form-element-disabled-border-color);
   opacity: var(--form-element-disabled-opacity);
   pointer-events: none;
 }
 
-:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid] {
+:where(input, select, textarea):not([type=checkbox],
+[type=radio],
+[type=date],
+[type=datetime-local],
+[type=month],
+[type=time],
+[type=week])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
   padding-inline-start: var(--form-element-spacing-horizontal) !important;
@@ -1105,25 +1140,49 @@ textarea[disabled],
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid=false] {
+:where(input, select, textarea):not([type=checkbox],
+[type=radio],
+[type=date],
+[type=datetime-local],
+[type=month],
+[type=time],
+[type=week])[aria-invalid=false] {
   background-image: var(--icon-valid);
 }
-:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid=true] {
+:where(input, select, textarea):not([type=checkbox],
+[type=radio],
+[type=date],
+[type=datetime-local],
+[type=month],
+[type=time],
+[type=week])[aria-invalid=true] {
   background-image: var(--icon-invalid);
 }
 :where(input, select, textarea)[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
 }
 :where(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
-  --border-color: var(--form-element-valid-active-border-color) !important;
-  --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
+  --border-color: var(
+    --form-element-valid-active-border-color
+  ) !important;
+  --box-shadow: 0
+    0
+    0
+    var(--outline-width)
+    var(--form-element-valid-focus-color) !important;
 }
 :where(input, select, textarea)[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
 }
 :where(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
-  --border-color: var(--form-element-invalid-active-border-color) !important;
-  --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
+  --border-color: var(
+    --form-element-invalid-active-border-color
+  ) !important;
+  --box-shadow: 0
+    0
+    0
+    var(--outline-width)
+    var(--form-element-invalid-focus-color) !important;
 }
 
 [dir=rtl] :where(input, select, textarea):not([type=checkbox], [type=radio]):is([aria-invalid], [aria-invalid=true], [aria-invalid=false]) {
@@ -1205,8 +1264,8 @@ label > :where(input, select, textarea) {
 [type=radio]:checked,
 [type=radio]:checked:active,
 [type=radio]:checked:focus {
-  --background-color: var(--primary);
-  --border-color: var(--primary);
+  --background-color: var(--blue);
+  --border-color: var(--blue);
   background-image: var(--icon-checkbox);
   background-position: center;
   background-size: 0.75em auto;
@@ -1221,8 +1280,8 @@ label > :where(input, select, textarea) {
 }
 
 [type=checkbox]:indeterminate {
-  --background-color: var(--primary);
-  --border-color: var(--primary);
+  --background-color: var(--blue);
+  --border-color: var(--blue);
   background-image: var(--icon-minus);
   background-position: center;
   background-size: 0.75em auto;
@@ -1233,7 +1292,7 @@ label > :where(input, select, textarea) {
   border-radius: 50%;
 }
 [type=radio]:checked, [type=radio]:checked:active, [type=radio]:checked:focus {
-  --background-color: var(--primary-inverse);
+  --background-color: var(--blue-inverse);
   border-width: 0.35em;
   background-image: none;
 }
@@ -1303,14 +1362,18 @@ label > :where(input, select, textarea) {
 }
 [type=color]::-webkit-color-swatch {
   border: 0;
-  border-radius: calc(var(--border-radius) * 0.5);
+  border-radius: calc(var(--button-border-radius) * 0.5);
 }
 [type=color]::-moz-color-swatch {
   border: 0;
-  border-radius: calc(var(--border-radius) * 0.5);
+  border-radius: calc(var(--button-border-radius) * 0.5);
 }
 
-input:not([type=checkbox], [type=radio], [type=range], [type=file]):is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
+input:not([type=checkbox], [type=radio], [type=range], [type=file]):is([type=date],
+[type=datetime-local],
+[type=month],
+[type=time],
+[type=week]) {
   --icon-position: 0.75rem;
   --icon-width: 1rem;
   padding-right: calc(var(--icon-width) + var(--icon-position));
@@ -1334,7 +1397,11 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   opacity: 0;
 }
 
-[dir=rtl] :is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
+[dir=rtl] :is([type=date],
+[type=datetime-local],
+[type=month],
+[type=time],
+[type=week]) {
   text-align: right;
 }
 
@@ -1447,7 +1514,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
 [type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 0.25rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   background-color: var(--range-border-color);
   -webkit-transition: background-color var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), box-shadow var(--transition);
@@ -1455,7 +1522,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
 [type=range]::-moz-range-track {
   width: 100%;
   height: 0.25rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   background-color: var(--range-border-color);
   -moz-transition: background-color var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), box-shadow var(--transition);
@@ -1463,7 +1530,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
 [type=range]::-ms-track {
   width: 100%;
   height: 0.25rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   background-color: var(--range-border-color);
   -ms-transition: background-color var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), box-shadow var(--transition);
@@ -1684,7 +1751,7 @@ span.badge {
   font-size: var(--font-size);
   line-height: initial;
   display: inline-block;
-  padding: 0.125 0.25rem;
+  padding: 0.0625rem 0.25rem;
   vertical-align: baseline;
   text-transform: uppercase;
 }

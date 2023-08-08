@@ -48,6 +48,8 @@ input[type="reset"],
   --border-color: var(--primary);
   --color: var(--primary-inverse);
   --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  --font-weight: 500;
+
   padding: var(--form-element-spacing-vertical)
     var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
@@ -56,13 +58,12 @@ input[type="reset"],
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
-  // font-weight: var(--font-weight);
+  font-weight: var(--font-weight);
   font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
   // TODO: should this styles go here? their not dynamic, but specific to button style
-  font-weight: 500;
   text-transform: uppercase;
   font-family: Fredoka;
   letter-spacing: 0.04em;

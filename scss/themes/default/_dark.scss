@@ -42,6 +42,12 @@
   --contrast-focus: #{rgba($neutral-500, 0.25)};
   --contrast-inverse: #{$black};
 
+  // Blue colors
+  --blue: #{$blue-600};
+  --blue-hover: #{$blue-500};
+  --blue-focus: #{$blue-200};
+  --blue-inverse: #{$white};
+
   // Highlighted text (<mark>)
   --mark-background-color: #{mix($neutral-300, $yellow-350)};
   --mark-color: #{mix($black, $neutral-900, 37.5%)};
@@ -61,35 +67,35 @@
   --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 
   // Form elements
-  --form-element-background-color: #{mix($black, $neutral-900, 37.5%)};
+  --form-element-background-color: #{mix($black, $neutral-850, 25%)};
   --form-element-border-color: #{mix($neutral-800, $neutral-700)};
   --form-element-color: var(--color);
   --form-element-placeholder-color: var(--muted-color);
   --form-element-active-background-color: var(--form-element-background-color);
-  --form-element-active-border-color: var(--primary);
-  --form-element-focus-color: var(--primary-focus);
-  --form-element-disabled-background-color: #{$neutral-800};
+  --form-element-active-border-color: var(--blue);
+  --form-element-focus-color: var(--blue-focus);
+  --form-element-disabled-background-color: #{mix($white, $neutral-800, 2%)};
   --form-element-disabled-border-color: #{$neutral-700};
-  --form-element-disabled-opacity: 0.5;
-  --form-element-invalid-border-color: #{$red-800};
-  --form-element-invalid-active-border-color: #{$red-700};
-  --form-element-invalid-focus-color: #{rgba($red-700, 0.25)};
-  --form-element-valid-border-color: #{$green-800};
-  --form-element-valid-active-border-color: #{$green-700};
-  --form-element-valid-focus-color: #{rgba($green-700, 0.25)};
+  --form-element-disabled-opacity: 0.7;
+  --form-element-invalid-border-color: #{$red-700};
+  --form-element-invalid-active-border-color: #{$red-600};
+  --form-element-invalid-focus-color: #{rgba($red-600, 0.25)};
+  --form-element-valid-border-color: #{$green-700};
+  --form-element-valid-active-border-color: #{$green-600};
+  --form-element-valid-focus-color: #{rgba($green-600, 0.25)};
 
   // Switch (input[type="checkbox"][role="switch"])
   --switch-background-color: #{mix($neutral-800, $neutral-700)};
-  --switch-color: var(--primary-inverse);
-  --switch-checked-background-color: var(--primary);
+  --switch-color: var(--blue-inverse);
+  --switch-checked-background-color: var(--blue);
 
   // Range (input[type="range"])
-  --range-border-color: #{mix($neutral-900, $neutral-800)};
+  --range-border-color: #{mix($neutral-900, $neutral-600)};
   --range-active-border-color: #{$neutral-800};
   --range-thumb-border-color: var(--background-color);
   --range-thumb-color: var(--secondary);
   --range-thumb-hover-color: var(--secondary-hover);
-  --range-thumb-active-color: var(--primary);
+  --range-thumb-active-color: var(--blue);
 
   // Table
   --table-border-color: var(--muted-border-color);
@@ -156,7 +162,7 @@
 
   // Progress
   --progress-background-color: #{mix($neutral-900, $neutral-800)};
-  --progress-color: var(--primary);
+  --progress-color: var(--blue);
 
   // Loading ([aria-busy=true])
   --loading-spinner-opacity: 0.5;

@@ -157,7 +157,7 @@ textarea {
   --color: var(--form-element-color);
   --box-shadow: none;
   border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--button-border-radius);
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
@@ -169,10 +169,21 @@ textarea {
       border-color var(--transition), color var(--transition),
       box-shadow var(--transition);
   }
+
+  &:is([type="checkbox"]) {
+    border-radius: var(--checkbox-border-radius);
+  }
 }
 
 // Active & Focus
-input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"], [readonly]),
+input:not(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [readonly]
+  ),
 :where(select, textarea) {
   &:is(:active, :focus) {
     --background-color: var(--form-element-active-background-color);
@@ -180,7 +191,13 @@ input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [
 }
 
 // Active & Focus
-input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]),
+input:not(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [role="switch"],
+    [readonly]
+  ),
 :where(select, textarea) {
   &:is(:active, :focus) {
     --border-color: var(--form-element-active-border-color);
@@ -188,11 +205,18 @@ input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [re
 }
 
 // Focus
-input:not([type="submit"], [type="button"], [type="reset"], [type="range"], [type="file"], [readonly]),
+input:not(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="range"],
+    [type="file"],
+    [readonly]
+  ),
 select,
 textarea {
   &:focus {
-    --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
+    --box-shadow: var(--card-box-shadow);
   }
 }
 
@@ -200,7 +224,12 @@ textarea {
 input:not([type="submit"], [type="button"], [type="reset"])[disabled],
 select[disabled],
 textarea[disabled],
-:where(fieldset[disabled]) :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
+:where(fieldset[disabled])
+  :is(
+    input:not([type="submit"], [type="button"], [type="reset"]),
+    select,
+    textarea
+  ) {
   --background-color: var(--form-element-disabled-background-color);
   --border-color: var(--form-element-disabled-border-color);
   opacity: var(--form-element-disabled-opacity);
@@ -209,7 +238,15 @@ textarea[disabled],
 
 // Aria-invalid
 :where(input, select, textarea) {
-  &:not([type="checkbox"], [type="radio"], [type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+  &:not(
+      [type="checkbox"],
+      [type="radio"],
+      [type="date"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="time"],
+      [type="week"]
+    ) {
     &[aria-invalid] {
       @if $enable-important {
         padding-right: calc(
@@ -220,12 +257,13 @@ textarea[disabled],
         padding-inline-end: calc(
           var(--form-element-spacing-horizontal) + 1.5rem
         ) !important;
-      }
-      @else {
+      } @else {
         padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
         padding-left: var(--form-element-spacing-horizontal);
         padding-inline-start: var(--form-element-spacing-horizontal);
-        padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+        padding-inline-end: calc(
+          var(--form-element-spacing-horizontal) + 1.5rem
+        );
       }
       background-position: center right 0.75rem;
       background-size: 1rem auto;
@@ -246,12 +284,21 @@ textarea[disabled],
 
     &:is(:active, :focus) {
       @if $enable-important {
-        --border-color: var(--form-element-valid-active-border-color) !important;
-        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
-      }
-      @else {
+        --border-color: var(
+          --form-element-valid-active-border-color
+        ) !important;
+        --box-shadow: 0
+          0
+          0
+          var(--outline-width)
+          var(--form-element-valid-focus-color) !important;
+      } @else {
         --border-color: var(--form-element-valid-active-border-color);
-        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color);
+        --box-shadow: 0
+          0
+          0
+          var(--outline-width)
+          var(--form-element-valid-focus-color);
       }
     }
   }
@@ -261,12 +308,21 @@ textarea[disabled],
 
     &:is(:active, :focus) {
       @if $enable-important {
-        --border-color: var(--form-element-invalid-active-border-color) !important;
-        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
-      }
-      @else {
+        --border-color: var(
+          --form-element-invalid-active-border-color
+        ) !important;
+        --box-shadow: 0
+          0
+          0
+          var(--outline-width)
+          var(--form-element-invalid-focus-color) !important;
+      } @else {
         --border-color: var(--form-element-invalid-active-border-color);
-        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color);
+        --box-shadow: 0
+          0
+          0
+          var(--outline-width)
+          var(--form-element-invalid-focus-color);
       }
     }
   }
@@ -275,7 +331,7 @@ textarea[disabled],
 [dir="rtl"] {
   :where(input, select, textarea) {
     &:not([type="checkbox"], [type="radio"]) {
-      &:is([aria-invalid], [aria-invalid="true"], [aria-invalid="false"] ){
+      &:is([aria-invalid], [aria-invalid="true"], [aria-invalid="false"]) {
         background-position: center left 0.75rem;
       }
     }

@@ -21,7 +21,7 @@
   // Swatch
   @mixin color-swatch {
     border: 0;
-    border-radius: calc(var(--border-radius) * 0.5);
+    border-radius: calc(var(--button-border-radius) * 0.5);
   }
 
   &::-webkit-color-swatch {
@@ -36,7 +36,13 @@
 // Date & Time
 // :not() are needed to add Specificity and avoid !important on padding
 input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
-  &:is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+  &:is(
+      [type="date"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="time"],
+      [type="week"]
+    ) {
     --icon-position: 0.75rem;
     --icon-width: 1rem;
     padding-right: calc(var(--icon-width) + var(--icon-position));
@@ -67,7 +73,13 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
 }
 
 [dir="rtl"]
-  :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+  :is(
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="time"],
+    [type="week"]
+  ) {
   text-align: right;
 }
 
@@ -159,7 +171,7 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
   @mixin slider-track {
     width: 100%;
     height: $height-track;
-    border-radius: var(--border-radius);
+    border-radius: var(--button-border-radius);
     background-color: var(--range-border-color);
 
     @if $enable-transitions {
@@ -236,19 +248,24 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
 // :not() are needed to add Specificity and avoid !important on padding
 input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
   &[type="search"] {
-    padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+    padding-inline-start: calc(
+      var(--form-element-spacing-horizontal) + 1.75rem
+    );
     border-radius: 5rem;
     background-image: var(--icon-search);
     background-position: center left 1.125rem;
     background-size: 1rem auto;
     background-repeat: no-repeat;
-    
+
     &[aria-invalid] {
       @if $enable-important {
-        padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
-      } 
-      @else {
-        padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+        padding-inline-start: calc(
+          var(--form-element-spacing-horizontal) + 1.75rem
+        ) !important;
+      } @else {
+        padding-inline-start: calc(
+          var(--form-element-spacing-horizontal) + 1.75rem
+        );
       }
       background-position: center left 1.125rem, center right 0.75rem;
     }
@@ -276,7 +293,7 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     &:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
       &[type="search"] {
         background-position: center right 1.125rem;
-        
+
         &[aria-invalid] {
           background-position: center right 1.125rem, center left 0.75rem;
         }

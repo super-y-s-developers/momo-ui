@@ -27,8 +27,8 @@
   &:checked,
   &:checked:active,
   &:checked:focus {
-    --background-color: var(--primary);
-    --border-color: var(--primary);
+    --background-color: var(--blue);
+    --border-color: var(--blue);
     background-image: var(--icon-checkbox);
     background-position: center;
     background-size: 0.75em auto;
@@ -46,8 +46,8 @@
 // Checkboxes
 [type="checkbox"] {
   &:indeterminate {
-    --background-color: var(--primary);
-    --border-color: var(--primary);
+    --background-color: var(--blue);
+    --border-color: var(--blue);
     background-image: var(--icon-minus);
     background-position: center;
     background-size: 0.75em auto;
@@ -62,7 +62,7 @@
   &:checked,
   &:checked:active,
   &:checked:focus {
-    --background-color: var(--primary-inverse);
+    --background-color: var(--blue-inverse);
     border-width: 0.35em;
     background-image: none;
   }
@@ -127,7 +127,6 @@
 [type="radio"]:checked,
 [type="checkbox"][role="switch"],
 [type="checkbox"][role="switch"]:checked {
-  
   &[aria-invalid="false"] {
     --border-color: var(--form-element-valid-border-color);
   }
