@@ -355,6 +355,11 @@ textarea {
   margin-bottom: var(--spacing);
 }
 
+// Textarea
+textarea {
+  border-radius: var(--border-radius);
+}
+
 // Select
 select {
   // Unstyle the caret on `<select>`s in IE10+.

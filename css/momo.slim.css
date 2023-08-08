@@ -1335,6 +1335,10 @@ textarea {
   margin-bottom: var(--spacing);
 }
 
+textarea {
+  border-radius: var(--border-radius);
+}
+
 select::-ms-expand {
   border: 0;
   background-color: transparent;
