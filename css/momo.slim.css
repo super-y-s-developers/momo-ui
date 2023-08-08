@@ -129,10 +129,8 @@ kbd {
 [data-theme=light],
 :root:not([data-theme=dark]) {
   --background-color: #F5F8FD;
-  --font-color: #464871;
+  --font-color: #2C2C48;
   --color: var(--font-color);
-  --h1-color: #131524;
-  --h2-color: #202136;
   --h3-color: #2C2C48;
   --h4-color: #393a5d;
   --h5-color: #464871;

@@ -4,12 +4,12 @@
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
   --background-color: #{$neutral-50};
-  --font-color: #{$neutral-700};
+  --font-color: #{$neutral-800};
 
   // Texts colors
   --color: var(--font-color);
-  --h1-color: #{$neutral-900};
-  --h2-color: #{mix($neutral-900, $neutral-800)};
+  // --h1-color: #{$neutral-900};
+  // --h2-color: #{mix($neutral-900, $neutral-800)};
   --h3-color: #{$neutral-800};
   --h4-color: #{mix($neutral-800, $neutral-700)};
   --h5-color: #{$neutral-700};
