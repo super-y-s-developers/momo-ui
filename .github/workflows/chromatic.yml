@@ -1,0 +1,27 @@
+name: "Chromatic"
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  launch-chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v1
+
+      - name: Install 🔧
+        run: yarn
+
+      - name: Launch chromatic 🚀
+        uses: chromaui/action@v1
+        with:
+          #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/review/ to obtain it
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
